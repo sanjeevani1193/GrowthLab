@@ -1,0 +1,92 @@
+{
+  "status": "Frozen for Phase 2 by user approval; no models authorized",
+  "row_grain": "One row per eligible observed user_id",
+  "timezone": "UTC; SQL TIMESTAMP values are UTC without a stored timezone offset",
+  "feature_columns": [
+    "n_views_7d",
+    "n_carts_7d",
+    "n_removals_7d",
+    "n_purchases_7d",
+    "n_viewed_products_7d",
+    "active_24h_bins_7d",
+    "n_sessions_7d",
+    "hours_since_last_event",
+    "cart_view_ratio_7d",
+    "purchase_view_ratio_7d",
+    "median_view_price_7d",
+    "view_price_unavailable_7d"
+  ],
+  "target": "purchased_next_30d",
+  "feature_window": "[first_seen, first_seen + 7 elapsed days)",
+  "outcome_window": "[first_seen + 7 elapsed days, first_seen + 37 elapsed days)",
+  "coverage_end_exclusive": "2020-03-01 00:00:00",
+  "eligibility": "37-day end <= coverage end and no declared whole-day logging gap intersects the history; eligibility is independent of purchase value",
+  "primary_splits": [
+    [
+      "train",
+      "2019-10-08",
+      "2019-10-13",
+      87760,
+      3814
+    ],
+    [
+      "validation",
+      "2019-11-12",
+      "2019-11-17",
+      53089,
+      1150
+    ],
+    [
+      "test",
+      "2019-12-17",
+      "2019-12-22",
+      51444,
+      547
+    ]
+  ],
+  "broader_splits": [
+    [
+      "train",
+      "2019-10-08",
+      "2019-11-01",
+      328535,
+      10092
+    ],
+    [
+      "validation",
+      "2019-12-01",
+      "2019-12-16",
+      157349,
+      1985
+    ],
+    [
+      "test",
+      "2020-01-15",
+      "2020-01-30",
+      167822,
+      2140
+    ]
+  ],
+  "split_tuple_fields": [
+    "split",
+    "prediction_start_inclusive",
+    "prediction_end_exclusive",
+    "expected_customers",
+    "expected_positives"
+  ],
+  "deduplication": "Distinct on all nine original decoded CSV fields, before deterministic type parsing; raw unchanged",
+  "price_policy": "Keep all activity; exclude negative/nonfinite prices from median-view-price; include zero; retain QA zero/negative counts; no imputation",
+  "session_policy": "Distinct nonmissing session IDs per user within feature window",
+  "gap_interval_utc": [
+    "2020-01-22 02:52:09",
+    "2020-01-22 03:26:14"
+  ],
+  "gap_policy": "Keep feature_gap/outcome_gap as QA only; primary calendar avoids gap; broader assignment retained for later robustness",
+  "model_input_exclusions": "user_id, target, timestamps, splits and every QA/gap column; model must use feature_columns allowlist only",
+  "design_document_sha256": "598364fab0e3a864f23eb5e969fdfff999417d6b9e599e3a0961e006894a8f6a",
+  "assumptions": [
+    "First observed is not necessarily new customer",
+    "No undetected logging loss outside identified gap",
+    "Event-time availability; no ingestion latency data"
+  ]
+}

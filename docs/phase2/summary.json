@@ -1,0 +1,1427 @@
+{
+  "specification_sha256": "ce7c8522905bfb72e344674b01eaf7b7a4a603eb3cc96ccdf88896b0479a44de",
+  "feature_columns": [
+    "n_views_7d",
+    "n_carts_7d",
+    "n_removals_7d",
+    "n_purchases_7d",
+    "n_viewed_products_7d",
+    "active_24h_bins_7d",
+    "n_sessions_7d",
+    "hours_since_last_event",
+    "cart_view_ratio_7d",
+    "purchase_view_ratio_7d",
+    "median_view_price_7d",
+    "view_price_unavailable_7d"
+  ],
+  "target": "purchased_next_30d",
+  "raw_hashes_before": {
+    "2019-Oct.csv": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+    "2019-Nov.csv": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+    "2019-Dec.csv": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+    "2020-Jan.csv": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+    "2020-Feb.csv": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b"
+  },
+  "memory_limit": "1GB",
+  "threads": 1,
+  "max_spill": "8GB",
+  "cleaned_months": [
+    {
+      "month": "2019-Oct",
+      "events": 3889128,
+      "purchases": 245281,
+      "invalid_rows": 0,
+      "bytes": 179158553,
+      "sha256": "14b09cb548c9c8e9e22282d28e244404e2ca6bb6028afb887f776392546fd7fb"
+    },
+    {
+      "month": "2019-Nov",
+      "events": 4389144,
+      "purchases": 322269,
+      "invalid_rows": 0,
+      "bytes": 202732936,
+      "sha256": "cc3b606170c00f2cac0dcbbce85f3cbea99e93d949286af99fde7c1717e9edf2"
+    },
+    {
+      "month": "2019-Dec",
+      "events": 3349426,
+      "purchases": 213066,
+      "invalid_rows": 0,
+      "bytes": 153949367,
+      "sha256": "65f57d559704dc949e0178e21eb10da84b7084fb9af161ee27f812766c624fd6"
+    },
+    {
+      "month": "2020-Jan",
+      "events": 4039652,
+      "purchases": 263605,
+      "invalid_rows": 0,
+      "bytes": 186461446,
+      "sha256": "1e21d49b99c92403274aa67568b9070ccadccd52d825265380c2e2193cfef100"
+    },
+    {
+      "month": "2020-Feb",
+      "events": 3916392,
+      "purchases": 241881,
+      "invalid_rows": 0,
+      "bytes": 180079108,
+      "sha256": "d8789b4645f790174785b91a589026805f4d6cff7840e4222a5b2738ca5b3d6d"
+    }
+  ],
+  "validation": {
+    "customers": 1256629,
+    "distinct_users": 1256629,
+    "censored": 0,
+    "feature_boundary_errors": 0,
+    "window_errors": 0,
+    "range_errors": 0,
+    "event_sum_errors": 0,
+    "price_missingness_errors": 0,
+    "price_range_errors": 0,
+    "target_errors": 0,
+    "target_boundary_errors": 0,
+    "feature_validity_passed": true
+  },
+  "primary_splits": [
+    {
+      "split": "test",
+      "customers": 51444,
+      "positives": 547,
+      "positive_rate": 0.010632921234740689,
+      "earliest_first_seen": "2019-12-10 00:01:00",
+      "latest_prediction": "2019-12-21 23:57:38",
+      "latest_outcome_end": "2020-01-20 23:57:38",
+      "gap_overlap_customers": 0
+    },
+    {
+      "split": "train",
+      "customers": 87760,
+      "positives": 3814,
+      "positive_rate": 0.04345943482224248,
+      "earliest_first_seen": "2019-10-01 00:00:00",
+      "latest_prediction": "2019-10-12 23:59:59",
+      "latest_outcome_end": "2019-11-11 23:59:59",
+      "gap_overlap_customers": 0
+    },
+    {
+      "split": "validation",
+      "customers": 53089,
+      "positives": 1150,
+      "positive_rate": 0.0216617378364633,
+      "earliest_first_seen": "2019-11-05 00:00:06",
+      "latest_prediction": "2019-11-16 23:59:54",
+      "latest_outcome_end": "2019-12-16 23:59:54",
+      "gap_overlap_customers": 0
+    },
+    {
+      "split": null,
+      "customers": 1064336,
+      "positives": 18249,
+      "positive_rate": 0.01714590129432811,
+      "earliest_first_seen": "2019-10-06 00:00:00",
+      "latest_prediction": "2020-01-30 23:59:45",
+      "latest_outcome_end": "2020-02-29 23:59:45",
+      "gap_overlap_customers": 370970
+    }
+  ],
+  "broader_assignments": [
+    {
+      "split": "test",
+      "customers": 167822,
+      "positives": 2140,
+      "positive_rate": 0.012751605868122178,
+      "earliest_first_seen": "2020-01-08 00:00:29",
+      "latest_prediction": "2020-01-29 23:59:54",
+      "latest_outcome_end": "2020-02-28 23:59:54",
+      "gap_overlap_customers": 158052
+    },
+    {
+      "split": "train",
+      "customers": 328535,
+      "positives": 10092,
+      "positive_rate": 0.030718188320879053,
+      "earliest_first_seen": "2019-10-01 00:00:00",
+      "latest_prediction": "2019-10-31 23:59:57",
+      "latest_outcome_end": "2019-11-30 23:59:57",
+      "gap_overlap_customers": 0
+    },
+    {
+      "split": "validation",
+      "customers": 157349,
+      "positives": 1985,
+      "positive_rate": 0.012615269242257657,
+      "earliest_first_seen": "2019-11-24 00:01:08",
+      "latest_prediction": "2019-12-15 23:59:06",
+      "latest_outcome_end": "2020-01-14 23:59:06",
+      "gap_overlap_customers": 0
+    },
+    {
+      "split": null,
+      "customers": 602923,
+      "positives": 9543,
+      "positive_rate": 0.015827891787176803,
+      "earliest_first_seen": "2019-10-25 00:01:17",
+      "latest_prediction": "2020-01-30 23:59:45",
+      "latest_outcome_end": "2020-02-29 23:59:45",
+      "gap_overlap_customers": 212918
+    }
+  ],
+  "all_eligible": {
+    "customers": 1256629,
+    "positives": 23760,
+    "positive_rate": 0.018907728534038288
+  },
+  "qa": {
+    "zero_price_events": 9378,
+    "zero_price_customers": 5110,
+    "negative_price_events": 49,
+    "negative_price_customers": 49,
+    "missing_session_events": 2505,
+    "feature_gap_customers": 72719,
+    "outcome_gap_customers": 298353
+  },
+  "feature_distributions": {
+    "all_eligible": {
+      "n_views_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 39723,
+        "minimum": 0,
+        "maximum": 1168,
+        "mean": 3.360750070227569,
+        "p50_p90_p99": [
+          1.0,
+          6.0,
+          37.0
+        ]
+      },
+      "n_carts_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 965065,
+        "minimum": 0,
+        "maximum": 1664,
+        "mean": 1.8858167366820278,
+        "p50_p90_p99": [
+          0.0,
+          4.0,
+          33.0
+        ]
+      },
+      "n_removals_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 1142471,
+        "minimum": 0,
+        "maximum": 1009,
+        "mean": 0.7432909792786893,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          17.0
+        ]
+      },
+      "n_purchases_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 1193184,
+        "minimum": 0,
+        "maximum": 257,
+        "mean": 0.382887869052839,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          11.0
+        ]
+      },
+      "n_viewed_products_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 39723,
+        "minimum": 0,
+        "maximum": 740,
+        "mean": 2.601974807202444,
+        "p50_p90_p99": [
+          1.0,
+          5.0,
+          28.0
+        ]
+      },
+      "active_24h_bins_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 1,
+        "maximum": 7,
+        "mean": 1.149160969546302,
+        "p50_p90_p99": [
+          1.0,
+          2.0,
+          3.0
+        ]
+      },
+      "n_sessions_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 156,
+        "minimum": 0,
+        "maximum": 1049,
+        "mean": 1.7719302992370858,
+        "p50_p90_p99": [
+          1.0,
+          3.0,
+          12.0
+        ]
+      },
+      "hours_since_last_event": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 0.0002777777777777778,
+        "maximum": 168.0,
+        "mean": 157.74626289306534,
+        "p50_p90_p99": [
+          168.0,
+          168.0,
+          168.0
+        ]
+      },
+      "cart_view_ratio_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 1002954,
+        "minimum": 0.0,
+        "maximum": 392.0,
+        "mean": 0.4536398480116964,
+        "p50_p90_p99": [
+          0.0,
+          1.2408684546615283,
+          6.75
+        ]
+      },
+      "purchase_view_ratio_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 1198534,
+        "minimum": 0.0,
+        "maximum": 134.0,
+        "mean": 0.06387703006400193,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.5
+        ]
+      },
+      "median_view_price_7d": {
+        "customers": 1256629,
+        "missing": 39723,
+        "zeros": 1202,
+        "minimum": 0.0,
+        "maximum": 327.78,
+        "mean": 16.41810889252753,
+        "p50_p90_p99": [
+          6.19,
+          44.29,
+          154.09749999999767
+        ]
+      },
+      "view_price_unavailable_7d": {
+        "customers": 1256629,
+        "missing": 0,
+        "zeros": 1216906,
+        "minimum": 0,
+        "maximum": 1,
+        "mean": 0.03161076180797992,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "train": {
+      "n_views_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 2546,
+        "minimum": 0,
+        "maximum": 582,
+        "mean": 4.227392889699179,
+        "p50_p90_p99": [
+          1.0,
+          8.0,
+          53.0
+        ]
+      },
+      "n_carts_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 46644,
+        "minimum": 0,
+        "maximum": 691,
+        "mean": 3.104626253418414,
+        "p50_p90_p99": [
+          0.0,
+          6.0,
+          41.0
+        ]
+      },
+      "n_removals_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 76472,
+        "minimum": 0,
+        "maximum": 985,
+        "mean": 1.4010369188696445,
+        "p50_p90_p99": [
+          0.0,
+          2.0,
+          30.0
+        ]
+      },
+      "n_purchases_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 82139,
+        "minimum": 0,
+        "maximum": 135,
+        "mean": 0.5947584320875114,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          16.0
+        ]
+      },
+      "n_viewed_products_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 2546,
+        "minimum": 0,
+        "maximum": 444,
+        "mean": 3.2635027347310848,
+        "p50_p90_p99": [
+          1.0,
+          6.0,
+          39.0
+        ]
+      },
+      "active_24h_bins_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 1,
+        "maximum": 7,
+        "mean": 1.2384571558796718,
+        "p50_p90_p99": [
+          1.0,
+          2.0,
+          5.0
+        ]
+      },
+      "n_sessions_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 4,
+        "minimum": 0,
+        "maximum": 455,
+        "mean": 1.9353577939835915,
+        "p50_p90_p99": [
+          1.0,
+          3.0,
+          15.0
+        ]
+      },
+      "hours_since_last_event": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 0.0002777777777777778,
+        "maximum": 168.0,
+        "mean": 153.10333908132242,
+        "p50_p90_p99": [
+          167.9947222222222,
+          168.0,
+          168.0
+        ]
+      },
+      "cart_view_ratio_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 48879,
+        "minimum": 0.0,
+        "maximum": 309.5,
+        "mean": 1.1137561291315474,
+        "p50_p90_p99": [
+          0.0,
+          3.0,
+          7.5
+        ]
+      },
+      "purchase_view_ratio_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 82550,
+        "minimum": 0.0,
+        "maximum": 82.0,
+        "mean": 0.09015420326088534,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          2.0
+        ]
+      },
+      "median_view_price_7d": {
+        "customers": 87760,
+        "missing": 2546,
+        "zeros": 61,
+        "minimum": 0.0,
+        "maximum": 299.81,
+        "mean": 14.030009212100653,
+        "p50_p90_p99": [
+          5.635,
+          30.158499999999986,
+          137.78
+        ]
+      },
+      "view_price_unavailable_7d": {
+        "customers": 87760,
+        "missing": 0,
+        "zeros": 85214,
+        "minimum": 0,
+        "maximum": 1,
+        "mean": 0.029010938924339105,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "validation": {
+      "n_views_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 1776,
+        "minimum": 0,
+        "maximum": 475,
+        "mean": 3.535930230367873,
+        "p50_p90_p99": [
+          1.0,
+          7.0,
+          38.0
+        ]
+      },
+      "n_carts_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 41848,
+        "minimum": 0,
+        "maximum": 454,
+        "mean": 2.022886096931568,
+        "p50_p90_p99": [
+          0.0,
+          5.0,
+          35.0
+        ]
+      },
+      "n_removals_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 47868,
+        "minimum": 0,
+        "maximum": 300,
+        "mean": 0.7896739437548268,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          19.0
+        ]
+      },
+      "n_purchases_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 50034,
+        "minimum": 0,
+        "maximum": 252,
+        "mean": 0.4701350562263369,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          13.0
+        ]
+      },
+      "n_viewed_products_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 1776,
+        "minimum": 0,
+        "maximum": 294,
+        "mean": 2.758763585676882,
+        "p50_p90_p99": [
+          1.0,
+          5.0,
+          29.0
+        ]
+      },
+      "active_24h_bins_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 1,
+        "maximum": 7,
+        "mean": 1.1451901523856165,
+        "p50_p90_p99": [
+          1.0,
+          2.0,
+          3.0
+        ]
+      },
+      "n_sessions_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 8,
+        "minimum": 0,
+        "maximum": 371,
+        "mean": 1.8383657631524422,
+        "p50_p90_p99": [
+          1.0,
+          3.0,
+          13.0
+        ]
+      },
+      "hours_since_last_event": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 0.0008333333333333334,
+        "maximum": 168.0,
+        "mean": 157.932439577356,
+        "p50_p90_p99": [
+          168.0,
+          168.0,
+          168.0
+        ]
+      },
+      "cart_view_ratio_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 43540,
+        "minimum": 0.0,
+        "maximum": 392.0,
+        "mean": 0.39731419950215036,
+        "p50_p90_p99": [
+          0.0,
+          0.8533206831119627,
+          7.0
+        ]
+      },
+      "purchase_view_ratio_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 50289,
+        "minimum": 0.0,
+        "maximum": 84.0,
+        "mean": 0.07714402946720164,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.91000000000002
+        ]
+      },
+      "median_view_price_7d": {
+        "customers": 53089,
+        "missing": 1776,
+        "zeros": 35,
+        "minimum": 0.0,
+        "maximum": 299.81,
+        "mean": 17.84354111043946,
+        "p50_p90_p99": [
+          6.35,
+          45.27,
+          187.3
+        ]
+      },
+      "view_price_unavailable_7d": {
+        "customers": 53089,
+        "missing": 0,
+        "zeros": 51313,
+        "minimum": 0,
+        "maximum": 1,
+        "mean": 0.03345325773700766,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "test": {
+      "n_views_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 1495,
+        "minimum": 0,
+        "maximum": 766,
+        "mean": 3.080864629500039,
+        "p50_p90_p99": [
+          1.0,
+          5.0,
+          33.0
+        ]
+      },
+      "n_carts_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 42346,
+        "minimum": 0,
+        "maximum": 370,
+        "mean": 1.4905917113754763,
+        "p50_p90_p99": [
+          0.0,
+          3.0,
+          28.0
+        ]
+      },
+      "n_removals_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 47452,
+        "minimum": 0,
+        "maximum": 350,
+        "mean": 0.5588018039032735,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          13.0
+        ]
+      },
+      "n_purchases_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 49034,
+        "minimum": 0,
+        "maximum": 187,
+        "mean": 0.32761838115232095,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          9.0
+        ]
+      },
+      "n_viewed_products_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 1495,
+        "minimum": 0,
+        "maximum": 385,
+        "mean": 2.3758844568851565,
+        "p50_p90_p99": [
+          1.0,
+          4.0,
+          24.0
+        ]
+      },
+      "active_24h_bins_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 1,
+        "maximum": 7,
+        "mean": 1.1334266386750642,
+        "p50_p90_p99": [
+          1.0,
+          1.0,
+          3.0
+        ]
+      },
+      "n_sessions_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 10,
+        "minimum": 0,
+        "maximum": 665,
+        "mean": 1.7020643806857942,
+        "p50_p90_p99": [
+          1.0,
+          3.0,
+          10.569999999999709
+        ]
+      },
+      "hours_since_last_event": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 0,
+        "minimum": 0.0008333333333333334,
+        "maximum": 168.0,
+        "mean": 158.66212003991365,
+        "p50_p90_p99": [
+          168.0,
+          168.0,
+          168.0
+        ]
+      },
+      "cart_view_ratio_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 43798,
+        "minimum": 0.0,
+        "maximum": 126.0,
+        "mean": 0.2993906553924136,
+        "p50_p90_p99": [
+          0.0,
+          0.5,
+          6.0
+        ]
+      },
+      "purchase_view_ratio_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 49222,
+        "minimum": 0.0,
+        "maximum": 104.0,
+        "mean": 0.05886899743754343,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.2857142857142858
+        ]
+      },
+      "median_view_price_7d": {
+        "customers": 51444,
+        "missing": 1495,
+        "zeros": 52,
+        "minimum": 0.0,
+        "maximum": 327.78,
+        "mean": 15.86067789144933,
+        "p50_p90_p99": [
+          5.87,
+          42.86,
+          158.32999999999998
+        ]
+      },
+      "view_price_unavailable_7d": {
+        "customers": 51444,
+        "missing": 0,
+        "zeros": 49949,
+        "minimum": 0,
+        "maximum": 1,
+        "mean": 0.02906072622657647,
+        "p50_p90_p99": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "export_files": {
+    "data/features/phase2/customers.parquet": {
+      "bytes": 49133027,
+      "sha256": "860a323505ed7e936e39bdf169c2d30ff2ed5ea0cc9a38b38a72f2866575f2ae",
+      "schema": [
+        {
+          "column_name": "user_id",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "first_seen",
+          "column_type": "TIMESTAMP",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "prediction_time",
+          "column_type": "TIMESTAMP",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "outcome_end",
+          "column_type": "TIMESTAMP",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_views_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_carts_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_removals_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_purchases_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_viewed_products_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "active_24h_bins_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_sessions_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "hours_since_last_event",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "median_view_price_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "view_price_unavailable_7d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_total_events_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_negative_price_events_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_zero_price_events_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_missing_session_events_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_first_feature_event",
+          "column_type": "TIMESTAMP",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "qa_last_feature_event",
+          "column_type": "TIMESTAMP",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "cart_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchase_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchased_next_30d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "primary_split",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "robustness_split",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "feature_gap",
+          "column_type": "BOOLEAN",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "outcome_gap",
+          "column_type": "BOOLEAN",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ]
+    },
+    "data/features/phase2/primary/test.parquet": {
+      "bytes": 516908,
+      "sha256": "410fe475841632c9576a7cd5fa663344488d6b2f88f6124f88f4d557c8ddaf72",
+      "schema": [
+        {
+          "column_name": "user_id",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_views_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_carts_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_removals_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_purchases_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_viewed_products_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "active_24h_bins_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_sessions_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "hours_since_last_event",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "cart_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchase_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "median_view_price_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "view_price_unavailable_7d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchased_next_30d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ]
+    },
+    "data/features/phase2/primary/train.parquet": {
+      "bytes": 946717,
+      "sha256": "a4cded0c981140f756b73e5c89b60933d65869aedb5a59003174ef5e0892f08e",
+      "schema": [
+        {
+          "column_name": "user_id",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_views_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_carts_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_removals_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_purchases_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_viewed_products_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "active_24h_bins_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_sessions_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "hours_since_last_event",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "cart_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchase_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "median_view_price_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "view_price_unavailable_7d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchased_next_30d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ]
+    },
+    "data/features/phase2/primary/validation.parquet": {
+      "bytes": 551434,
+      "sha256": "250400282407b10ca9eed94c6d200b47f79a74018e2f410fd1250ccb146624cf",
+      "schema": [
+        {
+          "column_name": "user_id",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_views_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_carts_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_removals_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_purchases_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_viewed_products_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "active_24h_bins_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "n_sessions_7d",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "hours_since_last_event",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "cart_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchase_view_ratio_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "median_view_price_7d",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "view_price_unavailable_7d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "purchased_next_30d",
+          "column_type": "INTEGER",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ]
+    }
+  },
+  "history_verification": {
+    "customers_checked": 18,
+    "raw_events_scanned": 20692840,
+    "fields_checked_per_customer": 20,
+    "mismatches": 0,
+    "method": "Independent Python exact-tuple deduplication and datetime/statistics aggregation from all five raw CSVs",
+    "selection": "Two positive and two negative customers per primary split, plus deterministic price/session/gap edge cases; overlaps removed",
+    "customer_details_path": "data/features/phase2/history_checks.json (local, ignored)"
+  },
+  "raw_hashes_after": {
+    "2019-Oct.csv": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+    "2019-Nov.csv": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+    "2019-Dec.csv": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+    "2020-Jan.csv": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+    "2020-Feb.csv": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b"
+  },
+  "source_parquet_sha256": {
+    "2019-Oct": "65edd7c4760917397a104f0f4289186f51510af6b0770e367003d4c372a0dad7",
+    "2019-Nov": "fc35d5b7125498bdfb7fe0fa781a709bcf7679582228d8ec687c45a01e8563a0",
+    "2019-Dec": "7f713ae88f5ef3706496e0a193d61cf4fddd0d201482aea7dc40138cf59d8256",
+    "2020-Jan": "7135fa4a70cfe328f4d29634f4229ab62d987f7e4f260dbc0dd677e8939e5d02",
+    "2020-Feb": "c700797164f8c0ebb996291ccf3b3477656a9c7fc59937a630c6ee6f05bdf1fc"
+  },
+  "source_code_sha256": {
+    "src/growthlab/features.py": "566ebad4d0961a0f0d678a661ad9b5c6d392d939920f1f76085f9c7cdd9c8d7d",
+    "src/growthlab/history_verification.py": "c8f03276b1f613302feba52793b0cf81e3116a3d3bf8a747eeca2ad3bbfd6514",
+    "src/growthlab/audit.py": "818dd12ed873eba03930a4b5ceed7cebb49b83dd5dd63c366588fa28aed97c0c",
+    "src/growthlab/design_review.py": "f1f9e3265c4375265075e1034c242aa9584b7577e069e702e38b94f03dbe2364"
+  },
+  "elapsed_seconds": 121.73,
+  "peak_process_rss_bytes": 951484416,
+  "disk_free_after_bytes": 147901644800,
+  "peak_spill_usage_note": "Not measured; engine spill capped at 8GB."
+}
