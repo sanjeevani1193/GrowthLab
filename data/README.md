@@ -28,3 +28,10 @@ contains separate train/validation/test files. `build.duckdb`, `spill/`, logs,
 All are ignored. The aggregate report/provenance is in `docs/phase2/summary.json`.
 Use only the frozen feature allowlist for future modeling: keys, target, gap
 flags and other QA metadata are not predictors.
+
+Phase 3 writes models, validation-only predictions, manifests, logs and plotting
+caches to `models/phase3/`, all ignored. `validation_predictions.npz` contains
+customer-level validation keys/labels/probabilities and must stay local.
+There are no test predictions. Small aggregate validation evidence and charts
+live in `docs/phase3/`; Phase 2 feature files are unchanged. The optional native
+OpenMP dependency is stored under the ignored `.venv/native/`.
