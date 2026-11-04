@@ -1,0 +1,14 @@
+{
+  "fitted_at_utc": "2026-11-04T16:37:20.460337+00:00",
+  "fit_split": "validation",
+  "customers": 53089,
+  "positive_labels": 1150,
+  "validation_predictions_sha256": "1fa66a2f8302f18103f8221bd77c410e79bfca6149859110a83214020adc8bdb",
+  "slope": 1.0196015434609753,
+  "intercept": -0.5261079517841346,
+  "iterations": [
+    13
+  ],
+  "in_sample_validation_metrics_reported": false,
+  "model": "q = sigmoid(slope * logit(clipped raw XGBoost p) + intercept)"
+}

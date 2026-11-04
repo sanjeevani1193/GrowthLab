@@ -1,0 +1,205 @@
+{
+  "frozen_at_utc": "2026-11-04T16:37:20.385635+00:00",
+  "phase3_commit": "bbb71140fde22eacb1762740ce7ee2d3759f7589",
+  "primary_model": "xgboost",
+  "baselines": [
+    "dummy",
+    "logistic_regression"
+  ],
+  "secondary_probability_variant": "xgboost_calibrated",
+  "feature_columns": [
+    "n_views_7d",
+    "n_carts_7d",
+    "n_removals_7d",
+    "n_purchases_7d",
+    "n_viewed_products_7d",
+    "active_24h_bins_7d",
+    "n_sessions_7d",
+    "hours_since_last_event",
+    "cart_view_ratio_7d",
+    "purchase_view_ratio_7d",
+    "median_view_price_7d",
+    "view_price_unavailable_7d"
+  ],
+  "model_configuration": {
+    "seed": 42,
+    "evaluated_split": "validation",
+    "feature_columns": [
+      "n_views_7d",
+      "n_carts_7d",
+      "n_removals_7d",
+      "n_purchases_7d",
+      "n_viewed_products_7d",
+      "active_24h_bins_7d",
+      "n_sessions_7d",
+      "hours_since_last_event",
+      "cart_view_ratio_7d",
+      "purchase_view_ratio_7d",
+      "median_view_price_7d",
+      "view_price_unavailable_7d"
+    ],
+    "top_fraction": 0.1,
+    "tie_break": "label-independent seeded random priorities, after sorting rows by user_id",
+    "dummy": {
+      "strategy": "prior",
+      "random_state": 42
+    },
+    "logistic_regression": {
+      "solver": "lbfgs",
+      "C": 1.0,
+      "l1_ratio": 0.0,
+      "max_iter": 2000,
+      "tol": 1e-06,
+      "random_state": 42,
+      "class_weight": null
+    },
+    "xgboost": {
+      "objective": "binary:logistic",
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_estimators": 500,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "min_child_weight": 10,
+      "subsample": 0.8,
+      "colsample_bytree": 0.9,
+      "reg_lambda": 5.0,
+      "reg_alpha": 0.0,
+      "gamma": 0.0,
+      "max_bin": 128,
+      "scale_pos_weight": 1.0,
+      "n_jobs": 1,
+      "random_state": 42,
+      "eval_metric": "logloss",
+      "early_stopping_rounds": 30
+    }
+  },
+  "selected_xgboost_iteration_zero_based": 272,
+  "base_model_refitting": false,
+  "preprocessing": "Saved training-fitted LR median imputer/scaler unchanged; XGBoost native NaN; approved missing indicator retained",
+  "calibration_configuration": {
+    "method": "sigmoid of raw XGBoost log-odds",
+    "fit_split": "validation",
+    "probability_clip_epsilon": 1e-15,
+    "solver": "lbfgs",
+    "C": "infinity (unpenalized)",
+    "l1_ratio": 0.0,
+    "tol": 1e-10,
+    "max_iter": 1000,
+    "random_state": 42,
+    "class_weight": null,
+    "role": "secondary probability variant; raw XGBoost remains primary ranking model"
+  },
+  "calibration_validation_reuse_warning": "Validation was used for early stopping and will fit calibration; in-sample calibrated validation metrics are not independent evidence and will not be reported",
+  "test_cohort": {
+    "prediction_start_inclusive": "2019-12-17 00:00:00",
+    "prediction_end_exclusive": "2019-12-22 00:00:00",
+    "expected_customers": 51444,
+    "evaluation_as_of_utc": "2020-01-21 00:00:00"
+  },
+  "metrics": [
+    "average_precision",
+    "roc_auc",
+    "brier_score",
+    "log_loss",
+    "precision_at_top_10_percent",
+    "recall_at_top_10_percent",
+    "lift_at_top_10_percent",
+    "top_10_percent_positive_labels",
+    "mean_predicted_probability",
+    "prevalence"
+  ],
+  "top_fraction": 0.1,
+  "top_count_rounding": "ceil(N*0.10)",
+  "tie_policy": "label-independent seeded random priorities, after sorting rows by user_id",
+  "random_seed": 42,
+  "reliability_bins": 5,
+  "uncertainty": {
+    "method": "paired ordinary customer bootstrap; percentile intervals",
+    "replicates": 500,
+    "seed": 20261104,
+    "confidence_level": 0.95,
+    "resampling": "Sample N customer indices with replacement, sort indices to preserve key ordering, reuse for every variant",
+    "model_refitting": false,
+    "calibrator_refitting": false,
+    "scope": "Conditional on frozen models/calibrator and this cohort; assumes independent customer sampling; excludes training/calibration and temporal-shift uncertainty"
+  },
+  "paired_contrasts": [
+    [
+      "primary_ap_gain_xgboost_minus_logistic",
+      "xgboost",
+      "logistic_regression",
+      "average_precision"
+    ],
+    [
+      "auc_gain_xgboost_minus_logistic",
+      "xgboost",
+      "logistic_regression",
+      "roc_auc"
+    ],
+    [
+      "recall_gain_xgboost_minus_logistic",
+      "xgboost",
+      "logistic_regression",
+      "recall_at_top_10_percent"
+    ],
+    [
+      "calibrated_minus_raw_brier",
+      "xgboost_calibrated",
+      "xgboost",
+      "brier_score"
+    ],
+    [
+      "calibrated_minus_raw_log_loss",
+      "xgboost_calibrated",
+      "xgboost",
+      "log_loss"
+    ]
+  ],
+  "versions": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "duckdb": "2.0.0"
+  },
+  "human_plan_sha256": "ed9d683a1262f19ccf7de027c421cbbb6be1c6e585b855c19c135d68e0fb3ef4",
+  "phase2_specification_sha256": "ce7c8522905bfb72e344674b01eaf7b7a4a603eb3cc96ccdf88896b0479a44de",
+  "phase3_summary_sha256": "f6d69accd454945a0fb29a7b22a6d9a399a5398ea033017fa474162b283f9aa8",
+  "data_sha256": {
+    "data/features/phase2/primary/train.parquet": "a4cded0c981140f756b73e5c89b60933d65869aedb5a59003174ef5e0892f08e",
+    "data/features/phase2/primary/validation.parquet": "250400282407b10ca9eed94c6d200b47f79a74018e2f410fd1250ccb146624cf",
+    "data/features/phase2/primary/test.parquet": "410fe475841632c9576a7cd5fa663344488d6b2f88f6124f88f4d557c8ddaf72",
+    "data/features/phase2/customers.parquet": "860a323505ed7e936e39bdf169c2d30ff2ed5ea0cc9a38b38a72f2866575f2ae"
+  },
+  "phase3_artifacts": {
+    "data/models/phase3/dummy.joblib": {
+      "bytes": 583,
+      "sha256": "e49c57af0e661f7c1d52680505adb494595e393a3baac1a9d52bbe0a57f6dd52"
+    },
+    "data/models/phase3/logistic_regression.joblib": {
+      "bytes": 2081,
+      "sha256": "2d56de163bafe679f908034b984b22631a0e8cc6cce2892e046534ec5ed122b6"
+    },
+    "data/models/phase3/xgboost.ubj": {
+      "bytes": 342430,
+      "sha256": "66ae6a12c6c3380a3dd81a2b1f7f2e34c71539b14c35cc0f4422cd23e28fd319"
+    },
+    "data/models/phase3/validation_predictions.npz": {
+      "bytes": 545464,
+      "sha256": "1fa66a2f8302f18103f8221bd77c410e79bfca6149859110a83214020adc8bdb"
+    }
+  },
+  "source_sha256": {
+    "src/growthlab/final_evaluation.py": "59b6efb96bde73a600846fb339af6ab48957e136ee1ee3945e6fbb65b08e4493",
+    "src/growthlab/calibration.py": "53e506240c3c4817ba719855a3c3e912f5307a8fbadd1da0b571259afff7c6fd",
+    "src/growthlab/evaluation_uncertainty.py": "792b0e4bed53435bfd3bb8257e4714c49e6b0ebca24dfb651c73df8f20672fa7",
+    "src/growthlab/final_plots.py": "5108376b5059b45aa28b084f7ed53cf5824ffda2a9a874b9822c4147bbef7669",
+    "src/growthlab/modeling.py": "0efdd9edb6493821786bccd950a2346701d0620ba4089b884f520d47317d6d24",
+    "src/growthlab/features.py": "566ebad4d0961a0f0d678a661ad9b5c6d392d939920f1f76085f9c7cdd9c8d7d"
+  },
+  "one_use_policy": "No alternative model/configuration is selected from test results; a ledger blocks a second scoring run. Verification may recompute metrics from the identical saved predictions."
+}

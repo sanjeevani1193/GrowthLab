@@ -1,0 +1,7 @@
+{
+  "ready_for_test_at_utc": "2026-11-04T16:37:20.462846+00:00",
+  "plan_sha256": "70e0bfb2c66e19bdd99fec1174c8a0c5be3c2e66db4ace0791586dda8a971af6",
+  "calibration_fit_sha256": "3659e6eb9f6e8b734f008615d905c7933eb76b1e1afabff7bc1c5950042aad81",
+  "calibrator_sha256": "d4f833ac19d2bdfd7edf539217d30577b4e828edeb07d5592734e2a56ec28f8d",
+  "test_labels_loaded": false
+}

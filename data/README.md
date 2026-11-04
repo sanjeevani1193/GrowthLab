@@ -32,6 +32,14 @@ flags and other QA metadata are not predictors.
 Phase 3 writes models, validation-only predictions, manifests, logs and plotting
 caches to `models/phase3/`, all ignored. `validation_predictions.npz` contains
 customer-level validation keys/labels/probabilities and must stay local.
-There are no test predictions. Small aggregate validation evidence and charts
-live in `docs/phase3/`; Phase 2 feature files are unchanged. The optional native
+At the end of Phase 3 there were no test predictions. Small aggregate validation
+evidence and charts live in `docs/phase3/`; Phase 2 feature files are unchanged. The optional native
 OpenMP dependency is stored under the ignored `.venv/native/`.
+
+Phase 4 adds `models/phase4/` for the validation-fitted sigmoid calibrator,
+one frozen `test_predictions.npz`, bootstrap draws, a one-use test-access ledger,
+manifest and logs/caches. These all remain ignored. Existing Phase 3 models and
+all feature/raw inputs are unchanged. Aggregate protocol, calibration fit,
+test metrics, uncertainty and plots live in `docs/phase4/`.
+Do not delete the access ledger to try alternative models against this test set;
+use the saved-record verification command in the Phase 4 report.

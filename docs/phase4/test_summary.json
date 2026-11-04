@@ -1,0 +1,521 @@
+{
+  "plan_sha256": "70e0bfb2c66e19bdd99fec1174c8a0c5be3c2e66db4ace0791586dda8a971af6",
+  "test_access": {
+    "test_first_access_utc": "2026-11-04T16:38:14.916797+00:00",
+    "plan_sha256": "70e0bfb2c66e19bdd99fec1174c8a0c5be3c2e66db4ace0791586dda8a971af6",
+    "status": "claimed; no second scoring run permitted"
+  },
+  "calendar_checks": {
+    "customers": 51444,
+    "unique_customers": 51444,
+    "first_prediction": "2019-12-17 00:01:00",
+    "last_prediction": "2019-12-21 23:57:38",
+    "last_outcome_end": "2020-01-20 23:57:38",
+    "errors": 0
+  },
+  "primary_model": "xgboost",
+  "underlying_model_refits": 0,
+  "calibrator_refits_on_test": 0,
+  "test_customers": 51444,
+  "test_positive_labels": 547,
+  "test_prevalence": 0.010632921234740689,
+  "models": {
+    "dummy": {
+      "test": {
+        "customers": 51444,
+        "positive_labels": 547,
+        "prevalence": 0.010632921234740689,
+        "average_precision": 0.010632921234740689,
+        "roc_auc": 0.5,
+        "brier_score": 0.011597442215066929,
+        "log_loss": 0.07730370624255545,
+        "top_10_percent_count": 5145,
+        "top_10_percent_positive_labels": 58,
+        "precision_at_top_10_percent": 0.011273080660835762,
+        "recall_at_top_10_percent": 0.10603290676416818,
+        "lift_at_top_10_percent": 1.0602054141060968,
+        "mean_predicted_probability": 0.04345943482224247,
+        "minimum_probability": 0.04345943482224248,
+        "maximum_probability": 0.04345943482224248
+      },
+      "reliability": [
+        {
+          "customers": 51444,
+          "positives": 547,
+          "mean_predicted_probability": 0.04345943482224247,
+          "observed_purchase_rate": 0.010632921234740689,
+          "minimum_probability": 0.04345943482224248,
+          "maximum_probability": 0.04345943482224248
+        }
+      ]
+    },
+    "logistic_regression": {
+      "test": {
+        "customers": 51444,
+        "positive_labels": 547,
+        "prevalence": 0.010632921234740689,
+        "average_precision": 0.07368065949493931,
+        "roc_auc": 0.8081207776008463,
+        "brier_score": 0.011536677662895373,
+        "log_loss": 0.0635825486106101,
+        "top_10_percent_count": 5145,
+        "top_10_percent_positive_labels": 243,
+        "precision_at_top_10_percent": 0.04723032069970846,
+        "recall_at_top_10_percent": 0.44424131627056673,
+        "lift_at_top_10_percent": 4.4418950970307165,
+        "mean_predicted_probability": 0.03137845218658715,
+        "minimum_probability": 0.005054222584250703,
+        "maximum_probability": 0.9999999260099247
+      },
+      "reliability": [
+        {
+          "customers": 10419,
+          "positives": 29,
+          "mean_predicted_probability": 0.01763446741368845,
+          "observed_purchase_rate": 0.0027833765236587003,
+          "minimum_probability": 0.005054222584250703,
+          "maximum_probability": 0.01886962711407696
+        },
+        {
+          "customers": 10235,
+          "positives": 27,
+          "mean_predicted_probability": 0.019118457250180316,
+          "observed_purchase_rate": 0.002638006839276991,
+          "minimum_probability": 0.018869958240715558,
+          "maximum_probability": 0.019283645801838584
+        },
+        {
+          "customers": 10258,
+          "positives": 22,
+          "mean_predicted_probability": 0.019354101834760593,
+          "observed_purchase_rate": 0.0021446675765256387,
+          "minimum_probability": 0.019283650267950023,
+          "maximum_probability": 0.019415180797911345
+        },
+        {
+          "customers": 10243,
+          "positives": 78,
+          "mean_predicted_probability": 0.019844591297257422,
+          "observed_purchase_rate": 0.007614956555696573,
+          "minimum_probability": 0.019415215681797552,
+          "maximum_probability": 0.021529714245249795
+        },
+        {
+          "customers": 10289,
+          "positives": 391,
+          "mean_predicted_probability": 0.08096215794238426,
+          "observed_purchase_rate": 0.03800174944115074,
+          "minimum_probability": 0.021529721246626457,
+          "maximum_probability": 0.9999999260099247
+        }
+      ]
+    },
+    "xgboost": {
+      "test": {
+        "customers": 51444,
+        "positive_labels": 547,
+        "prevalence": 0.010632921234740689,
+        "average_precision": 0.10250175148132161,
+        "roc_auc": 0.8486584854187539,
+        "brier_score": 0.011243404279046968,
+        "log_loss": 0.057434116449764594,
+        "top_10_percent_count": 5145,
+        "top_10_percent_positive_labels": 324,
+        "precision_at_top_10_percent": 0.0629737609329446,
+        "recall_at_top_10_percent": 0.5923217550274223,
+        "lift_at_top_10_percent": 5.9225267960409544,
+        "mean_predicted_probability": 0.03058192056783218,
+        "minimum_probability": 0.0005499822436831892,
+        "maximum_probability": 0.7561839818954468
+      },
+      "reliability": [
+        {
+          "customers": 10536,
+          "positives": 24,
+          "mean_predicted_probability": 0.008050464706843412,
+          "observed_purchase_rate": 0.002277904328018223,
+          "minimum_probability": 0.0005499822436831892,
+          "maximum_probability": 0.008567146956920624
+        },
+        {
+          "customers": 10273,
+          "positives": 16,
+          "mean_predicted_probability": 0.009268121252098057,
+          "observed_purchase_rate": 0.0015574807748466855,
+          "minimum_probability": 0.008570375852286816,
+          "maximum_probability": 0.01000909972935915
+        },
+        {
+          "customers": 10061,
+          "positives": 18,
+          "mean_predicted_probability": 0.010814477334937771,
+          "observed_purchase_rate": 0.0017890865719113408,
+          "minimum_probability": 0.010015234351158142,
+          "maximum_probability": 0.014075096696615219
+        },
+        {
+          "customers": 10285,
+          "positives": 67,
+          "mean_predicted_probability": 0.022131968068305762,
+          "observed_purchase_rate": 0.006514341273699563,
+          "minimum_probability": 0.014078662730753422,
+          "maximum_probability": 0.03492783010005951
+        },
+        {
+          "customers": 10289,
+          "positives": 422,
+          "mean_predicted_probability": 0.10271099891807946,
+          "observed_purchase_rate": 0.04101467586743124,
+          "minimum_probability": 0.03492910787463188,
+          "maximum_probability": 0.7561839818954468
+        }
+      ]
+    },
+    "xgboost_calibrated": {
+      "test": {
+        "customers": 51444,
+        "positive_labels": 547,
+        "prevalence": 0.010632921234740689,
+        "average_precision": 0.10250175148132161,
+        "roc_auc": 0.8486584854187539,
+        "brier_score": 0.010180689687770823,
+        "log_loss": 0.04974257778576666,
+        "top_10_percent_count": 5145,
+        "top_10_percent_positive_labels": 324,
+        "precision_at_top_10_percent": 0.0629737609329446,
+        "recall_at_top_10_percent": 0.5923217550274223,
+        "lift_at_top_10_percent": 5.9225267960409544,
+        "mean_predicted_probability": 0.0181836935899807,
+        "minimum_probability": 0.00028060177446209835,
+        "maximum_probability": 0.652024316670612
+      },
+      "reliability": [
+        {
+          "customers": 10536,
+          "positives": 24,
+          "mean_predicted_probability": 0.004345385925852101,
+          "observed_purchase_rate": 0.002277904328018223,
+          "minimum_probability": 0.00028060177446209835,
+          "maximum_probability": 0.004630470443750063
+        },
+        {
+          "customers": 10273,
+          "positives": 16,
+          "mean_predicted_probability": 0.005018912828662485,
+          "observed_purchase_rate": 0.0015574807748466855,
+          "minimum_probability": 0.004632256917521967,
+          "maximum_probability": 0.00543004787801813
+        },
+        {
+          "customers": 10061,
+          "positives": 18,
+          "mean_predicted_probability": 0.005878784470384229,
+          "observed_purchase_rate": 0.0017890865719113408,
+          "minimum_probability": 0.005433456939932391,
+          "maximum_probability": 0.007701785866772954
+        },
+        {
+          "customers": 10285,
+          "positives": 67,
+          "mean_predicted_probability": 0.012280763366433155,
+          "observed_purchase_rate": 0.006514341273699563,
+          "minimum_probability": 0.007703788291477178,
+          "maximum_probability": 0.01964517451922942
+        },
+        {
+          "customers": 10289,
+          "positives": 422,
+          "mean_predicted_probability": 0.0634313882456059,
+          "observed_purchase_rate": 0.04101467586743124,
+          "minimum_probability": 0.019645918896179643,
+          "maximum_probability": 0.652024316670612
+        }
+      ]
+    }
+  },
+  "calibration_ranking_preserved": {
+    "same_top_10_percent_customers": true,
+    "ap_difference": 0.0,
+    "auc_difference": 0.0
+  },
+  "uncertainty": {
+    "replicates": 500,
+    "seed": 20261104,
+    "intervals": {
+      "dummy": {
+        "average_precision": {
+          "lower": 0.009601702822486588,
+          "upper": 0.011468781587745898,
+          "valid_replicates": 500
+        },
+        "roc_auc": {
+          "lower": 0.5,
+          "upper": 0.5,
+          "valid_replicates": 500
+        },
+        "brier_score": {
+          "lower": 0.010655856141562536,
+          "upper": 0.012360650531008287,
+          "valid_replicates": 500
+        },
+        "log_loss": {
+          "lower": 0.0741156994422514,
+          "upper": 0.07988776453497909,
+          "valid_replicates": 500
+        },
+        "precision_at_top_10_percent": {
+          "lower": 0.007968901846452867,
+          "upper": 0.013707482993197274,
+          "valid_replicates": 500
+        },
+        "recall_at_top_10_percent": {
+          "lower": 0.0743619777312314,
+          "upper": 0.12846903286217504,
+          "valid_replicates": 500
+        },
+        "lift_at_top_10_percent": {
+          "lower": 0.7435330578047556,
+          "upper": 1.2845405105076253,
+          "valid_replicates": 500
+        },
+        "top_10_percent_positive_labels": {
+          "lower": 41.0,
+          "upper": 70.52499999999998,
+          "valid_replicates": 500
+        },
+        "mean_predicted_probability": {
+          "lower": 0.04345943482224247,
+          "upper": 0.04345943482224247,
+          "valid_replicates": 500
+        },
+        "prevalence": {
+          "lower": 0.009601702822486588,
+          "upper": 0.011468781587745898,
+          "valid_replicates": 500
+        }
+      },
+      "logistic_regression": {
+        "average_precision": {
+          "lower": 0.059832574926028795,
+          "upper": 0.09117431449706051,
+          "valid_replicates": 500
+        },
+        "roc_auc": {
+          "lower": 0.7867666290321018,
+          "upper": 0.8291856883524241,
+          "valid_replicates": 500
+        },
+        "brier_score": {
+          "lower": 0.010661365708995337,
+          "upper": 0.012258113607537164,
+          "valid_replicates": 500
+        },
+        "log_loss": {
+          "lower": 0.06015726161441007,
+          "upper": 0.06641118302750339,
+          "valid_replicates": 500
+        },
+        "precision_at_top_10_percent": {
+          "lower": 0.041593780369290574,
+          "upper": 0.052478134110787174,
+          "valid_replicates": 500
+        },
+        "recall_at_top_10_percent": {
+          "lower": 0.4026634492806411,
+          "upper": 0.48548633620576065,
+          "valid_replicates": 500
+        },
+        "lift_at_top_10_percent": {
+          "lower": 4.026164914439902,
+          "upper": 4.854297197234042,
+          "valid_replicates": 500
+        },
+        "top_10_percent_positive_labels": {
+          "lower": 214.0,
+          "upper": 270.0,
+          "valid_replicates": 500
+        },
+        "mean_predicted_probability": {
+          "lower": 0.030966954518538533,
+          "upper": 0.03181517540205372,
+          "valid_replicates": 500
+        },
+        "prevalence": {
+          "lower": 0.009601702822486588,
+          "upper": 0.011468781587745898,
+          "valid_replicates": 500
+        }
+      },
+      "xgboost": {
+        "average_precision": {
+          "lower": 0.08448049587499402,
+          "upper": 0.12632973588744786,
+          "valid_replicates": 500
+        },
+        "roc_auc": {
+          "lower": 0.8284895169092027,
+          "upper": 0.8648735288632785,
+          "valid_replicates": 500
+        },
+        "brier_score": {
+          "lower": 0.010441781239472208,
+          "upper": 0.01195338645516587,
+          "valid_replicates": 500
+        },
+        "log_loss": {
+          "lower": 0.05455929768679269,
+          "upper": 0.06012322187360702,
+          "valid_replicates": 500
+        },
+        "precision_at_top_10_percent": {
+          "lower": 0.05597667638483965,
+          "upper": 0.0695821185617104,
+          "valid_replicates": 500
+        },
+        "recall_at_top_10_percent": {
+          "lower": 0.5535300085310461,
+          "upper": 0.6366204766645671,
+          "valid_replicates": 500
+        },
+        "lift_at_top_10_percent": {
+          "lower": 5.534654569265527,
+          "upper": 6.365462352095625,
+          "valid_replicates": 500
+        },
+        "top_10_percent_positive_labels": {
+          "lower": 288.0,
+          "upper": 358.0,
+          "valid_replicates": 500
+        },
+        "mean_predicted_probability": {
+          "lower": 0.03010486038675574,
+          "upper": 0.03103134069267642,
+          "valid_replicates": 500
+        },
+        "prevalence": {
+          "lower": 0.009601702822486588,
+          "upper": 0.011468781587745898,
+          "valid_replicates": 500
+        }
+      },
+      "xgboost_calibrated": {
+        "average_precision": {
+          "lower": 0.08448049587499402,
+          "upper": 0.12632973588744786,
+          "valid_replicates": 500
+        },
+        "roc_auc": {
+          "lower": 0.8284895169092027,
+          "upper": 0.8648735288632785,
+          "valid_replicates": 500
+        },
+        "brier_score": {
+          "lower": 0.009298891476979224,
+          "upper": 0.010911519798445625,
+          "valid_replicates": 500
+        },
+        "log_loss": {
+          "lower": 0.04639813600360887,
+          "upper": 0.052758938157559415,
+          "valid_replicates": 500
+        },
+        "precision_at_top_10_percent": {
+          "lower": 0.05597667638483965,
+          "upper": 0.0695821185617104,
+          "valid_replicates": 500
+        },
+        "recall_at_top_10_percent": {
+          "lower": 0.5535300085310461,
+          "upper": 0.6366204766645671,
+          "valid_replicates": 500
+        },
+        "lift_at_top_10_percent": {
+          "lower": 5.534654569265527,
+          "upper": 6.365462352095625,
+          "valid_replicates": 500
+        },
+        "top_10_percent_positive_labels": {
+          "lower": 288.0,
+          "upper": 358.0,
+          "valid_replicates": 500
+        },
+        "mean_predicted_probability": {
+          "lower": 0.01786724857959494,
+          "upper": 0.018479662819179878,
+          "valid_replicates": 500
+        },
+        "prevalence": {
+          "lower": 0.009601702822486588,
+          "upper": 0.011468781587745898,
+          "valid_replicates": 500
+        }
+      }
+    },
+    "paired_differences": {
+      "primary_ap_gain_xgboost_minus_logistic": {
+        "lower": 0.017245192119183947,
+        "upper": 0.04296446633596839,
+        "valid_replicates": 500
+      },
+      "auc_gain_xgboost_minus_logistic": {
+        "lower": 0.02550826166961061,
+        "upper": 0.05449112867536569,
+        "valid_replicates": 500
+      },
+      "recall_gain_xgboost_minus_logistic": {
+        "lower": 0.10739909106046214,
+        "upper": 0.19202450102238386,
+        "valid_replicates": 500
+      },
+      "calibrated_minus_raw_brier": {
+        "lower": -0.0011818868757125895,
+        "upper": -0.0009680175972049085,
+        "valid_replicates": 500
+      },
+      "calibrated_minus_raw_log_loss": {
+        "lower": -0.008260835133991413,
+        "upper": -0.007176761653963472,
+        "valid_replicates": 500
+      }
+    }
+  },
+  "figures": {
+    "docs/phase4/figures/calibration.png": {
+      "bytes": 117538,
+      "sha256": "c35f8d4b3a4d5fbfab0619ec1593757a1694e8d50b65f3b65fa272ee91c51187"
+    },
+    "docs/phase4/figures/precision_recall.png": {
+      "bytes": 91908,
+      "sha256": "fae08eb1c2dc73a36d1ca1965bb5395129bc0ffb153c0b79eb5fa4876c025faf"
+    }
+  },
+  "elapsed_seconds": 94.943,
+  "peak_process_rss_bytes": 203325440,
+  "completed_at_utc": "2026-11-04T16:39:49.513035+00:00",
+  "evaluation_source_sha256": {
+    "src/growthlab/final_evaluation.py": "59b6efb96bde73a600846fb339af6ab48957e136ee1ee3945e6fbb65b08e4493",
+    "src/growthlab/calibration.py": "53e506240c3c4817ba719855a3c3e912f5307a8fbadd1da0b571259afff7c6fd",
+    "src/growthlab/evaluation_uncertainty.py": "792b0e4bed53435bfd3bb8257e4714c49e6b0ebca24dfb651c73df8f20672fa7",
+    "src/growthlab/final_plots.py": "5108376b5059b45aa28b084f7ed53cf5824ffda2a9a874b9822c4147bbef7669",
+    "src/growthlab/modeling.py": "0efdd9edb6493821786bccd950a2346701d0620ba4089b884f520d47317d6d24",
+    "src/growthlab/features.py": "566ebad4d0961a0f0d678a661ad9b5c6d392d939920f1f76085f9c7cdd9c8d7d"
+  },
+  "artifacts": {
+    "data/models/phase4/sigmoid_calibrator.joblib": {
+      "bytes": 863,
+      "sha256": "d4f833ac19d2bdfd7edf539217d30577b4e828edeb07d5592734e2a56ec28f8d"
+    },
+    "data/models/phase4/test_predictions.npz": {
+      "bytes": 701632,
+      "sha256": "98da0c970ca307dba092c4ed1dd3708d96ef5077e98b58e590f3b1f8232ea0ea"
+    },
+    "data/models/phase4/bootstrap_draws.npz": {
+      "bytes": 102454,
+      "sha256": "09822985c6f87f70eaa479fc7080897a2f17506f68cb2874deb08a8cd9791c5a"
+    },
+    "data/models/phase4/test_access_ledger.json": {
+      "bytes": 207,
+      "sha256": "145de9cf27a8eb01d74ea4130b6f2ee0106e0ba71be5ee702fdfae62f566d7f3"
+    }
+  }
+}
