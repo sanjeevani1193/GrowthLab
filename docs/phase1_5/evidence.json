@@ -1,0 +1,979 @@
+{
+  "analysis_source_sha256": "f1f9e3265c4375265075e1034c242aa9584b7577e069e702e38b94f03dbe2364",
+  "memory_limit": "1GB",
+  "threads": 1,
+  "raw_hashes_before": {
+    "2019-Oct.csv": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+    "2019-Nov.csv": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+    "2019-Dec.csv": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+    "2020-Jan.csv": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+    "2020-Feb.csv": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b"
+  },
+  "duplicates_by_month_type": [
+    {
+      "month": "2019-Oct",
+      "event_type": "cart",
+      "raw_events": 1232385,
+      "duplicate_groups": 25503,
+      "excess": 28167,
+      "deduplicated_events": 1204218
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "purchase",
+      "raw_events": 245624,
+      "duplicate_groups": 343,
+      "excess": 343,
+      "deduplicated_events": 245281
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "remove_from_cart",
+      "raw_events": 762110,
+      "duplicate_groups": 179122,
+      "excess": 184531,
+      "deduplicated_events": 577579
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "view",
+      "raw_events": 1862164,
+      "duplicate_groups": 114,
+      "excess": 114,
+      "deduplicated_events": 1862050
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "cart",
+      "raw_events": 1311807,
+      "duplicate_groups": 17280,
+      "excess": 22175,
+      "deduplicated_events": 1289632
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "purchase",
+      "raw_events": 322417,
+      "duplicate_groups": 148,
+      "excess": 148,
+      "deduplicated_events": 322269
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "remove_from_cart",
+      "raw_events": 925481,
+      "duplicate_groups": 214382,
+      "excess": 224231,
+      "deduplicated_events": 701250
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "view",
+      "raw_events": 2076132,
+      "duplicate_groups": 135,
+      "excess": 139,
+      "deduplicated_events": 2075993
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "cart",
+      "raw_events": 927124,
+      "duplicate_groups": 12145,
+      "excess": 15483,
+      "deduplicated_events": 911641
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "purchase",
+      "raw_events": 213176,
+      "duplicate_groups": 110,
+      "excess": 110,
+      "deduplicated_events": 213066
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "remove_from_cart",
+      "raw_events": 664655,
+      "duplicate_groups": 162452,
+      "excess": 168157,
+      "deduplicated_events": 496498
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "view",
+      "raw_events": 1728331,
+      "duplicate_groups": 104,
+      "excess": 110,
+      "deduplicated_events": 1728221
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "cart",
+      "raw_events": 1148323,
+      "duplicate_groups": 15051,
+      "excess": 19661,
+      "deduplicated_events": 1128662
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "purchase",
+      "raw_events": 263797,
+      "duplicate_groups": 192,
+      "excess": 192,
+      "deduplicated_events": 263605
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "remove_from_cart",
+      "raw_events": 815024,
+      "duplicate_groups": 199072,
+      "excess": 205140,
+      "deduplicated_events": 609884
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "view",
+      "raw_events": 2037608,
+      "duplicate_groups": 106,
+      "excess": 107,
+      "deduplicated_events": 2037501
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "cart",
+      "raw_events": 1148694,
+      "duplicate_groups": 20523,
+      "excess": 29856,
+      "deduplicated_events": 1118838
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "purchase",
+      "raw_events": 241993,
+      "duplicate_groups": 110,
+      "excess": 112,
+      "deduplicated_events": 241881
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "remove_from_cart",
+      "raw_events": 812409,
+      "duplicate_groups": 198360,
+      "excess": 209761,
+      "deduplicated_events": 602648
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "view",
+      "raw_events": 1953586,
+      "duplicate_groups": 510,
+      "excess": 561,
+      "deduplicated_events": 1953025
+    }
+  ],
+  "duplicate_user_concentration": {
+    "affected_users": 114683,
+    "total_excess": 1109098,
+    "maximum_excess_per_user": 3422,
+    "affected_user_excess_p50_p90_p99": [
+      2,
+      21,
+      112
+    ],
+    "top_shares": {
+      "top_10_excess": 18054,
+      "top_100_excess": 80502,
+      "top_1000_excess": 256898
+    },
+    "activity_buckets": [
+      {
+        "raw_event_bucket": "1-9",
+        "users": 1389870,
+        "duplicate_affected_users": 20770,
+        "excess": 22121
+      },
+      {
+        "raw_event_bucket": "10-99",
+        "users": 209352,
+        "duplicate_affected_users": 62985,
+        "excess": 221571
+      },
+      {
+        "raw_event_bucket": "100-999",
+        "users": 39029,
+        "duplicate_affected_users": 29890,
+        "excess": 653340
+      },
+      {
+        "raw_event_bucket": "1000+",
+        "users": 1107,
+        "duplicate_affected_users": 1038,
+        "excess": 212066
+      }
+    ]
+  },
+  "price_and_session_details": [
+    {
+      "source_month": "2019-Dec",
+      "event_type": "cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 1207,
+      "zero_price_products": 655,
+      "missing_session_events": 648
+    },
+    {
+      "source_month": "2019-Dec",
+      "event_type": "purchase",
+      "negative_price": 18,
+      "negative_price_users": 15,
+      "zero_price": 0,
+      "zero_price_products": 0,
+      "missing_session_events": 0
+    },
+    {
+      "source_month": "2019-Dec",
+      "event_type": "remove_from_cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 315,
+      "zero_price_products": 201,
+      "missing_session_events": 126
+    },
+    {
+      "source_month": "2019-Dec",
+      "event_type": "view",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 6067,
+      "zero_price_products": 2013,
+      "missing_session_events": 5
+    },
+    {
+      "source_month": "2019-Nov",
+      "event_type": "cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 2528,
+      "zero_price_products": 916,
+      "missing_session_events": 661
+    },
+    {
+      "source_month": "2019-Nov",
+      "event_type": "purchase",
+      "negative_price": 17,
+      "negative_price_users": 14,
+      "zero_price": 0,
+      "zero_price_products": 0,
+      "missing_session_events": 0
+    },
+    {
+      "source_month": "2019-Nov",
+      "event_type": "remove_from_cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 703,
+      "zero_price_products": 322,
+      "missing_session_events": 143
+    },
+    {
+      "source_month": "2019-Nov",
+      "event_type": "view",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 8394,
+      "zero_price_products": 1660,
+      "missing_session_events": 9
+    },
+    {
+      "source_month": "2019-Oct",
+      "event_type": "cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 540,
+      "zero_price_products": 329,
+      "missing_session_events": 509
+    },
+    {
+      "source_month": "2019-Oct",
+      "event_type": "purchase",
+      "negative_price": 20,
+      "negative_price_users": 20,
+      "zero_price": 0,
+      "zero_price_products": 0,
+      "missing_session_events": 0
+    },
+    {
+      "source_month": "2019-Oct",
+      "event_type": "remove_from_cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 154,
+      "zero_price_products": 80,
+      "missing_session_events": 125
+    },
+    {
+      "source_month": "2019-Oct",
+      "event_type": "view",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 5372,
+      "zero_price_products": 1368,
+      "missing_session_events": 3
+    },
+    {
+      "source_month": "2020-Feb",
+      "event_type": "cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 43423,
+      "zero_price_products": 12773,
+      "missing_session_events": 894
+    },
+    {
+      "source_month": "2020-Feb",
+      "event_type": "purchase",
+      "negative_price": 35,
+      "negative_price_users": 28,
+      "zero_price": 0,
+      "zero_price_products": 0,
+      "missing_session_events": 0
+    },
+    {
+      "source_month": "2020-Feb",
+      "event_type": "remove_from_cart",
+      "negative_price": 2,
+      "negative_price_users": 1,
+      "zero_price": 22597,
+      "zero_price_products": 9262,
+      "missing_session_events": 155
+    },
+    {
+      "source_month": "2020-Feb",
+      "event_type": "view",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 5234,
+      "zero_price_products": 1803,
+      "missing_session_events": 6
+    },
+    {
+      "source_month": "2020-Jan",
+      "event_type": "cart",
+      "negative_price": 0,
+      "negative_price_users": 0,
+      "zero_price": 1672,
+      "zero_price_products": 541,
+      "missing_session_events": 1064
+    },
+    {
+      "source_month": "2020-Jan",
+      "event_type": "purchase",
+      "negative_price": 36,
+      "negative_price_users": 34,
+      "zero_price": 1,
+      "zero_price_products": 1,
+      "missing_session_events": 0
+    },
+    {
+      "source_month": "2020-Jan",
+      "event_type": "remove_from_cart",
+      "negative_price": 1,
+      "negative_price_users": 1,
+      "zero_price": 527,
+      "zero_price_products": 243,
+      "missing_session_events": 242
+    },
+    {
+      "source_month": "2020-Jan",
+      "event_type": "view",
+      "negative_price": 2,
+      "negative_price_users": 2,
+      "zero_price": 5423,
+      "zero_price_products": 1333,
+      "missing_session_events": 8
+    }
+  ],
+  "shared_sessions": {
+    "affected_events": 1985,
+    "affected_users": 591,
+    "shared_session_ids": 272
+  },
+  "gap": {
+    "last_event_before": "2020-01-22 02:52:08",
+    "first_event_after": "2020-01-22 03:26:14",
+    "unobserved_start_inclusive": "2020-01-22 02:52:09",
+    "unobserved_end_exclusive": "2020-01-22 03:26:14",
+    "inter_event_seconds": 2046,
+    "unobserved_timestamp_seconds": 2045,
+    "comparisons": [
+      {
+        "day_offset": -14,
+        "window_name": "before",
+        "start_time": "2020-01-08 02:18:04",
+        "end_time": "2020-01-08 02:52:09",
+        "events": 762,
+        "users": 127,
+        "purchase_events": 12
+      },
+      {
+        "day_offset": -14,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-08 02:52:09",
+        "end_time": "2020-01-08 03:26:14",
+        "events": 772,
+        "users": 143,
+        "purchase_events": 35
+      },
+      {
+        "day_offset": -14,
+        "window_name": "after",
+        "start_time": "2020-01-08 03:26:14",
+        "end_time": "2020-01-08 04:00:19",
+        "events": 1216,
+        "users": 196,
+        "purchase_events": 19
+      },
+      {
+        "day_offset": -7,
+        "window_name": "before",
+        "start_time": "2020-01-15 02:18:04",
+        "end_time": "2020-01-15 02:52:09",
+        "events": 794,
+        "users": 201,
+        "purchase_events": 21
+      },
+      {
+        "day_offset": -7,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-15 02:52:09",
+        "end_time": "2020-01-15 03:26:14",
+        "events": 949,
+        "users": 244,
+        "purchase_events": 25
+      },
+      {
+        "day_offset": -7,
+        "window_name": "after",
+        "start_time": "2020-01-15 03:26:14",
+        "end_time": "2020-01-15 04:00:19",
+        "events": 1177,
+        "users": 297,
+        "purchase_events": 28
+      },
+      {
+        "day_offset": -2,
+        "window_name": "before",
+        "start_time": "2020-01-20 02:18:04",
+        "end_time": "2020-01-20 02:52:09",
+        "events": 895,
+        "users": 151,
+        "purchase_events": 72
+      },
+      {
+        "day_offset": -2,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-20 02:52:09",
+        "end_time": "2020-01-20 03:26:14",
+        "events": 1111,
+        "users": 202,
+        "purchase_events": 75
+      },
+      {
+        "day_offset": -2,
+        "window_name": "after",
+        "start_time": "2020-01-20 03:26:14",
+        "end_time": "2020-01-20 04:00:19",
+        "events": 1084,
+        "users": 249,
+        "purchase_events": 45
+      },
+      {
+        "day_offset": -1,
+        "window_name": "before",
+        "start_time": "2020-01-21 02:18:04",
+        "end_time": "2020-01-21 02:52:09",
+        "events": 921,
+        "users": 176,
+        "purchase_events": 21
+      },
+      {
+        "day_offset": -1,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-21 02:52:09",
+        "end_time": "2020-01-21 03:26:14",
+        "events": 830,
+        "users": 199,
+        "purchase_events": 58
+      },
+      {
+        "day_offset": -1,
+        "window_name": "after",
+        "start_time": "2020-01-21 03:26:14",
+        "end_time": "2020-01-21 04:00:19",
+        "events": 1321,
+        "users": 273,
+        "purchase_events": 52
+      },
+      {
+        "day_offset": 0,
+        "window_name": "before",
+        "start_time": "2020-01-22 02:18:04",
+        "end_time": "2020-01-22 02:52:09",
+        "events": 705,
+        "users": 165,
+        "purchase_events": 67
+      },
+      {
+        "day_offset": 0,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-22 02:52:09",
+        "end_time": "2020-01-22 03:26:14",
+        "events": 0,
+        "users": 0,
+        "purchase_events": 0
+      },
+      {
+        "day_offset": 0,
+        "window_name": "after",
+        "start_time": "2020-01-22 03:26:14",
+        "end_time": "2020-01-22 04:00:19",
+        "events": 992,
+        "users": 258,
+        "purchase_events": 32
+      },
+      {
+        "day_offset": 1,
+        "window_name": "before",
+        "start_time": "2020-01-23 02:18:04",
+        "end_time": "2020-01-23 02:52:09",
+        "events": 606,
+        "users": 164,
+        "purchase_events": 38
+      },
+      {
+        "day_offset": 1,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-23 02:52:09",
+        "end_time": "2020-01-23 03:26:14",
+        "events": 1158,
+        "users": 206,
+        "purchase_events": 57
+      },
+      {
+        "day_offset": 1,
+        "window_name": "after",
+        "start_time": "2020-01-23 03:26:14",
+        "end_time": "2020-01-23 04:00:19",
+        "events": 1414,
+        "users": 283,
+        "purchase_events": 108
+      },
+      {
+        "day_offset": 2,
+        "window_name": "before",
+        "start_time": "2020-01-24 02:18:04",
+        "end_time": "2020-01-24 02:52:09",
+        "events": 604,
+        "users": 154,
+        "purchase_events": 10
+      },
+      {
+        "day_offset": 2,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-24 02:52:09",
+        "end_time": "2020-01-24 03:26:14",
+        "events": 1317,
+        "users": 229,
+        "purchase_events": 112
+      },
+      {
+        "day_offset": 2,
+        "window_name": "after",
+        "start_time": "2020-01-24 03:26:14",
+        "end_time": "2020-01-24 04:00:19",
+        "events": 1091,
+        "users": 258,
+        "purchase_events": 54
+      },
+      {
+        "day_offset": 7,
+        "window_name": "before",
+        "start_time": "2020-01-29 02:18:04",
+        "end_time": "2020-01-29 02:52:09",
+        "events": 653,
+        "users": 163,
+        "purchase_events": 9
+      },
+      {
+        "day_offset": 7,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-01-29 02:52:09",
+        "end_time": "2020-01-29 03:26:14",
+        "events": 1099,
+        "users": 220,
+        "purchase_events": 30
+      },
+      {
+        "day_offset": 7,
+        "window_name": "after",
+        "start_time": "2020-01-29 03:26:14",
+        "end_time": "2020-01-29 04:00:19",
+        "events": 1336,
+        "users": 289,
+        "purchase_events": 57
+      },
+      {
+        "day_offset": 14,
+        "window_name": "before",
+        "start_time": "2020-02-05 02:18:04",
+        "end_time": "2020-02-05 02:52:09",
+        "events": 940,
+        "users": 160,
+        "purchase_events": 56
+      },
+      {
+        "day_offset": 14,
+        "window_name": "gap_clock_interval",
+        "start_time": "2020-02-05 02:52:09",
+        "end_time": "2020-02-05 03:26:14",
+        "events": 1182,
+        "users": 186,
+        "purchase_events": 25
+      },
+      {
+        "day_offset": 14,
+        "window_name": "after",
+        "start_time": "2020-02-05 03:26:14",
+        "end_time": "2020-02-05 04:00:19",
+        "events": 1296,
+        "users": 269,
+        "purchase_events": 59
+      }
+    ],
+    "five_minute_counts": [
+      {
+        "start_time": "2020-01-22 02:00:00",
+        "events": 136
+      },
+      {
+        "start_time": "2020-01-22 02:05:00",
+        "events": 147
+      },
+      {
+        "start_time": "2020-01-22 02:10:00",
+        "events": 93
+      },
+      {
+        "start_time": "2020-01-22 02:15:00",
+        "events": 81
+      },
+      {
+        "start_time": "2020-01-22 02:20:00",
+        "events": 103
+      },
+      {
+        "start_time": "2020-01-22 02:25:00",
+        "events": 114
+      },
+      {
+        "start_time": "2020-01-22 02:30:00",
+        "events": 157
+      },
+      {
+        "start_time": "2020-01-22 02:35:00",
+        "events": 96
+      },
+      {
+        "start_time": "2020-01-22 02:40:00",
+        "events": 106
+      },
+      {
+        "start_time": "2020-01-22 02:45:00",
+        "events": 79
+      },
+      {
+        "start_time": "2020-01-22 02:50:00",
+        "events": 22
+      },
+      {
+        "start_time": "2020-01-22 02:55:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:00:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:05:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:10:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:15:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:20:00",
+        "events": 0
+      },
+      {
+        "start_time": "2020-01-22 03:25:00",
+        "events": 85
+      },
+      {
+        "start_time": "2020-01-22 03:30:00",
+        "events": 86
+      },
+      {
+        "start_time": "2020-01-22 03:35:00",
+        "events": 82
+      },
+      {
+        "start_time": "2020-01-22 03:40:00",
+        "events": 217
+      },
+      {
+        "start_time": "2020-01-22 03:45:00",
+        "events": 146
+      },
+      {
+        "start_time": "2020-01-22 03:50:00",
+        "events": 143
+      },
+      {
+        "start_time": "2020-01-22 03:55:00",
+        "events": 224
+      }
+    ],
+    "customer_overlap": [
+      {
+        "eligible": false,
+        "feature_gap": false,
+        "outcome_gap": false,
+        "users": 382729,
+        "positives": 2249
+      },
+      {
+        "eligible": true,
+        "feature_gap": false,
+        "outcome_gap": false,
+        "users": 885659,
+        "positives": 19497
+      },
+      {
+        "eligible": true,
+        "feature_gap": false,
+        "outcome_gap": true,
+        "users": 298251,
+        "positives": 3295
+      },
+      {
+        "eligible": true,
+        "feature_gap": true,
+        "outcome_gap": false,
+        "users": 72617,
+        "positives": 967
+      },
+      {
+        "eligible": true,
+        "feature_gap": true,
+        "outcome_gap": true,
+        "users": 102,
+        "positives": 1
+      }
+    ],
+    "overlap_totals": {
+      "users": 1639358,
+      "eligible_users": 1256629,
+      "feature_overlap": 72719,
+      "outcome_overlap": 298353,
+      "both_overlap": 102,
+      "neither_overlap": 1268388
+    }
+  },
+  "schedules": {
+    "broad_retain": [
+      {
+        "split": "train",
+        "prediction_start": "2019-10-08",
+        "prediction_end_exclusive": "2019-11-01",
+        "users": 328535,
+        "positives": 10092,
+        "positive_rate": 0.030718188320879053,
+        "earliest_first_seen": "2019-10-01 00:00:00",
+        "latest_first_seen": "2019-10-24 23:59:57",
+        "earliest_prediction": "2019-10-08 00:00:00",
+        "latest_prediction": "2019-10-31 23:59:57",
+        "earliest_outcome_end": "2019-11-07 00:00:00",
+        "latest_outcome_end": "2019-11-30 23:59:57",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "validation",
+        "prediction_start": "2019-12-01",
+        "prediction_end_exclusive": "2019-12-16",
+        "users": 157349,
+        "positives": 1985,
+        "positive_rate": 0.012615269242257657,
+        "earliest_first_seen": "2019-11-24 00:01:08",
+        "latest_first_seen": "2019-12-08 23:59:06",
+        "earliest_prediction": "2019-12-01 00:01:08",
+        "latest_prediction": "2019-12-15 23:59:06",
+        "earliest_outcome_end": "2019-12-31 00:01:08",
+        "latest_outcome_end": "2020-01-14 23:59:06",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "test",
+        "prediction_start": "2020-01-15",
+        "prediction_end_exclusive": "2020-01-30",
+        "users": 167822,
+        "positives": 2140,
+        "positive_rate": 0.012751605868122178,
+        "earliest_first_seen": "2020-01-08 00:00:29",
+        "latest_first_seen": "2020-01-22 23:59:54",
+        "earliest_prediction": "2020-01-15 00:00:29",
+        "latest_prediction": "2020-01-29 23:59:54",
+        "earliest_outcome_end": "2020-02-14 00:00:29",
+        "latest_outcome_end": "2020-02-28 23:59:54",
+        "feature_gap_users": 72719,
+        "outcome_gap_users": 85435,
+        "any_gap_users": 158052
+      }
+    ],
+    "broad_exclude_gap": [
+      {
+        "split": "train",
+        "prediction_start": "2019-10-08",
+        "prediction_end_exclusive": "2019-11-01",
+        "users": 328535,
+        "positives": 10092,
+        "positive_rate": 0.030718188320879053,
+        "earliest_first_seen": "2019-10-01 00:00:00",
+        "latest_first_seen": "2019-10-24 23:59:57",
+        "earliest_prediction": "2019-10-08 00:00:00",
+        "latest_prediction": "2019-10-31 23:59:57",
+        "earliest_outcome_end": "2019-11-07 00:00:00",
+        "latest_outcome_end": "2019-11-30 23:59:57",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "validation",
+        "prediction_start": "2019-12-01",
+        "prediction_end_exclusive": "2019-12-16",
+        "users": 157349,
+        "positives": 1985,
+        "positive_rate": 0.012615269242257657,
+        "earliest_first_seen": "2019-11-24 00:01:08",
+        "latest_first_seen": "2019-12-08 23:59:06",
+        "earliest_prediction": "2019-12-01 00:01:08",
+        "latest_prediction": "2019-12-15 23:59:06",
+        "earliest_outcome_end": "2019-12-31 00:01:08",
+        "latest_outcome_end": "2020-01-14 23:59:06",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "test",
+        "prediction_start": "2020-01-15",
+        "prediction_end_exclusive": "2020-01-30",
+        "users": 9770,
+        "positives": 135,
+        "positive_rate": 0.013817809621289662,
+        "earliest_first_seen": "2020-01-22 03:26:16",
+        "latest_first_seen": "2020-01-22 23:59:54",
+        "earliest_prediction": "2020-01-29 03:26:16",
+        "latest_prediction": "2020-01-29 23:59:54",
+        "earliest_outcome_end": "2020-02-28 03:26:16",
+        "latest_outcome_end": "2020-02-28 23:59:54",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      }
+    ],
+    "earlier_gap_free": [
+      {
+        "split": "train",
+        "prediction_start": "2019-10-08",
+        "prediction_end_exclusive": "2019-10-13",
+        "users": 87760,
+        "positives": 3814,
+        "positive_rate": 0.04345943482224248,
+        "earliest_first_seen": "2019-10-01 00:00:00",
+        "latest_first_seen": "2019-10-05 23:59:59",
+        "earliest_prediction": "2019-10-08 00:00:00",
+        "latest_prediction": "2019-10-12 23:59:59",
+        "earliest_outcome_end": "2019-11-07 00:00:00",
+        "latest_outcome_end": "2019-11-11 23:59:59",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "validation",
+        "prediction_start": "2019-11-12",
+        "prediction_end_exclusive": "2019-11-17",
+        "users": 53089,
+        "positives": 1150,
+        "positive_rate": 0.0216617378364633,
+        "earliest_first_seen": "2019-11-05 00:00:06",
+        "latest_first_seen": "2019-11-09 23:59:54",
+        "earliest_prediction": "2019-11-12 00:00:06",
+        "latest_prediction": "2019-11-16 23:59:54",
+        "earliest_outcome_end": "2019-12-12 00:00:06",
+        "latest_outcome_end": "2019-12-16 23:59:54",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      },
+      {
+        "split": "test",
+        "prediction_start": "2019-12-17",
+        "prediction_end_exclusive": "2019-12-22",
+        "users": 51444,
+        "positives": 547,
+        "positive_rate": 0.010632921234740689,
+        "earliest_first_seen": "2019-12-10 00:01:00",
+        "latest_first_seen": "2019-12-14 23:57:38",
+        "earliest_prediction": "2019-12-17 00:01:00",
+        "latest_prediction": "2019-12-21 23:57:38",
+        "earliest_outcome_end": "2020-01-16 00:01:00",
+        "latest_outcome_end": "2020-01-20 23:57:38",
+        "feature_gap_users": 0,
+        "outcome_gap_users": 0,
+        "any_gap_users": 0
+      }
+    ]
+  },
+  "price_target_sensitivity": {
+    "eligible_users": 1256629,
+    "event_type_positives": 23760,
+    "positive_price_positives": 23760
+  },
+  "raw_hashes_after": {
+    "2019-Oct.csv": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+    "2019-Nov.csv": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+    "2019-Dec.csv": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+    "2020-Jan.csv": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+    "2020-Feb.csv": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b"
+  },
+  "parquet_sha256": {
+    "2019-Oct": "65edd7c4760917397a104f0f4289186f51510af6b0770e367003d4c372a0dad7",
+    "2019-Nov": "fc35d5b7125498bdfb7fe0fa781a709bcf7679582228d8ec687c45a01e8563a0",
+    "2019-Dec": "7f713ae88f5ef3706496e0a193d61cf4fddd0d201482aea7dc40138cf59d8256",
+    "2020-Jan": "7135fa4a70cfe328f4d29634f4229ab62d987f7e4f260dbc0dd677e8939e5d02",
+    "2020-Feb": "c700797164f8c0ebb996291ccf3b3477656a9c7fc59937a630c6ee6f05bdf1fc"
+  },
+  "elapsed_seconds": 39.35
+}
