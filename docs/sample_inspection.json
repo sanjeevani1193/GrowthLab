@@ -1,0 +1,41 @@
+{
+  "requested_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2019-Oct.csv?datasetVersionNumber=6",
+  "status": 206,
+  "content_type": "application/zip",
+  "content_range": "bytes 0-65535/87127708",
+  "bytes_read": 65536,
+  "prefix_sha256": "dcf9c189da43da8284cf145ca423e5a8b48c421ee46391f6bfae83d49ea277d6",
+  "archive_member": "2019-Oct.csv",
+  "sample_path": "data/sample/2019-Oct.head100.csv",
+  "sample_rows": 100,
+  "sample_sha256": "567b940afb35ff53be02de4b0bd9b8e6887c46b34cc90ccb327e4c88fbbd2c73",
+  "columns": [
+    "event_time",
+    "event_type",
+    "product_id",
+    "category_id",
+    "category_code",
+    "brand",
+    "price",
+    "user_id",
+    "user_session"
+  ],
+  "event_types_observed": [
+    "cart",
+    "remove_from_cart",
+    "view"
+  ],
+  "minimum_event_time": "2019-10-01 00:00:00 UTC",
+  "maximum_event_time": "2019-10-01 00:02:57 UTC",
+  "missing_counts": {
+    "event_time": 0,
+    "event_type": 0,
+    "product_id": 0,
+    "category_id": 0,
+    "category_code": 99,
+    "brand": 33,
+    "price": 0,
+    "user_id": 0,
+    "user_session": 0
+  }
+}

@@ -1,4 +1,34 @@
 # Byte-compiled / optimized / DLL files
+
+# GrowthLab: keep source and documentation, never local datasets or credentials.
+/data/*
+!/data/README.md
+/artifacts/
+/reports/
+*.csv
+*.parquet
+*.arrow
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.zip
+*.gz
+*.tar
+*.duckdb
+*.duckdb.wal
+*.sqlite*
+.env.*
+!.env.example
+.aws/
+.kaggle/
+kaggle.json
+*.pem
+*.key
+.DS_Store
+.vscode/
+.idea/
+
 __pycache__/
 *.py[codz]
 *$py.class
