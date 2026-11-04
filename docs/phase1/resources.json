@@ -1,0 +1,32 @@
+{
+  "physical_memory_bytes_observed": 8589934592,
+  "physical_memory_source": "sysctl hw.memsize",
+  "preflight_system_memory_free_percent_observed": 33,
+  "free_disk_before_acquisition_bytes": 153335881728,
+  "free_disk_after_audit_bytes": 149171470336,
+  "planning": {
+    "csv_bytes": 2434277452,
+    "zip_bytes": 450866660,
+    "conservative_parquet_allowance_bytes": 2434277452,
+    "spill_allowance_bytes": 8589934592,
+    "free_os_reserve_bytes": 21474836480,
+    "required_free_bytes_in_acquisition_guard": 37367603428
+  },
+  "observed_storage_bytes": {
+    "csv": 2434277452,
+    "parquet": 516380933,
+    "zip": 450866660,
+    "duckdb": 42217472,
+    "retained_spill": 0
+  },
+  "audit_memory_limit": "1GB",
+  "threads": 1,
+  "max_spill": "8GB",
+  "peak_process_rss_bytes": 1289404416,
+  "audit_elapsed_seconds": 94.11,
+  "peak_spill_note": "Peak transient spill usage was not measured; the engine cap was 8GB.",
+  "independent_next_purchase_verification": {
+    "eligible_users": 1256629,
+    "positive_users": 23760
+  }
+}

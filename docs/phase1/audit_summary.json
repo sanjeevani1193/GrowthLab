@@ -1,0 +1,1891 @@
+{
+  "duckdb_version": "2.0.0",
+  "python_version": "3.14.7",
+  "audit_source_sha256": "818dd12ed873eba03930a4b5ceed7cebb49b83dd5dd63c366588fa28aed97c0c",
+  "memory_limit": "1GB",
+  "threads": 1,
+  "max_spill": "8GB",
+  "coverage_end_assumed_exclusive_utc": "2020-03-01 00:00:00",
+  "assumptions": [
+    "Nonempty days are assumed logged; partial logging outages cannot be ruled out.",
+    "A user_id is treated as persistent across months, not proven to identify a person."
+  ],
+  "files": [
+    {
+      "events": 4102283,
+      "users": 399664,
+      "first_event": "2019-10-01 00:00:00",
+      "last_event": "2019-10-31 23:59:54",
+      "purchase_events": 245624,
+      "wrong_month": 0,
+      "month": "2019-Oct",
+      "csv_bytes": 482542278,
+      "csv_sha256": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+      "parquet_bytes": 101721111,
+      "duplicates": {
+        "duplicate_groups": 205082,
+        "excess_rows": 213155,
+        "rows_in_duplicate_groups": 418237,
+        "largest_multiplicity": 19
+      },
+      "duplicates_by_type": [
+        {
+          "event_type": "cart",
+          "excess_rows": 28167
+        },
+        {
+          "event_type": "purchase",
+          "excess_rows": 343
+        },
+        {
+          "event_type": "remove_from_cart",
+          "excess_rows": 184531
+        },
+        {
+          "event_type": "view",
+          "excess_rows": 114
+        }
+      ]
+    },
+    {
+      "events": 4635837,
+      "users": 368232,
+      "first_event": "2019-11-01 00:00:02",
+      "last_event": "2019-11-30 23:59:58",
+      "purchase_events": 322417,
+      "wrong_month": 0,
+      "month": "2019-Nov",
+      "csv_bytes": 545839412,
+      "csv_sha256": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+      "parquet_bytes": 112408328,
+      "duplicates": {
+        "duplicate_groups": 231945,
+        "excess_rows": 246693,
+        "rows_in_duplicate_groups": 478638,
+        "largest_multiplicity": 23
+      },
+      "duplicates_by_type": [
+        {
+          "event_type": "cart",
+          "excess_rows": 22175
+        },
+        {
+          "event_type": "purchase",
+          "excess_rows": 148
+        },
+        {
+          "event_type": "remove_from_cart",
+          "excess_rows": 224231
+        },
+        {
+          "event_type": "view",
+          "excess_rows": 139
+        }
+      ]
+    },
+    {
+      "events": 3533286,
+      "users": 370154,
+      "first_event": "2019-12-01 00:00:00",
+      "last_event": "2019-12-31 23:59:57",
+      "purchase_events": 213176,
+      "wrong_month": 0,
+      "month": "2019-Dec",
+      "csv_bytes": 415302972,
+      "csv_sha256": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+      "parquet_bytes": 90745653,
+      "duplicates": {
+        "duplicate_groups": 174811,
+        "excess_rows": 183860,
+        "rows_in_duplicate_groups": 358671,
+        "largest_multiplicity": 20
+      },
+      "duplicates_by_type": [
+        {
+          "event_type": "cart",
+          "excess_rows": 15483
+        },
+        {
+          "event_type": "purchase",
+          "excess_rows": 110
+        },
+        {
+          "event_type": "remove_from_cart",
+          "excess_rows": 168157
+        },
+        {
+          "event_type": "view",
+          "excess_rows": 110
+        }
+      ]
+    },
+    {
+      "events": 4264752,
+      "users": 410073,
+      "first_event": "2020-01-01 00:00:00",
+      "last_event": "2020-01-31 23:59:58",
+      "purchase_events": 263797,
+      "wrong_month": 0,
+      "month": "2020-Jan",
+      "csv_bytes": 501792804,
+      "csv_sha256": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+      "parquet_bytes": 107487616,
+      "duplicates": {
+        "duplicate_groups": 214421,
+        "excess_rows": 225100,
+        "rows_in_duplicate_groups": 439521,
+        "largest_multiplicity": 29
+      },
+      "duplicates_by_type": [
+        {
+          "event_type": "cart",
+          "excess_rows": 19661
+        },
+        {
+          "event_type": "purchase",
+          "excess_rows": 192
+        },
+        {
+          "event_type": "remove_from_cart",
+          "excess_rows": 205140
+        },
+        {
+          "event_type": "view",
+          "excess_rows": 107
+        }
+      ]
+    },
+    {
+      "events": 4156682,
+      "users": 391055,
+      "first_event": "2020-02-01 00:00:01",
+      "last_event": "2020-02-29 23:59:59",
+      "purchase_events": 241993,
+      "wrong_month": 0,
+      "month": "2020-Feb",
+      "csv_bytes": 488799986,
+      "csv_sha256": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b",
+      "parquet_bytes": 104018225,
+      "duplicates": {
+        "duplicate_groups": 219503,
+        "excess_rows": 240290,
+        "rows_in_duplicate_groups": 459793,
+        "largest_multiplicity": 48
+      },
+      "duplicates_by_type": [
+        {
+          "event_type": "cart",
+          "excess_rows": 29856
+        },
+        {
+          "event_type": "purchase",
+          "excess_rows": 112
+        },
+        {
+          "event_type": "remove_from_cart",
+          "excess_rows": 209761
+        },
+        {
+          "event_type": "view",
+          "excess_rows": 561
+        }
+      ]
+    }
+  ],
+  "daily": [
+    {
+      "day": "2019-10-01",
+      "events": 142414,
+      "users": 19230,
+      "purchase_events": 8476
+    },
+    {
+      "day": "2019-10-02",
+      "events": 201068,
+      "users": 33859,
+      "purchase_events": 9100
+    },
+    {
+      "day": "2019-10-03",
+      "events": 124847,
+      "users": 16323,
+      "purchase_events": 8865
+    },
+    {
+      "day": "2019-10-04",
+      "events": 115612,
+      "users": 14732,
+      "purchase_events": 7562
+    },
+    {
+      "day": "2019-10-05",
+      "events": 106343,
+      "users": 14990,
+      "purchase_events": 5940
+    },
+    {
+      "day": "2019-10-06",
+      "events": 187383,
+      "users": 31439,
+      "purchase_events": 7265
+    },
+    {
+      "day": "2019-10-07",
+      "events": 181451,
+      "users": 26427,
+      "purchase_events": 9376
+    },
+    {
+      "day": "2019-10-08",
+      "events": 148944,
+      "users": 20140,
+      "purchase_events": 8604
+    },
+    {
+      "day": "2019-10-09",
+      "events": 139901,
+      "users": 18174,
+      "purchase_events": 8464
+    },
+    {
+      "day": "2019-10-10",
+      "events": 132634,
+      "users": 17127,
+      "purchase_events": 8117
+    },
+    {
+      "day": "2019-10-11",
+      "events": 119195,
+      "users": 16504,
+      "purchase_events": 6922
+    },
+    {
+      "day": "2019-10-12",
+      "events": 111166,
+      "users": 14986,
+      "purchase_events": 6431
+    },
+    {
+      "day": "2019-10-13",
+      "events": 116755,
+      "users": 15627,
+      "purchase_events": 7088
+    },
+    {
+      "day": "2019-10-14",
+      "events": 133258,
+      "users": 17377,
+      "purchase_events": 8004
+    },
+    {
+      "day": "2019-10-15",
+      "events": 130030,
+      "users": 16950,
+      "purchase_events": 8299
+    },
+    {
+      "day": "2019-10-16",
+      "events": 136043,
+      "users": 17488,
+      "purchase_events": 9096
+    },
+    {
+      "day": "2019-10-17",
+      "events": 133870,
+      "users": 17200,
+      "purchase_events": 9236
+    },
+    {
+      "day": "2019-10-18",
+      "events": 119073,
+      "users": 15689,
+      "purchase_events": 7920
+    },
+    {
+      "day": "2019-10-19",
+      "events": 104300,
+      "users": 14533,
+      "purchase_events": 6064
+    },
+    {
+      "day": "2019-10-20",
+      "events": 114682,
+      "users": 15658,
+      "purchase_events": 6836
+    },
+    {
+      "day": "2019-10-21",
+      "events": 139662,
+      "users": 17653,
+      "purchase_events": 8872
+    },
+    {
+      "day": "2019-10-22",
+      "events": 136370,
+      "users": 16974,
+      "purchase_events": 8643
+    },
+    {
+      "day": "2019-10-23",
+      "events": 133764,
+      "users": 16688,
+      "purchase_events": 8714
+    },
+    {
+      "day": "2019-10-24",
+      "events": 129841,
+      "users": 16302,
+      "purchase_events": 8779
+    },
+    {
+      "day": "2019-10-25",
+      "events": 111774,
+      "users": 15650,
+      "purchase_events": 7024
+    },
+    {
+      "day": "2019-10-26",
+      "events": 109133,
+      "users": 14703,
+      "purchase_events": 5295
+    },
+    {
+      "day": "2019-10-27",
+      "events": 127318,
+      "users": 16304,
+      "purchase_events": 7816
+    },
+    {
+      "day": "2019-10-28",
+      "events": 132132,
+      "users": 17353,
+      "purchase_events": 8366
+    },
+    {
+      "day": "2019-10-29",
+      "events": 134769,
+      "users": 17337,
+      "purchase_events": 8472
+    },
+    {
+      "day": "2019-10-30",
+      "events": 125597,
+      "users": 16953,
+      "purchase_events": 7935
+    },
+    {
+      "day": "2019-10-31",
+      "events": 122954,
+      "users": 16170,
+      "purchase_events": 8043
+    },
+    {
+      "day": "2019-11-01",
+      "events": 119114,
+      "users": 14880,
+      "purchase_events": 7761
+    },
+    {
+      "day": "2019-11-02",
+      "events": 113560,
+      "users": 14614,
+      "purchase_events": 7422
+    },
+    {
+      "day": "2019-11-03",
+      "events": 126029,
+      "users": 15530,
+      "purchase_events": 7798
+    },
+    {
+      "day": "2019-11-04",
+      "events": 138500,
+      "users": 16209,
+      "purchase_events": 8053
+    },
+    {
+      "day": "2019-11-05",
+      "events": 150276,
+      "users": 18545,
+      "purchase_events": 8887
+    },
+    {
+      "day": "2019-11-06",
+      "events": 142348,
+      "users": 17724,
+      "purchase_events": 8710
+    },
+    {
+      "day": "2019-11-07",
+      "events": 190194,
+      "users": 19587,
+      "purchase_events": 16489
+    },
+    {
+      "day": "2019-11-08",
+      "events": 171636,
+      "users": 17845,
+      "purchase_events": 16628
+    },
+    {
+      "day": "2019-11-09",
+      "events": 114158,
+      "users": 15695,
+      "purchase_events": 5442
+    },
+    {
+      "day": "2019-11-10",
+      "events": 121377,
+      "users": 16152,
+      "purchase_events": 6208
+    },
+    {
+      "day": "2019-11-11",
+      "events": 137928,
+      "users": 18403,
+      "purchase_events": 8921
+    },
+    {
+      "day": "2019-11-12",
+      "events": 130829,
+      "users": 17681,
+      "purchase_events": 8184
+    },
+    {
+      "day": "2019-11-13",
+      "events": 139665,
+      "users": 18134,
+      "purchase_events": 8434
+    },
+    {
+      "day": "2019-11-14",
+      "events": 132756,
+      "users": 17402,
+      "purchase_events": 7632
+    },
+    {
+      "day": "2019-11-15",
+      "events": 122915,
+      "users": 15922,
+      "purchase_events": 6860
+    },
+    {
+      "day": "2019-11-16",
+      "events": 112832,
+      "users": 14591,
+      "purchase_events": 7029
+    },
+    {
+      "day": "2019-11-17",
+      "events": 125744,
+      "users": 16103,
+      "purchase_events": 7937
+    },
+    {
+      "day": "2019-11-18",
+      "events": 151701,
+      "users": 18634,
+      "purchase_events": 9593
+    },
+    {
+      "day": "2019-11-19",
+      "events": 140565,
+      "users": 18100,
+      "purchase_events": 9243
+    },
+    {
+      "day": "2019-11-20",
+      "events": 139748,
+      "users": 17816,
+      "purchase_events": 8873
+    },
+    {
+      "day": "2019-11-21",
+      "events": 220932,
+      "users": 20430,
+      "purchase_events": 16123
+    },
+    {
+      "day": "2019-11-22",
+      "events": 270074,
+      "users": 24276,
+      "purchase_events": 22780
+    },
+    {
+      "day": "2019-11-23",
+      "events": 199751,
+      "users": 19812,
+      "purchase_events": 15483
+    },
+    {
+      "day": "2019-11-24",
+      "events": 207607,
+      "users": 20398,
+      "purchase_events": 20464
+    },
+    {
+      "day": "2019-11-25",
+      "events": 142350,
+      "users": 21051,
+      "purchase_events": 6990
+    },
+    {
+      "day": "2019-11-26",
+      "events": 134721,
+      "users": 20206,
+      "purchase_events": 8040
+    },
+    {
+      "day": "2019-11-27",
+      "events": 146034,
+      "users": 19444,
+      "purchase_events": 8209
+    },
+    {
+      "day": "2019-11-28",
+      "events": 224940,
+      "users": 23683,
+      "purchase_events": 16974
+    },
+    {
+      "day": "2019-11-29",
+      "events": 206154,
+      "users": 21778,
+      "purchase_events": 17992
+    },
+    {
+      "day": "2019-11-30",
+      "events": 161399,
+      "users": 18683,
+      "purchase_events": 13258
+    },
+    {
+      "day": "2019-12-01",
+      "events": 127579,
+      "users": 17540,
+      "purchase_events": 7236
+    },
+    {
+      "day": "2019-12-02",
+      "events": 134714,
+      "users": 19391,
+      "purchase_events": 9079
+    },
+    {
+      "day": "2019-12-03",
+      "events": 137687,
+      "users": 18735,
+      "purchase_events": 8217
+    },
+    {
+      "day": "2019-12-04",
+      "events": 137253,
+      "users": 18836,
+      "purchase_events": 8371
+    },
+    {
+      "day": "2019-12-05",
+      "events": 127346,
+      "users": 18183,
+      "purchase_events": 7767
+    },
+    {
+      "day": "2019-12-06",
+      "events": 120309,
+      "users": 16948,
+      "purchase_events": 7383
+    },
+    {
+      "day": "2019-12-07",
+      "events": 110485,
+      "users": 15508,
+      "purchase_events": 6023
+    },
+    {
+      "day": "2019-12-08",
+      "events": 121400,
+      "users": 16835,
+      "purchase_events": 6595
+    },
+    {
+      "day": "2019-12-09",
+      "events": 156687,
+      "users": 19777,
+      "purchase_events": 9294
+    },
+    {
+      "day": "2019-12-10",
+      "events": 148027,
+      "users": 19336,
+      "purchase_events": 9794
+    },
+    {
+      "day": "2019-12-11",
+      "events": 144392,
+      "users": 20128,
+      "purchase_events": 9390
+    },
+    {
+      "day": "2019-12-12",
+      "events": 138363,
+      "users": 18920,
+      "purchase_events": 9396
+    },
+    {
+      "day": "2019-12-13",
+      "events": 121305,
+      "users": 17555,
+      "purchase_events": 7796
+    },
+    {
+      "day": "2019-12-14",
+      "events": 110444,
+      "users": 16446,
+      "purchase_events": 6038
+    },
+    {
+      "day": "2019-12-15",
+      "events": 121682,
+      "users": 17988,
+      "purchase_events": 7019
+    },
+    {
+      "day": "2019-12-16",
+      "events": 140946,
+      "users": 19387,
+      "purchase_events": 9226
+    },
+    {
+      "day": "2019-12-17",
+      "events": 130639,
+      "users": 18874,
+      "purchase_events": 8425
+    },
+    {
+      "day": "2019-12-18",
+      "events": 129070,
+      "users": 18779,
+      "purchase_events": 7818
+    },
+    {
+      "day": "2019-12-19",
+      "events": 116253,
+      "users": 17917,
+      "purchase_events": 7143
+    },
+    {
+      "day": "2019-12-20",
+      "events": 99237,
+      "users": 16596,
+      "purchase_events": 6308
+    },
+    {
+      "day": "2019-12-21",
+      "events": 97020,
+      "users": 16072,
+      "purchase_events": 5603
+    },
+    {
+      "day": "2019-12-22",
+      "events": 106284,
+      "users": 16232,
+      "purchase_events": 6086
+    },
+    {
+      "day": "2019-12-23",
+      "events": 116431,
+      "users": 18455,
+      "purchase_events": 6939
+    },
+    {
+      "day": "2019-12-24",
+      "events": 109832,
+      "users": 17356,
+      "purchase_events": 6901
+    },
+    {
+      "day": "2019-12-25",
+      "events": 107267,
+      "users": 16928,
+      "purchase_events": 6671
+    },
+    {
+      "day": "2019-12-26",
+      "events": 91702,
+      "users": 16116,
+      "purchase_events": 5914
+    },
+    {
+      "day": "2019-12-27",
+      "events": 81306,
+      "users": 14595,
+      "purchase_events": 4706
+    },
+    {
+      "day": "2019-12-28",
+      "events": 81312,
+      "users": 14574,
+      "purchase_events": 4786
+    },
+    {
+      "day": "2019-12-29",
+      "events": 75556,
+      "users": 14339,
+      "purchase_events": 3493
+    },
+    {
+      "day": "2019-12-30",
+      "events": 61662,
+      "users": 13249,
+      "purchase_events": 2633
+    },
+    {
+      "day": "2019-12-31",
+      "events": 31096,
+      "users": 7430,
+      "purchase_events": 1126
+    },
+    {
+      "day": "2020-01-01",
+      "events": 80940,
+      "users": 12296,
+      "purchase_events": 3269
+    },
+    {
+      "day": "2020-01-02",
+      "events": 103157,
+      "users": 14682,
+      "purchase_events": 4875
+    },
+    {
+      "day": "2020-01-03",
+      "events": 116893,
+      "users": 16125,
+      "purchase_events": 6031
+    },
+    {
+      "day": "2020-01-04",
+      "events": 116617,
+      "users": 16797,
+      "purchase_events": 6602
+    },
+    {
+      "day": "2020-01-05",
+      "events": 121732,
+      "users": 17312,
+      "purchase_events": 7227
+    },
+    {
+      "day": "2020-01-06",
+      "events": 107842,
+      "users": 16423,
+      "purchase_events": 6368
+    },
+    {
+      "day": "2020-01-07",
+      "events": 125209,
+      "users": 17845,
+      "purchase_events": 7564
+    },
+    {
+      "day": "2020-01-08",
+      "events": 131054,
+      "users": 19425,
+      "purchase_events": 7602
+    },
+    {
+      "day": "2020-01-09",
+      "events": 144709,
+      "users": 20799,
+      "purchase_events": 8774
+    },
+    {
+      "day": "2020-01-10",
+      "events": 130991,
+      "users": 19764,
+      "purchase_events": 8575
+    },
+    {
+      "day": "2020-01-11",
+      "events": 130337,
+      "users": 20096,
+      "purchase_events": 7470
+    },
+    {
+      "day": "2020-01-12",
+      "events": 145717,
+      "users": 21340,
+      "purchase_events": 8147
+    },
+    {
+      "day": "2020-01-13",
+      "events": 160363,
+      "users": 22241,
+      "purchase_events": 10138
+    },
+    {
+      "day": "2020-01-14",
+      "events": 163808,
+      "users": 23374,
+      "purchase_events": 10316
+    },
+    {
+      "day": "2020-01-15",
+      "events": 157848,
+      "users": 23234,
+      "purchase_events": 9962
+    },
+    {
+      "day": "2020-01-16",
+      "events": 146000,
+      "users": 19898,
+      "purchase_events": 9354
+    },
+    {
+      "day": "2020-01-17",
+      "events": 140112,
+      "users": 18647,
+      "purchase_events": 9265
+    },
+    {
+      "day": "2020-01-18",
+      "events": 119252,
+      "users": 16698,
+      "purchase_events": 6197
+    },
+    {
+      "day": "2020-01-19",
+      "events": 137205,
+      "users": 18115,
+      "purchase_events": 8168
+    },
+    {
+      "day": "2020-01-20",
+      "events": 152557,
+      "users": 20310,
+      "purchase_events": 9014
+    },
+    {
+      "day": "2020-01-21",
+      "events": 150404,
+      "users": 20778,
+      "purchase_events": 9165
+    },
+    {
+      "day": "2020-01-22",
+      "events": 138344,
+      "users": 19811,
+      "purchase_events": 9088
+    },
+    {
+      "day": "2020-01-23",
+      "events": 141652,
+      "users": 20111,
+      "purchase_events": 8700
+    },
+    {
+      "day": "2020-01-24",
+      "events": 135184,
+      "users": 19012,
+      "purchase_events": 8779
+    },
+    {
+      "day": "2020-01-25",
+      "events": 120436,
+      "users": 17643,
+      "purchase_events": 6766
+    },
+    {
+      "day": "2020-01-26",
+      "events": 134735,
+      "users": 19012,
+      "purchase_events": 8182
+    },
+    {
+      "day": "2020-01-27",
+      "events": 206611,
+      "users": 22141,
+      "purchase_events": 18314
+    },
+    {
+      "day": "2020-01-28",
+      "events": 184379,
+      "users": 21143,
+      "purchase_events": 17352
+    },
+    {
+      "day": "2020-01-29",
+      "events": 145257,
+      "users": 21740,
+      "purchase_events": 7605
+    },
+    {
+      "day": "2020-01-30",
+      "events": 142843,
+      "users": 21366,
+      "purchase_events": 7582
+    },
+    {
+      "day": "2020-01-31",
+      "events": 132564,
+      "users": 21620,
+      "purchase_events": 7346
+    },
+    {
+      "day": "2020-02-01",
+      "events": 146270,
+      "users": 21884,
+      "purchase_events": 7435
+    },
+    {
+      "day": "2020-02-02",
+      "events": 156196,
+      "users": 23168,
+      "purchase_events": 8715
+    },
+    {
+      "day": "2020-02-03",
+      "events": 176178,
+      "users": 23450,
+      "purchase_events": 9998
+    },
+    {
+      "day": "2020-02-04",
+      "events": 159671,
+      "users": 21917,
+      "purchase_events": 8937
+    },
+    {
+      "day": "2020-02-05",
+      "events": 160977,
+      "users": 19976,
+      "purchase_events": 9503
+    },
+    {
+      "day": "2020-02-06",
+      "events": 147526,
+      "users": 19542,
+      "purchase_events": 9209
+    },
+    {
+      "day": "2020-02-07",
+      "events": 138481,
+      "users": 19592,
+      "purchase_events": 7880
+    },
+    {
+      "day": "2020-02-08",
+      "events": 125398,
+      "users": 17418,
+      "purchase_events": 7216
+    },
+    {
+      "day": "2020-02-09",
+      "events": 149230,
+      "users": 19797,
+      "purchase_events": 8642
+    },
+    {
+      "day": "2020-02-10",
+      "events": 158514,
+      "users": 21191,
+      "purchase_events": 8981
+    },
+    {
+      "day": "2020-02-11",
+      "events": 151019,
+      "users": 20885,
+      "purchase_events": 9440
+    },
+    {
+      "day": "2020-02-12",
+      "events": 163754,
+      "users": 21212,
+      "purchase_events": 9563
+    },
+    {
+      "day": "2020-02-13",
+      "events": 142549,
+      "users": 19564,
+      "purchase_events": 9088
+    },
+    {
+      "day": "2020-02-14",
+      "events": 118554,
+      "users": 16918,
+      "purchase_events": 6947
+    },
+    {
+      "day": "2020-02-15",
+      "events": 126183,
+      "users": 17857,
+      "purchase_events": 6035
+    },
+    {
+      "day": "2020-02-16",
+      "events": 132936,
+      "users": 18418,
+      "purchase_events": 7404
+    },
+    {
+      "day": "2020-02-17",
+      "events": 154544,
+      "users": 20902,
+      "purchase_events": 9037
+    },
+    {
+      "day": "2020-02-18",
+      "events": 147805,
+      "users": 20484,
+      "purchase_events": 8691
+    },
+    {
+      "day": "2020-02-19",
+      "events": 150873,
+      "users": 20301,
+      "purchase_events": 8934
+    },
+    {
+      "day": "2020-02-20",
+      "events": 131305,
+      "users": 18778,
+      "purchase_events": 8382
+    },
+    {
+      "day": "2020-02-21",
+      "events": 116271,
+      "users": 17076,
+      "purchase_events": 7557
+    },
+    {
+      "day": "2020-02-22",
+      "events": 109037,
+      "users": 16004,
+      "purchase_events": 6189
+    },
+    {
+      "day": "2020-02-23",
+      "events": 120221,
+      "users": 15881,
+      "purchase_events": 6231
+    },
+    {
+      "day": "2020-02-24",
+      "events": 142914,
+      "users": 18332,
+      "purchase_events": 8024
+    },
+    {
+      "day": "2020-02-25",
+      "events": 157952,
+      "users": 20300,
+      "purchase_events": 9718
+    },
+    {
+      "day": "2020-02-26",
+      "events": 151357,
+      "users": 20265,
+      "purchase_events": 9126
+    },
+    {
+      "day": "2020-02-27",
+      "events": 147881,
+      "users": 20758,
+      "purchase_events": 9726
+    },
+    {
+      "day": "2020-02-28",
+      "events": 136356,
+      "users": 19164,
+      "purchase_events": 8328
+    },
+    {
+      "day": "2020-02-29",
+      "events": 136730,
+      "users": 19179,
+      "purchase_events": 7057
+    }
+  ],
+  "events_by_type": [
+    {
+      "month": "2019-Oct",
+      "event_type": "cart",
+      "events": 1232385
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "purchase",
+      "events": 245624
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "remove_from_cart",
+      "events": 762110
+    },
+    {
+      "month": "2019-Oct",
+      "event_type": "view",
+      "events": 1862164
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "cart",
+      "events": 1311807
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "purchase",
+      "events": 322417
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "remove_from_cart",
+      "events": 925481
+    },
+    {
+      "month": "2019-Nov",
+      "event_type": "view",
+      "events": 2076132
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "cart",
+      "events": 927124
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "purchase",
+      "events": 213176
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "remove_from_cart",
+      "events": 664655
+    },
+    {
+      "month": "2019-Dec",
+      "event_type": "view",
+      "events": 1728331
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "cart",
+      "events": 1148323
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "purchase",
+      "events": 263797
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "remove_from_cart",
+      "events": 815024
+    },
+    {
+      "month": "2020-Jan",
+      "event_type": "view",
+      "events": 2037608
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "cart",
+      "events": 1148694
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "purchase",
+      "events": 241993
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "remove_from_cart",
+      "events": 812409
+    },
+    {
+      "month": "2020-Feb",
+      "event_type": "view",
+      "events": 1953586
+    }
+  ],
+  "missing": {
+    "event_time": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "event_type": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "product_id": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "category_id": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "category_code": [
+      {
+        "month": "2019-Oct",
+        "missing": 4034806,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 4560089,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 3474821,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 4190033,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 4079497,
+        "whitespace_only": 0
+      }
+    ],
+    "brand": [
+      {
+        "month": "2019-Oct",
+        "missing": 1659261,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 1986029,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 1510289,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 1775630,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 1825908,
+        "whitespace_only": 0
+      }
+    ],
+    "price": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "user_id": [
+      {
+        "month": "2019-Oct",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 0,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 0,
+        "whitespace_only": 0
+      }
+    ],
+    "user_session": [
+      {
+        "month": "2019-Oct",
+        "missing": 637,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Nov",
+        "missing": 813,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2019-Dec",
+        "missing": 779,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Jan",
+        "missing": 1314,
+        "whitespace_only": 0
+      },
+      {
+        "month": "2020-Feb",
+        "missing": 1055,
+        "whitespace_only": 0
+      }
+    ]
+  },
+  "parsing": {
+    "2019-Oct": {
+      "invalid_timestamp": 0,
+      "invalid_product_id": 0,
+      "invalid_category_id": 0,
+      "invalid_user_id": 0,
+      "invalid_price": 0,
+      "nonpositive_id": 0,
+      "unknown_event_type": 0,
+      "negative_price": 20,
+      "zero_price": 6066,
+      "minimum_price": -79.37,
+      "maximum_price": 307.6,
+      "category_exceeds_float64_exact_integer": true
+    },
+    "2019-Nov": {
+      "invalid_timestamp": 0,
+      "invalid_product_id": 0,
+      "invalid_category_id": 0,
+      "invalid_user_id": 0,
+      "invalid_price": 0,
+      "nonpositive_id": 0,
+      "unknown_event_type": 0,
+      "negative_price": 17,
+      "zero_price": 11625,
+      "minimum_price": -79.37,
+      "maximum_price": 327.78,
+      "category_exceeds_float64_exact_integer": true
+    },
+    "2019-Dec": {
+      "invalid_timestamp": 0,
+      "invalid_product_id": 0,
+      "invalid_category_id": 0,
+      "invalid_user_id": 0,
+      "invalid_price": 0,
+      "nonpositive_id": 0,
+      "unknown_event_type": 0,
+      "negative_price": 18,
+      "zero_price": 7589,
+      "minimum_price": -79.37,
+      "maximum_price": 327.78,
+      "category_exceeds_float64_exact_integer": true
+    },
+    "2020-Jan": {
+      "invalid_timestamp": 0,
+      "invalid_product_id": 0,
+      "invalid_category_id": 0,
+      "invalid_user_id": 0,
+      "invalid_price": 0,
+      "nonpositive_id": 0,
+      "unknown_event_type": 0,
+      "negative_price": 39,
+      "zero_price": 7623,
+      "minimum_price": -79.37,
+      "maximum_price": 327.78,
+      "category_exceeds_float64_exact_integer": true
+    },
+    "2020-Feb": {
+      "invalid_timestamp": 0,
+      "invalid_product_id": 0,
+      "invalid_category_id": 0,
+      "invalid_user_id": 0,
+      "invalid_price": 0,
+      "nonpositive_id": 0,
+      "unknown_event_type": 0,
+      "negative_price": 37,
+      "zero_price": 71254,
+      "minimum_price": -79.37,
+      "maximum_price": 327.78,
+      "category_exceeds_float64_exact_integer": true
+    }
+  },
+  "totals": {
+    "events": 20692840,
+    "users": 1639358,
+    "first_event": "2019-10-01 00:00:00",
+    "last_event": "2020-02-29 23:59:59",
+    "purchase_events": 1287007,
+    "purchase_event_rate": 0.06219576433201049
+  },
+  "event_types": [
+    {
+      "event_type": "cart",
+      "events": 5768333
+    },
+    {
+      "event_type": "purchase",
+      "events": 1287007
+    },
+    {
+      "event_type": "remove_from_cart",
+      "events": 3979679
+    },
+    {
+      "event_type": "view",
+      "events": 9657821
+    }
+  ],
+  "duplicates": {
+    "duplicate_groups": 1045762,
+    "excess_rows": 1109098,
+    "rows_in_duplicate_groups": 2154860,
+    "largest_multiplicity": 48
+  },
+  "duplicate_definition": "Equal values in all nine original CSV fields after CSV decoding; no rows removed.",
+  "coverage": {
+    "zero_event_days": [],
+    "expected_days": 152,
+    "observed_days": 152,
+    "minimum_daily_events": 31096,
+    "largest_timestamp_gaps": [
+      {
+        "previous_event": "2020-01-22 02:52:08",
+        "event_ts": "2020-01-22 03:26:14",
+        "seconds": 2046
+      },
+      {
+        "previous_event": "2019-10-21 07:47:45",
+        "event_ts": "2019-10-21 07:54:15",
+        "seconds": 390
+      },
+      {
+        "previous_event": "2020-02-17 00:44:03",
+        "event_ts": "2020-02-17 00:50:14",
+        "seconds": 371
+      },
+      {
+        "previous_event": "2020-02-16 23:52:13",
+        "event_ts": "2020-02-16 23:57:32",
+        "seconds": 319
+      },
+      {
+        "previous_event": "2020-02-16 23:32:44",
+        "event_ts": "2020-02-16 23:37:54",
+        "seconds": 310
+      },
+      {
+        "previous_event": "2020-02-17 00:39:02",
+        "event_ts": "2020-02-17 00:44:03",
+        "seconds": 301
+      },
+      {
+        "previous_event": "2020-02-17 00:04:19",
+        "event_ts": "2020-02-17 00:08:45",
+        "seconds": 266
+      },
+      {
+        "previous_event": "2020-02-17 01:29:20",
+        "event_ts": "2020-02-17 01:33:08",
+        "seconds": 228
+      },
+      {
+        "previous_event": "2020-02-17 01:03:58",
+        "event_ts": "2020-02-17 01:07:43",
+        "seconds": 225
+      },
+      {
+        "previous_event": "2020-01-02 10:38:24",
+        "event_ts": "2020-01-02 10:41:48",
+        "seconds": 204
+      }
+    ],
+    "zero_event_hours": []
+  },
+  "identifiers": {
+    "user_ids_above_float64_exact_range": 0,
+    "category_ids_above_float64_exact_range": 20692840,
+    "product_ids_above_float64_exact_range": 0,
+    "non_uuid_session_rows": 0
+  },
+  "prices_by_event_type": [
+    {
+      "event_type": "cart",
+      "events": 5768333,
+      "negative_price": 0,
+      "zero_price": 49370,
+      "price_quantiles_p50_p95_p99": [
+        3.02,
+        14.6,
+        42.56
+      ]
+    },
+    {
+      "event_type": "purchase",
+      "events": 1287007,
+      "negative_price": 126,
+      "zero_price": 1,
+      "price_quantiles_p50_p95_p99": [
+        3.0,
+        14.27,
+        33.32
+      ]
+    },
+    {
+      "event_type": "remove_from_cart",
+      "events": 3979679,
+      "negative_price": 3,
+      "zero_price": 24296,
+      "price_quantiles_p50_p95_p99": [
+        3.33,
+        14.13,
+        38.89
+      ]
+    },
+    {
+      "event_type": "view",
+      "events": 9657821,
+      "negative_price": 2,
+      "zero_price": 30490,
+      "price_quantiles_p50_p95_p99": [
+        5.08,
+        52.22,
+        137.78
+      ]
+    }
+  ],
+  "session_consistency": {
+    "sessions": 4535941,
+    "sessions_with_multiple_users": 272,
+    "maximum_users_per_session": 8
+  },
+  "product_consistency": {
+    "products": 54571,
+    "products_with_multiple_category_ids": 1619,
+    "products_with_multiple_nonmissing_brands": 24,
+    "products_with_multiple_prices": 41508
+  },
+  "customer_activity": {
+    "users": 1639358,
+    "minimum_events": 1,
+    "maximum_events": 26752,
+    "mean_events": 12.622526623226898,
+    "event_quantiles_p50_p90_p95_p99": [
+      2,
+      18,
+      47,
+      214
+    ],
+    "active_day_quantiles_p50_p90_p95_p99": [
+      1,
+      3,
+      4,
+      12
+    ],
+    "single_event_users": 769492,
+    "single_day_users": 1256381,
+    "users_above_1000_events": 1104,
+    "users_above_10000_events": 1,
+    "first_week_first_seen_users": 137427
+  },
+  "cross_month_users": [
+    {
+      "months_observed": 1,
+      "users": 1434151
+    },
+    {
+      "months_observed": 2,
+      "users": 143450
+    },
+    {
+      "months_observed": 3,
+      "users": 37624
+    },
+    {
+      "months_observed": 4,
+      "users": 15410
+    },
+    {
+      "months_observed": 5,
+      "users": 8723
+    }
+  ],
+  "eligibility": {
+    "users": 1639358,
+    "eligible_users": 1256629,
+    "ineligible_users": 382729,
+    "eligible_positive_users": 23760,
+    "censored_observed_positive_users": 2249,
+    "eligible_purchase_rate": 0.018907728534038288,
+    "latest_eligible_first_seen": "2020-01-23 23:59:45"
+  },
+  "gap_sensitivity": {
+    "threshold_seconds_assumed": 1800,
+    "suspected_gaps": [
+      {
+        "gap_start": "2020-01-22 02:52:09",
+        "gap_end": "2020-01-22 03:26:14"
+      }
+    ],
+    "eligible_users": 885659,
+    "positive_users": 19497,
+    "purchase_rate": 0.022014116042404584
+  },
+  "first_week_purchase_subgroups": [
+    {
+      "purchased_in_first_week": false,
+      "eligible_users": 1193184,
+      "positive_users": 17237,
+      "purchase_rate": 0.014446221203100277
+    },
+    {
+      "purchased_in_first_week": true,
+      "eligible_users": 63445,
+      "positive_users": 6523,
+      "purchase_rate": 0.102813460477579
+    }
+  ],
+  "cohorts_by_prediction_month": [
+    {
+      "prediction_month": "2019-10",
+      "users": 328535,
+      "eligible_users": 328535,
+      "positive_users": 10092,
+      "purchase_rate": 0.030718188320879053
+    },
+    {
+      "prediction_month": "2019-11",
+      "users": 306355,
+      "eligible_users": 306355,
+      "positive_users": 6333,
+      "purchase_rate": 0.020672096097664475
+    },
+    {
+      "prediction_month": "2019-12",
+      "users": 320203,
+      "eligible_users": 320203,
+      "positive_users": 3726,
+      "purchase_rate": 0.011636368178936487
+    },
+    {
+      "prediction_month": "2020-01",
+      "users": 311421,
+      "eligible_users": 301536,
+      "positive_users": 3609,
+      "purchase_rate": 0.011968720152817573
+    },
+    {
+      "prediction_month": "2020-02",
+      "users": 302871,
+      "eligible_users": 0,
+      "positive_users": 0,
+      "purchase_rate": null
+    },
+    {
+      "prediction_month": "2020-03",
+      "users": 69973,
+      "eligible_users": 0,
+      "positive_users": 0,
+      "purchase_rate": null
+    }
+  ],
+  "splits": [
+    {
+      "split": "train",
+      "prediction_start": "2019-10-08",
+      "prediction_end_exclusive": "2019-11-01",
+      "users": 328535,
+      "positive_users": 10092,
+      "purchase_rate": 0.030718188320879053,
+      "latest_outcome_end": "2019-11-30 23:59:57"
+    },
+    {
+      "split": "validation",
+      "prediction_start": "2019-12-01",
+      "prediction_end_exclusive": "2019-12-16",
+      "users": 157349,
+      "positive_users": 1985,
+      "purchase_rate": 0.012615269242257657,
+      "latest_outcome_end": "2020-01-14 23:59:06"
+    },
+    {
+      "split": "test",
+      "prediction_start": "2020-01-15",
+      "prediction_end_exclusive": "2020-01-30",
+      "users": 167822,
+      "positive_users": 2140,
+      "purchase_rate": 0.012751605868122178,
+      "latest_outcome_end": "2020-02-28 23:59:54"
+    }
+  ],
+  "conservative_splits": [
+    {
+      "split": "train",
+      "users": 328535,
+      "positive_users": 10092,
+      "purchase_rate": 0.030718188320879053
+    },
+    {
+      "split": "validation",
+      "users": 157349,
+      "positive_users": 1985,
+      "purchase_rate": 0.012615269242257657
+    },
+    {
+      "split": "test",
+      "users": 9770,
+      "positive_users": 135,
+      "purchase_rate": 0.013817809621289662
+    }
+  ],
+  "earlier_conservative_splits": [
+    {
+      "split": "train",
+      "prediction_start": "2019-10-08",
+      "prediction_end_exclusive": "2019-10-13",
+      "users": 87760,
+      "positive_users": 3814,
+      "purchase_rate": 0.04345943482224248,
+      "latest_outcome_end": "2019-11-11 23:59:59"
+    },
+    {
+      "split": "validation",
+      "prediction_start": "2019-11-12",
+      "prediction_end_exclusive": "2019-11-17",
+      "users": 53089,
+      "positive_users": 1150,
+      "purchase_rate": 0.0216617378364633,
+      "latest_outcome_end": "2019-12-16 23:59:54"
+    },
+    {
+      "split": "test",
+      "prediction_start": "2019-12-17",
+      "prediction_end_exclusive": "2019-12-22",
+      "users": 51444,
+      "positive_users": 547,
+      "purchase_rate": 0.010632921234740689,
+      "latest_outcome_end": "2020-01-20 23:57:38"
+    }
+  ],
+  "elapsed_seconds": 94.11,
+  "peak_process_rss_bytes": 1289404416,
+  "storage_bytes": {
+    "csv": 2434277452,
+    "parquet": 516380933
+  }
+}

@@ -2,20 +2,21 @@
 
 A staged Customer Intelligence & Causal Decision Science portfolio project.
 
-**Current stage: Phase 0 — setup and dataset feasibility completed.**
+**Current stage: Phase 1 — data acquisition and quality audit completed.**
 
 The first planned module predicts whether a customer purchases in the next
 30 days using their first seven observed days of activity. The prediction is
 made at the end of those seven days. A separate causal inference and uplift
 modeling module is a later project stage; it has not been implemented.
 
-Completed: repository inspection, minimal Python scaffold, dataset source and
-usage checks, a bounded inspection of 100 real events, and a documented window
-definition and evaluation proposal. No models, feature/label pipeline, API,
-dashboard, or cloud resources have been built. No full dataset was downloaded.
+Completed: all five official monthly files acquired and verified locally;
+memory-bounded DuckDB audit; customer-window feasibility counts; synthetic
+boundary and safety tests. No customer feature pipeline, model, API, dashboard,
+or cloud resources have been built. The causal module remains deferred.
 
-Read [the Phase 0 feasibility report](docs/phase0_feasibility.md) for the schema,
-evidence, limitations, resource plan, and exact next step.
+Read [the Phase 1 findings](docs/phase1_report.md) for actual statistics,
+data-quality decisions, eligibility, and the evaluation proposal. The
+[Phase 0 report](docs/phase0_feasibility.md) is retained as historical planning.
 
 ## Data and attribution
 
@@ -29,16 +30,28 @@ Raw data stays outside Git. See [data handling](data/README.md).
 
 ## Local setup
 
-Python 3.11 or newer; no runtime dependencies are needed for Phase 0.
+Python 3.11 or newer; DuckDB is pinned in `pyproject.toml`. Verified locally
+with Python 3.14.7 and DuckDB 2.0.0.
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
+python -m pip install -e .
+python -m unittest discover -s tests -v
 ```
 
-`src/growthlab/` is the future Python package; `docs/` contains the feasibility
-report and source evidence. No dependency installation or data download is
-required to review this stage.
+To reproduce acquisition and the audit from the repository root:
 
-Next, after approval of the download scope: acquire the official monthly files
-and implement a bounded, read-only data audit before creating features or labels.
+```sh
+growthlab-acquire
+growthlab-audit --memory 1GB --coverage-end '2020-03-01 00:00:00'
+```
+
+Acquisition uses the free public Kaggle API sequentially, checks disk space,
+verifies ZIP CRCs, records hashes, and skips checksum-verified existing CSVs.
+It refuses to overwrite unmanaged or changed existing files. No Kaggle token
+is needed for this verified source. The audit writes ignored local Parquet and
+DuckDB files plus a small aggregate JSON report in `docs/phase1/`.
+
+Next: review the duplicate, price, logging-gap, and cohort decisions in the
+Phase 1 report before authorizing a customer feature pipeline or modeling.

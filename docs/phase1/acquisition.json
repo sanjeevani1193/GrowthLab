@@ -1,0 +1,62 @@
+{
+  "dataset_ref": "mkechinov/ecommerce-events-history-in-cosmetics-shop",
+  "version": 6,
+  "license": "Data files \u00a9 Original Authors",
+  "attribution": "https://www.kaggle.com/datasets/mkechinov/ecommerce-events-history-in-cosmetics-shop ; https://rees46.com",
+  "metadata_sources": [
+    "https://www.kaggle.com/api/v1/datasets/view/mkechinov/ecommerce-events-history-in-cosmetics-shop",
+    "https://www.kaggle.com/api/v1/datasets/list/mkechinov/ecommerce-events-history-in-cosmetics-shop"
+  ],
+  "files": [
+    {
+      "name": "2019-Oct.csv",
+      "source_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2019-Oct.csv?datasetVersionNumber=6",
+      "downloaded_at_utc": "2026-11-04T11:33:13.019754+00:00",
+      "csv_bytes": 482542278,
+      "zip_bytes": 87127708,
+      "csv_sha256": "d87b1124a003151592e722996c6295aba2d286626c5db624c49d749877478c23",
+      "zip_sha256": "2ff4afaf3e18e072dac566245c57613a42ddd1927b4fbc36e82da40a961d144e",
+      "zip_crc_verified": true
+    },
+    {
+      "name": "2019-Nov.csv",
+      "source_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2019-Nov.csv?datasetVersionNumber=6",
+      "downloaded_at_utc": "2026-11-04T11:33:19.167798+00:00",
+      "csv_bytes": 545839412,
+      "zip_bytes": 101654042,
+      "csv_sha256": "25b03eea9020a64f97659a4cbce9d801ca81872910ce72348bfa607817539755",
+      "zip_sha256": "4b2f18a74e159d929b93ec1ca01629c115e492906d97a073aebd1acd76d1b358",
+      "zip_crc_verified": true
+    },
+    {
+      "name": "2019-Dec.csv",
+      "source_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2019-Dec.csv?datasetVersionNumber=6",
+      "downloaded_at_utc": "2026-11-04T11:33:24.085631+00:00",
+      "csv_bytes": 415302972,
+      "zip_bytes": 77358943,
+      "csv_sha256": "ebf98f504e238109efa406d26a26a90e0d467faa938bf96b68e3fea663d2008e",
+      "zip_sha256": "2cbd4915d652481a32712882793d76456b3f8774b3edb68039763cd443d8e3e1",
+      "zip_crc_verified": true
+    },
+    {
+      "name": "2020-Jan.csv",
+      "source_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2020-Jan.csv?datasetVersionNumber=6",
+      "downloaded_at_utc": "2026-11-04T11:33:29.832727+00:00",
+      "csv_bytes": 501792804,
+      "zip_bytes": 94152636,
+      "csv_sha256": "c6d8d6bdcf0b6bccb61a14447afdca08e95683f34f279befb1ac580ddc214853",
+      "zip_sha256": "f690588c004dc0e677d5a56a8f50f920cab53bd884bf1f57caabee964efa27dc",
+      "zip_crc_verified": true
+    },
+    {
+      "name": "2020-Feb.csv",
+      "source_url": "https://www.kaggle.com/api/v1/datasets/download/mkechinov/ecommerce-events-history-in-cosmetics-shop/2020-Feb.csv?datasetVersionNumber=6",
+      "downloaded_at_utc": "2026-11-04T11:33:35.311344+00:00",
+      "csv_bytes": 488799986,
+      "zip_bytes": 90573331,
+      "csv_sha256": "605c76fd75b01b9b60d1ae5f412d2a774158fdd18e0a95377b3c547a556f1c1b",
+      "zip_sha256": "3a0f287a7ff1206ebf88d7c0d50f9078f0bd905561ad805587dcfae23404f91b",
+      "zip_crc_verified": true
+    }
+  ]
+}
