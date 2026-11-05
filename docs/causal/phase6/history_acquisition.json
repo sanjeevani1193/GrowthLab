@@ -1,0 +1,16 @@
+{
+  "retrieved_at_utc": "2026-11-05T12:26:36.982664+00:00",
+  "archive_url": "https://storage.yandexcloud.net/datasouls-ods/materials/9c6913e5/retailhero-uplift.zip",
+  "archive_etag": "\"b2d89a8d385f1a14e392b9fa1a6a5783\"",
+  "archive_bytes": 625190754,
+  "member": "data/purchases.csv",
+  "path": "data/retailhero/raw/purchases.csv",
+  "bytes": 4463775504,
+  "compressed_member_bytes": 611056980,
+  "zip_crc32": "7beba56f",
+  "sha256": "a9e132e3dde95655a0074622bb93af0616b7c4f047e71c4ce7322e2fe6d262c1",
+  "elapsed_seconds": 52.3216245829999,
+  "source_timing_evidence": "Official competition describes purchases as prior to communication. No exact campaign cutoff or assignment protocol supplied.",
+  "attribution": "X5 Retail Group / RetailHero, hosted by ODS.AI",
+  "license": "No explicit dataset reuse license found on official data page or mirrored card. Attribution is not a grant of redistribution rights. Data remain local; no commercial-use permission asserted."
+}

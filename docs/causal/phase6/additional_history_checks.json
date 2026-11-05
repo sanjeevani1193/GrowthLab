@@ -1,0 +1,10 @@
+{
+  "quantity_negative": 0,
+  "quantity_zero": 2707278,
+  "history_clients_missing_profile": 0,
+  "profile_clients_missing_history": 0,
+  "global_transaction_ids_reused_across_customers": 28,
+  "latest_feature_at_or_after_proxy_cutoff": 0,
+  "raw_basket_numeric_parse_failures": 0,
+  "raw_basket_values_changed_by_decimal_18_4": 0
+}

@@ -1,0 +1,11 @@
+{
+  "method": "Independent Python raw CSV scan; deterministic training-only customer sample selected by SHA256(client_id), no outcomes accessed.",
+  "sample_customers": 12,
+  "features_per_customer": 8,
+  "comparisons": 96,
+  "mismatches": 0,
+  "raw_rows_scanned": 45786568,
+  "elapsed_seconds": 39.109167583999806,
+  "history_sha256": "a9e132e3dde95655a0074622bb93af0616b7c4f047e71c4ce7322e2fe6d262c1",
+  "feature_sha256": "1acd63deb00f75f2d32b0c19f878a88981f55cb0c54ffba39fe5dbecca978389"
+}

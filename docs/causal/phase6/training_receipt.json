@@ -1,0 +1,53 @@
+{
+  "trained_at_utc": "2026-11-05T12:31:52.005177+00:00",
+  "plan_sha256": "5ee58802a66d635120350940ae315707e2556e8c56b076c63325c3cea891270f",
+  "feature_sha256": "1acd63deb00f75f2d32b0c19f878a88981f55cb0c54ffba39fe5dbecca978389",
+  "feature_names": [
+    "transaction_count",
+    "active_shopping_days",
+    "distinct_products",
+    "distinct_stores",
+    "historical_spend",
+    "mean_transaction_value",
+    "days_since_last_purchase",
+    "transactions_per_active_day"
+  ],
+  "model_path": "data/retailhero/phase6/models/uplift_models.joblib",
+  "model_sha256": "36598898fcaf1aa29412ce083917d7562ba3eb68fc1d7a4dca34e4eb321a8fcb",
+  "train_n": 120022,
+  "train_control": 60034,
+  "train_treated": 59988,
+  "constant_uplift": 0.033902075303512746,
+  "fit_counts": {
+    "response": 120022,
+    "s_learner": 120022,
+    "t_control": 60034,
+    "t_treated": 59988
+  },
+  "iterations": {
+    "response": 150,
+    "s_learner": 150,
+    "t_control": 150,
+    "t_treated": 150
+  },
+  "preprocessing": "Native train-fitted histogram bins and native missing handling; no data-fitted preprocessing outside training.",
+  "versions": {
+    "python": "3.14.7",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "duckdb": "2.0.0"
+  },
+  "resources": {
+    "elapsed_seconds": 4.371161250000114,
+    "threads": 1,
+    "process_maxrss_bytes": 252182528
+  },
+  "source_sha256": {
+    "src/growthlab/retailhero/acquire.py": "7f9c562ccf7001711c543b01b3f92a3d92478783e0af4a61cf87b4bdd390b216",
+    "src/growthlab/retailhero/__init__.py": "e6eb8773767fd01d91d2144d28301d72a2fdf0714d64229bb26c26260d53325c",
+    "src/growthlab/retailhero/experiment.py": "b49a2f34aa3dc248e96276237a801309444f2f28ccdf7926c06e639cb6acb3be",
+    "src/growthlab/retailhero/uplift_metrics.py": "250fda4047b882d2ceba653401e90d46c7e987428612c9ec28642911974578f7",
+    "src/growthlab/retailhero/uplift.py": "862fcb9da05e0d5ffaf7291f4fef4ceb6e94822d440acd751e56c9a8eac233f1",
+    "src/growthlab/retailhero/history.py": "96c8fdebac8f0827fdb631a29bd5c54942149534db888446c34f4f7625cf6538"
+  }
+}

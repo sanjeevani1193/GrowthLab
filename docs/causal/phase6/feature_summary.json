@@ -1,0 +1,103 @@
+{
+  "created_at_utc": "2026-11-05T12:30:18.036330+00:00",
+  "history_sha256": "a9e132e3dde95655a0074622bb93af0616b7c4f047e71c4ce7322e2fe6d262c1",
+  "split_sha256": "f38834e436b38b6483af7e4adfafda695bb2ffc9a178cf050b7f6c00a1d34169",
+  "feature_path": "data/retailhero/phase6/customer_features.parquet",
+  "feature_sha256": "1acd63deb00f75f2d32b0c19f878a88981f55cb0c54ffba39fe5dbecca978389",
+  "features": [
+    "transaction_count",
+    "active_shopping_days",
+    "distinct_products",
+    "distinct_stores",
+    "historical_spend",
+    "mean_transaction_value",
+    "days_since_last_purchase",
+    "transactions_per_active_day"
+  ],
+  "counts": [
+    {
+      "split": "final_test",
+      "n": 40009,
+      "no_history": 0
+    },
+    {
+      "split": "train",
+      "n": 120022,
+      "no_history": 0
+    },
+    {
+      "split": "validation",
+      "n": 40008,
+      "no_history": 0
+    }
+  ],
+  "summaries": {
+    "transaction_count": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 320.0,
+      "mean": 20.120821439819235,
+      "median": 15.0
+    },
+    "active_shopping_days": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 115.0,
+      "mean": 17.87419953109144,
+      "median": 14.0
+    },
+    "distinct_products": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 1364.0,
+      "mean": 75.28725898449802,
+      "median": 62.0
+    },
+    "distinct_stores": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 95.0,
+      "mean": 2.920690465359255,
+      "median": 2.0
+    },
+    "historical_spend": {
+      "missing": 0,
+      "min": 1.04,
+      "max": 504490.38,
+      "mean": 8597.521954619397,
+      "median": 6102.44
+    },
+    "mean_transaction_value": {
+      "missing": 0,
+      "min": 1.04,
+      "max": 7694.0,
+      "mean": 495.78322191128467,
+      "median": 393.99984615384614
+    },
+    "days_since_last_purchase": {
+      "missing": 0,
+      "min": 0.028148148148148148,
+      "max": 22.10587962962963,
+      "mean": 6.3147562029224,
+      "median": 4.423368055555556
+    },
+    "transactions_per_active_day": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 11.666666666666666,
+      "mean": 1.1008049139899043,
+      "median": 1.0526315789473684
+    }
+  },
+  "proxy_cutoff": "2019-03-19 00:00:00",
+  "cutoff_interpretation": "Midnight after last observed historical day, in source naive time. Not a verified campaign date; recency has an unknown common offset from true campaign time.",
+  "profile_policy": "No client-profile predictors; snapshot timing unverified. Ages and inconsistent redemption dates remain audited in Phase 5, never imputed or dropped here.",
+  "monetary_policy": "One total per customer/transaction. Exclude negative/inconsistent/missing totals from monetary summaries only; retain those transactions as activity. Zero totals retained. No price-derived filtering of customers.",
+  "resources": {
+    "memory_limit": "512MB",
+    "threads": 1,
+    "max_spill": "8GB",
+    "elapsed_seconds": 164.37313325000014,
+    "process_maxrss_bytes": 786792448
+  }
+}

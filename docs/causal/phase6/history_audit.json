@@ -1,0 +1,617 @@
+{
+  "rows": 45786568,
+  "users": 400162,
+  "first_timestamp": "2018-11-21 21:02:33",
+  "last_timestamp": "2019-03-18 23:40:03",
+  "min_purchase_sum": 0.0,
+  "max_purchase_sum": 35149.04,
+  "negative_price_rows": 0,
+  "zero_price_rows": 620,
+  "nonpositive_quantity_rows": 2707278,
+  "malformed_client_ids": 0,
+  "schema": [
+    {
+      "column_name": "client_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "transaction_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "transaction_datetime",
+      "column_type": "TIMESTAMP",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "regular_points_received",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "express_points_received",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "regular_points_spent",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "express_points_spent",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "purchase_sum",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "store_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "product_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "product_quantity",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "trn_sum_from_iss",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "trn_sum_from_red",
+      "column_type": "DECIMAL(18,4)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    }
+  ],
+  "missing": {
+    "client_id": 0,
+    "transaction_id": 0,
+    "transaction_datetime": 0,
+    "regular_points_received": 0,
+    "express_points_received": 0,
+    "regular_points_spent": 0,
+    "express_points_spent": 0,
+    "purchase_sum": 0,
+    "store_id": 0,
+    "product_id": 0,
+    "product_quantity": 0,
+    "trn_sum_from_iss": 0,
+    "trn_sum_from_red": 42743212
+  },
+  "transaction_quality": {
+    "transactions": 8045229,
+    "inconsistent_timestamps": 0,
+    "inconsistent_stores": 0,
+    "inconsistent_amounts": 0,
+    "negative_amount_transactions": 0,
+    "zero_amount_transactions": 567,
+    "max_items_per_transaction": 116
+  },
+  "typed_duplicate_row_excess": 0,
+  "events_by_day": [
+    {
+      "day": "2018-11-21",
+      "rows": 190
+    },
+    {
+      "day": "2018-11-22",
+      "rows": 338469
+    },
+    {
+      "day": "2018-11-23",
+      "rows": 379366
+    },
+    {
+      "day": "2018-11-24",
+      "rows": 356983
+    },
+    {
+      "day": "2018-11-25",
+      "rows": 320488
+    },
+    {
+      "day": "2018-11-26",
+      "rows": 340280
+    },
+    {
+      "day": "2018-11-27",
+      "rows": 329950
+    },
+    {
+      "day": "2018-11-28",
+      "rows": 334298
+    },
+    {
+      "day": "2018-11-29",
+      "rows": 347801
+    },
+    {
+      "day": "2018-11-30",
+      "rows": 386950
+    },
+    {
+      "day": "2018-12-01",
+      "rows": 373644
+    },
+    {
+      "day": "2018-12-02",
+      "rows": 330191
+    },
+    {
+      "day": "2018-12-03",
+      "rows": 350240
+    },
+    {
+      "day": "2018-12-04",
+      "rows": 328373
+    },
+    {
+      "day": "2018-12-05",
+      "rows": 337011
+    },
+    {
+      "day": "2018-12-06",
+      "rows": 340250
+    },
+    {
+      "day": "2018-12-07",
+      "rows": 381736
+    },
+    {
+      "day": "2018-12-08",
+      "rows": 364194
+    },
+    {
+      "day": "2018-12-09",
+      "rows": 317216
+    },
+    {
+      "day": "2018-12-10",
+      "rows": 323159
+    },
+    {
+      "day": "2018-12-11",
+      "rows": 316127
+    },
+    {
+      "day": "2018-12-12",
+      "rows": 323012
+    },
+    {
+      "day": "2018-12-13",
+      "rows": 325368
+    },
+    {
+      "day": "2018-12-14",
+      "rows": 360445
+    },
+    {
+      "day": "2018-12-15",
+      "rows": 344786
+    },
+    {
+      "day": "2018-12-16",
+      "rows": 305082
+    },
+    {
+      "day": "2018-12-17",
+      "rows": 328904
+    },
+    {
+      "day": "2018-12-18",
+      "rows": 318550
+    },
+    {
+      "day": "2018-12-19",
+      "rows": 324985
+    },
+    {
+      "day": "2018-12-20",
+      "rows": 319551
+    },
+    {
+      "day": "2018-12-21",
+      "rows": 351157
+    },
+    {
+      "day": "2018-12-22",
+      "rows": 346908
+    },
+    {
+      "day": "2018-12-23",
+      "rows": 312213
+    },
+    {
+      "day": "2018-12-24",
+      "rows": 346092
+    },
+    {
+      "day": "2018-12-25",
+      "rows": 344078
+    },
+    {
+      "day": "2018-12-26",
+      "rows": 359948
+    },
+    {
+      "day": "2018-12-27",
+      "rows": 376945
+    },
+    {
+      "day": "2018-12-28",
+      "rows": 414105
+    },
+    {
+      "day": "2018-12-29",
+      "rows": 449503
+    },
+    {
+      "day": "2018-12-30",
+      "rows": 621704
+    },
+    {
+      "day": "2018-12-31",
+      "rows": 428027
+    },
+    {
+      "day": "2019-01-01",
+      "rows": 99966
+    },
+    {
+      "day": "2019-01-02",
+      "rows": 224540
+    },
+    {
+      "day": "2019-01-03",
+      "rows": 253083
+    },
+    {
+      "day": "2019-01-04",
+      "rows": 292622
+    },
+    {
+      "day": "2019-01-05",
+      "rows": 316199
+    },
+    {
+      "day": "2019-01-06",
+      "rows": 345094
+    },
+    {
+      "day": "2019-01-07",
+      "rows": 301200
+    },
+    {
+      "day": "2019-01-08",
+      "rows": 305590
+    },
+    {
+      "day": "2019-01-09",
+      "rows": 322610
+    },
+    {
+      "day": "2019-01-10",
+      "rows": 341313
+    },
+    {
+      "day": "2019-01-11",
+      "rows": 379351
+    },
+    {
+      "day": "2019-01-12",
+      "rows": 379858
+    },
+    {
+      "day": "2019-01-13",
+      "rows": 344646
+    },
+    {
+      "day": "2019-01-14",
+      "rows": 348190
+    },
+    {
+      "day": "2019-01-15",
+      "rows": 359463
+    },
+    {
+      "day": "2019-01-16",
+      "rows": 363037
+    },
+    {
+      "day": "2019-01-17",
+      "rows": 359595
+    },
+    {
+      "day": "2019-01-18",
+      "rows": 397434
+    },
+    {
+      "day": "2019-01-19",
+      "rows": 389986
+    },
+    {
+      "day": "2019-01-20",
+      "rows": 333669
+    },
+    {
+      "day": "2019-01-21",
+      "rows": 371945
+    },
+    {
+      "day": "2019-01-22",
+      "rows": 362507
+    },
+    {
+      "day": "2019-01-23",
+      "rows": 367423
+    },
+    {
+      "day": "2019-01-24",
+      "rows": 375954
+    },
+    {
+      "day": "2019-01-25",
+      "rows": 407414
+    },
+    {
+      "day": "2019-01-26",
+      "rows": 404897
+    },
+    {
+      "day": "2019-01-27",
+      "rows": 348498
+    },
+    {
+      "day": "2019-01-28",
+      "rows": 385727
+    },
+    {
+      "day": "2019-01-29",
+      "rows": 378272
+    },
+    {
+      "day": "2019-01-30",
+      "rows": 384635
+    },
+    {
+      "day": "2019-01-31",
+      "rows": 376829
+    },
+    {
+      "day": "2019-02-01",
+      "rows": 416951
+    },
+    {
+      "day": "2019-02-02",
+      "rows": 409931
+    },
+    {
+      "day": "2019-02-03",
+      "rows": 353121
+    },
+    {
+      "day": "2019-02-04",
+      "rows": 385030
+    },
+    {
+      "day": "2019-02-05",
+      "rows": 410990
+    },
+    {
+      "day": "2019-02-06",
+      "rows": 426985
+    },
+    {
+      "day": "2019-02-07",
+      "rows": 422797
+    },
+    {
+      "day": "2019-02-08",
+      "rows": 486469
+    },
+    {
+      "day": "2019-02-09",
+      "rows": 459906
+    },
+    {
+      "day": "2019-02-10",
+      "rows": 400843
+    },
+    {
+      "day": "2019-02-11",
+      "rows": 434476
+    },
+    {
+      "day": "2019-02-12",
+      "rows": 429750
+    },
+    {
+      "day": "2019-02-13",
+      "rows": 431314
+    },
+    {
+      "day": "2019-02-14",
+      "rows": 448520
+    },
+    {
+      "day": "2019-02-15",
+      "rows": 501046
+    },
+    {
+      "day": "2019-02-16",
+      "rows": 489902
+    },
+    {
+      "day": "2019-02-17",
+      "rows": 432160
+    },
+    {
+      "day": "2019-02-18",
+      "rows": 436732
+    },
+    {
+      "day": "2019-02-19",
+      "rows": 426164
+    },
+    {
+      "day": "2019-02-20",
+      "rows": 438065
+    },
+    {
+      "day": "2019-02-21",
+      "rows": 452333
+    },
+    {
+      "day": "2019-02-22",
+      "rows": 509035
+    },
+    {
+      "day": "2019-02-23",
+      "rows": 466061
+    },
+    {
+      "day": "2019-02-24",
+      "rows": 384115
+    },
+    {
+      "day": "2019-02-25",
+      "rows": 478923
+    },
+    {
+      "day": "2019-02-26",
+      "rows": 439117
+    },
+    {
+      "day": "2019-02-27",
+      "rows": 499767
+    },
+    {
+      "day": "2019-02-28",
+      "rows": 482871
+    },
+    {
+      "day": "2019-03-01",
+      "rows": 519936
+    },
+    {
+      "day": "2019-03-02",
+      "rows": 521912
+    },
+    {
+      "day": "2019-03-03",
+      "rows": 457953
+    },
+    {
+      "day": "2019-03-04",
+      "rows": 473653
+    },
+    {
+      "day": "2019-03-05",
+      "rows": 465849
+    },
+    {
+      "day": "2019-03-06",
+      "rows": 475934
+    },
+    {
+      "day": "2019-03-07",
+      "rows": 587661
+    },
+    {
+      "day": "2019-03-08",
+      "rows": 520138
+    },
+    {
+      "day": "2019-03-09",
+      "rows": 457045
+    },
+    {
+      "day": "2019-03-10",
+      "rows": 443686
+    },
+    {
+      "day": "2019-03-11",
+      "rows": 499124
+    },
+    {
+      "day": "2019-03-12",
+      "rows": 424377
+    },
+    {
+      "day": "2019-03-13",
+      "rows": 425345
+    },
+    {
+      "day": "2019-03-14",
+      "rows": 491228
+    },
+    {
+      "day": "2019-03-15",
+      "rows": 552207
+    },
+    {
+      "day": "2019-03-16",
+      "rows": 460425
+    },
+    {
+      "day": "2019-03-17",
+      "rows": 407371
+    },
+    {
+      "day": "2019-03-18",
+      "rows": 429524
+    }
+  ]
+}

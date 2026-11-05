@@ -1,0 +1,40 @@
+{
+  "validation_n": 40008,
+  "predictions_identical": true,
+  "all_500_bootstrap_draws_identical": true,
+  "saved_metrics_and_intervals_match": true,
+  "training_time_source_hashes_match": true,
+  "no_refitting": true,
+  "final_holdout_accessed": false,
+  "paired_curve_comparisons": {
+    "s_learner minus constant": {
+      "auuc_difference": 0.004144272125378962,
+      "ci95": [
+        -0.001918086688601092,
+        0.009765820999717276
+      ]
+    },
+    "s_learner minus response": {
+      "auuc_difference": 0.007281645800414002,
+      "ci95": [
+        -0.0012201052840821547,
+        0.015428562707774382
+      ]
+    },
+    "t_learner minus constant": {
+      "auuc_difference": 0.0014443009718392262,
+      "ci95": [
+        -0.004846866090938982,
+        0.006938667974013676
+      ]
+    },
+    "t_learner minus response": {
+      "auuc_difference": 0.004581674646874267,
+      "ci95": [
+        -0.0028428535886004156,
+        0.011979059303366273
+      ]
+    }
+  },
+  "validation_summary_sha256": "4c9af149a00fb55b6daef8ebbee6fb91f52137d1ef935ca8875f030d707c73f3"
+}
