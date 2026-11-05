@@ -1,0 +1,10 @@
+{
+  "verified_at_utc": "2026-11-05T14:35:28.397263+00:00",
+  "protocol_sha256": "a56005e54a3e8d18db276c095685bf5bd8db306459b7bd0a05fd127e6d96cbfd",
+  "final_summary_sha256": "c26bfe05eb95b77769225d5867257bc909d3bd14dbc3a9c2a68984c6b7478407",
+  "n": 40009,
+  "all_final_statistics_identical": true,
+  "all_500_paired_bootstrap_draws_identical": true,
+  "prior_file_states_unchanged": 82,
+  "no_refitting_or_new_outcome_access": true
+}

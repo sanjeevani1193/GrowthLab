@@ -1,0 +1,43 @@
+{
+  "ready_at_utc": "2026-11-05T14:33:59.897923+00:00",
+  "protocol_sha256": "a56005e54a3e8d18db276c095685bf5bd8db306459b7bd0a05fd127e6d96cbfd",
+  "cohort": {
+    "n": 40009,
+    "control_n": 20012,
+    "treated_n": 19997,
+    "sorted_final_id_treatment_sha256": "9801838a2b3636309dc5775af74f2c35b03da34e9111d0a07e7d1c467b929342",
+    "split_counts": [
+      {
+        "split": "final_test",
+        "treatment_flg": 0,
+        "n": 20012
+      },
+      {
+        "split": "final_test",
+        "treatment_flg": 1,
+        "n": 19997
+      },
+      {
+        "split": "train",
+        "treatment_flg": 0,
+        "n": 60034
+      },
+      {
+        "split": "train",
+        "treatment_flg": 1,
+        "n": 59988
+      },
+      {
+        "split": "validation",
+        "treatment_flg": 0,
+        "n": 20012
+      },
+      {
+        "split": "validation",
+        "treatment_flg": 1,
+        "n": 19996
+      }
+    ]
+  },
+  "final_outcomes_accessed": false
+}

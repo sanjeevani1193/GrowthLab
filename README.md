@@ -7,9 +7,11 @@ It includes acquisition/audit, reviewed cleaning policies, customer features,
 chronological model comparison, validation-only calibration, and a frozen test
 benchmark. The completed local run passes **all 66 tests with no skips**.
 
-RetailHero, causal inference, uplift modeling, and further decision-intelligence
-modules are **planned only**. They have not been implemented. No dashboard, API,
-cloud deployment, or campaign-effect experiment is included.
+**Module 2 — RetailHero SMS experiment and uplift-policy evaluation is complete
+through the final held-out evaluation (Phase 7), pending review and commit.**
+It uses a separate retailer dataset and customer population from Module 1.
+Campaign-effect estimates depend on an unverified randomization protocol and
+treatment-propensity assumptions. No dashboard, API, or cloud deployment is included.
 
 ## Business problem and prediction target
 
@@ -141,7 +143,8 @@ Other limitations include one retailer, five months of history, short scoring
 cohorts, first-observation truncation, imperfect identity/order semantics and
 uncertain instrumentation. **Predictive lift measures purchaser concentration;
 it does not show that targeting changes behavior or increases revenue.** No
-causal inference or uplift model has been implemented.
+intervention-effect estimation is performed in Module 1; the RetailHero study
+below is separate.
 
 ## Reproduction and verification
 
@@ -221,5 +224,81 @@ and plots are versioned. See [the data directory guide](data/README.md).
 | [Final aggregate evidence](docs/phase4/test_summary.json) | Full-precision metrics, checks, hashes and resources |
 
 Reports and frozen receipts retain their original phase-time status for
-provenance. This README records the current state: **Module 1 is complete**.
-Further causal, uplift and decision-intelligence modules remain future work.
+provenance. Module 1 remains complete and unchanged; Module 2 results follow.
+
+## Module 2 — RetailHero SMS targeting: final independent evaluation
+
+This is a separate study of **200,039 experimental customers**, using the
+[official X5 RetailHero data](https://ods.ai/competitions/x5-retailhero-uplift-modeling/data).
+The source describes historical purchases before communication and a subsequent
+binary purchase outcome. Attribution: X5 Retail Group / RetailHero, hosted by ODS.AI.
+An explicit reuse license and assignment protocol were not found in the inspected
+material; raw data remain local. These customers, features, and outcomes are not
+joined to REES46, and the two studies' predictive lift/uplift metrics are not interchangeable.
+
+Phase 5 froze treatment-stratified cohorts: **120,022 train / 40,008 validation /
+40,009 final holdout**. Phase 6 built eight history-only customer features from
+45,786,568 item rows and fitted fixed, modest response-propensity, S-Learner, and
+T-Learner benchmarks. All profile predictors were excluded because snapshot timing
+was uncertain. No model or preprocessing was refitted for final evaluation.
+
+Before final outcome access, Phase 7 froze **S-Learner minus fixed-random targeting
+at a 30% contact budget** as the primary comparison. Rankings, seeds, propensity
+assumption, bootstrap rules, and memberships were unchanged. At 30%, each ranking
+contacts **12,003 of 40,009 customers**.
+
+| Final policy at 30% | Incremental purchasers per 1,000 population | 95% interval |
+| --- | ---: | --- |
+| Fixed-random reference | 10.20 | [3.02, 17.15] |
+| Response-propensity ranking | 13.70 | [5.47, 22.40] |
+| S-Learner primary challenger | 7.70 | [1.05, 15.33] |
+| T-Learner secondary challenger | 10.50 | [3.22, 17.45] |
+
+Values use inverse-propensity weighting under **assumed constant assignment
+probability e=0.5**, with 500 paired, treatment-stratified customer bootstrap draws.
+They are assumption-dependent estimates relative to contacting nobody, not
+verified causal improvements or revenue effects.
+
+The primary **S-minus-random difference is −2.50 per 1,000**, with 95% interval
+**[−11.85, 7.45]**. S is numerically lower; superiority in either direction is
+inconclusive. S-minus-response is **−6.00 [−17.33, 6.95]** per 1,000. T is
+numerically above S at 30%, but their paired difference is also inconclusive.
+Response has the highest 30%-budget point estimate, yet its advantage over random
+is inconclusive and it was not promoted into the primary role after test access.
+
+Validation's encouraging S-Learner ranking did not establish superiority there,
+and it did not replicate as a numerical 30%-budget advantage in the final cohort.
+Cautiously retain fixed-random targeting as the budget-matched reference; no
+learned ranking has established an improvement. This does not prove random is
+optimal or that heterogeneity is absent. The observed treated/control purchase-rate
+difference is **+3.271 percentage points [2.320, 4.221]**; a positive overall
+campaign association does not demonstrate useful customer-level targeting.
+
+Limitations include unverified assignment/compliance and propensity, unknown exact
+outcome horizon, proxy historical cutoff, possible interference/clustering, and
+bootstrap intervals conditional on the fitted models. Secondary comparisons have
+no multiplicity adjustment. No actual SMS cost, financial return, or individual
+causal benefit is identified.
+
+The final protocol and a one-use local ledger block another scoring evaluation.
+Reproducibility checks use saved predictions and draws without reopening outcomes:
+
+```sh
+PYTHONPATH=src .venv/bin/python -m growthlab.retailhero.final_evaluation --verify
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
+```
+
+The completed local repository suite passes **120 tests with no skips**. Raw
+history, customer features, models, predictions, and bootstrap draws are ignored;
+only aggregate evidence/figures, protocols, source and tests are reviewable.
+
+| RetailHero phase | Evidence |
+| --- | --- |
+| [Phase 5](docs/causal/phase5_experiment_analysis.md) | Experiment audit, training-cohort effect and frozen splits |
+| [Phase 6](docs/causal/phase6_uplift_modeling.md) | History features, benchmark fitting and validation-policy comparisons |
+| [Phase 7 frozen protocol](docs/causal/phase7_frozen_protocol.md) | Prespecified primary comparison, controls and assumptions |
+| [Phase 7 final report](docs/causal/phase7_final_evaluation.md) | Final intervals, curves, interpretation and verification |
+| [Final aggregate evidence](docs/causal/phase7/final_summary.json) | Full-precision held-out estimates and provenance |
+
+Phase 7 is pending user review and has not been committed or pushed. The
+interactive GrowthLab Decision Studio is a proposed next step, not implemented.

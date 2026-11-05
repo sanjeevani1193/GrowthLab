@@ -1,0 +1,121 @@
+{
+  "frozen_at_utc": "2026-11-05T14:33:59.897608+00:00",
+  "baseline_commit": "ce0c851d58e5c9c783ce841f61f5851bf85423b0",
+  "human_protocol": "docs/causal/phase7_frozen_protocol.md",
+  "config": {
+    "ranking_seed": 20261105,
+    "bootstrap_seed": 20261106,
+    "bootstrap_draws": 500,
+    "budgets": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "propensity": 0.5,
+    "sensitivity": [
+      0.45,
+      0.55
+    ],
+    "primary_challenger": "s_learner",
+    "primary_reference": "constant",
+    "primary_budget": 0.3
+  },
+  "cohort": {
+    "n": 40009,
+    "control_n": 20012,
+    "treated_n": 19997,
+    "sorted_final_id_treatment_sha256": "9801838a2b3636309dc5775af74f2c35b03da34e9111d0a07e7d1c467b929342",
+    "split_counts": [
+      {
+        "split": "final_test",
+        "treatment_flg": 0,
+        "n": 20012
+      },
+      {
+        "split": "final_test",
+        "treatment_flg": 1,
+        "n": 19997
+      },
+      {
+        "split": "train",
+        "treatment_flg": 0,
+        "n": 60034
+      },
+      {
+        "split": "train",
+        "treatment_flg": 1,
+        "n": 59988
+      },
+      {
+        "split": "validation",
+        "treatment_flg": 0,
+        "n": 20012
+      },
+      {
+        "split": "validation",
+        "treatment_flg": 1,
+        "n": 19996
+      }
+    ]
+  },
+  "feature_names": [
+    "transaction_count",
+    "active_shopping_days",
+    "distinct_products",
+    "distinct_stores",
+    "historical_spend",
+    "mean_transaction_value",
+    "days_since_last_purchase",
+    "transactions_per_active_day"
+  ],
+  "inputs_sha256": {
+    "docs/causal/phase5/acquisition.json": "17957e885d11249dcab3ca2e6b2877a455ecbe96f69725f9515db69539cd0c37",
+    "docs/causal/phase5/audit.json": "4fdb30e10dbb127255bb3aa2f1d1ce1a2be98c2c8fc0622a921f563997b8108a",
+    "docs/causal/phase5/design.json": "aaaec58c66876774db0a73978e3408281b4e7bc111083a77a97f53ab721edfcb",
+    "docs/causal/phase5/experiment_summary.json": "9164d11732c4b5a74a92cb7e865d003c278462c7b155e2a86c2a039b47a038a6",
+    "docs/causal/phase5/independent_verification.json": "3b192e6ff8b3c0706a839297cbaf4546f2f67c87898aec2a92b9d6253a2cc673",
+    "docs/causal/phase5/purchases_schema.json": "25292fbcc72ad97ce1dfe0a3c3b8e13cb0cc5525726d0316d75703a37fd6e205",
+    "docs/causal/phase5/split_manifest.json": "77292277b07bb7a142f8dc72a88d9f171a1d387c398f1764caf875654e085549",
+    "docs/causal/phase6/additional_history_checks.json": "3563ca97815feb915bb4ed444eb48018710fe97112f45c58e171940072b7a678",
+    "docs/causal/phase6/feature_summary.json": "5c309341dc85161b6fcfb5f3f93ea848cf4aefe402cc7c1e76af54d112dae012",
+    "docs/causal/phase6/history_acquisition.json": "8007185891700b274be979980f1b3a7b9665ef1dde90064029e26be0cbf5b2fa",
+    "docs/causal/phase6/history_audit.json": "4eb1f28e60c35d422a21233727615341354840dc8878f4629d8ba7cf40d8f391",
+    "docs/causal/phase6/history_verification.json": "186a2cb08e1884d9347a5ec0db06e25a2556a609284d9da1af8351ffab8375ef",
+    "docs/causal/phase6/training_receipt.json": "5c84bc9c43931fb71f65ee015b25b3943d6981c30c21779f3c215ba350c20bcd",
+    "docs/causal/phase6/validation_plan.json": "5ee58802a66d635120350940ae315707e2556e8c56b076c63325c3cea891270f",
+    "docs/causal/phase6/validation_summary.json": "4c9af149a00fb55b6daef8ebbee6fb91f52137d1ef935ca8875f030d707c73f3",
+    "docs/causal/phase6/validation_verification.json": "187cc06cc611b9245bc396a9070e49fd85e2ce5fdde26743c0390f1132f27eb1",
+    "src/growthlab/retailhero/__init__.py": "e6eb8773767fd01d91d2144d28301d72a2fdf0714d64229bb26c26260d53325c",
+    "src/growthlab/retailhero/acquire.py": "7f9c562ccf7001711c543b01b3f92a3d92478783e0af4a61cf87b4bdd390b216",
+    "src/growthlab/retailhero/experiment.py": "b49a2f34aa3dc248e96276237a801309444f2f28ccdf7926c06e639cb6acb3be",
+    "src/growthlab/retailhero/final_evaluation.py": "7b3096eb41a3e91d60de561b3c099b33ccbc95c7e871f192472f6729783301de",
+    "src/growthlab/retailhero/history.py": "96c8fdebac8f0827fdb631a29bd5c54942149534db888446c34f4f7625cf6538",
+    "src/growthlab/retailhero/history_verification.py": "60bcfb552f1463f0e881d11086161399c32044500b08584856ee8e53392cbdfd",
+    "src/growthlab/retailhero/uplift.py": "862fcb9da05e0d5ffaf7291f4fef4ceb6e94822d440acd751e56c9a8eac233f1",
+    "src/growthlab/retailhero/uplift_metrics.py": "250fda4047b882d2ceba653401e90d46c7e987428612c9ec28642911974578f7",
+    "src/growthlab/retailhero/validation_verification.py": "f0e69ff1638390f5d3007fd295e079274f9253afa552f0eaee303584adf480b7",
+    "docs/causal/phase5_experiment_analysis.md": "4ef10df295b2f4eb32084f9595ef74a78c802fc4483897f5ef130fd2d0253d6b",
+    "docs/causal/phase6_uplift_modeling.md": "f75a68d4b056e2191f0415f0054a9cebf2c65d065bdff0472673a56c96f36e2d",
+    "docs/causal/phase7_frozen_protocol.md": "9004d5fea111f111fb424c3c81bf3228e670912c122ff1458e60b26e3f018783",
+    "tests/test_retailhero_final_evaluation.py": "e440772800d46ceafe99c37dc019afa7bed57cd4765d1b3e40e720ff528d59a2",
+    "requirements-causal.lock": "c95ef73a7a14036a56af8d549a30407214131f45e3451510fa72eee2fdf84c58",
+    "data/retailhero/raw/uplift_train.csv": "ae3dc4c17e98426fa4233fa03421328d259b8720e56ad0380b260ca2edd19bd4",
+    "data/retailhero/raw/clients.csv": "0135e7a3dfb2174c0fff4033cc895c070794e3c19bf5a6b2a685f4acde32e7ba",
+    "data/retailhero/raw/purchases.csv": "a9e132e3dde95655a0074622bb93af0616b7c4f047e71c4ce7322e2fe6d262c1",
+    "data/retailhero/splits/customer_assignments.parquet": "f38834e436b38b6483af7e4adfafda695bb2ffc9a178cf050b7f6c00a1d34169",
+    "data/retailhero/phase6/customer_features.parquet": "1acd63deb00f75f2d32b0c19f878a88981f55cb0c54ffba39fe5dbecca978389",
+    "data/retailhero/phase6/models/uplift_models.joblib": "36598898fcaf1aa29412ce083917d7562ba3eb68fc1d7a4dca34e4eb321a8fcb",
+    "data/retailhero/phase6/validation_predictions.npz": "081846d66c0bc43e1f0227af54abc6982aaf2d2d32fdcfb248dfadd8f93eff83",
+    "data/retailhero/phase6/bootstrap_draws.npz": "1cc81e232babe3383d10a1f5a94ac7ba0b6c32835df99232ff2c3041745d5c88",
+    "docs/causal/phase6/figures/policy_value.png": "fe238b150a0b5f3dd86a6e46cd66148c92ec5e44c21e620a4d670cf381842aee",
+    "docs/causal/phase6/figures/uplift_qini.png": "3caae82faed320324fd12135072a73a7a00825b87000b79b213f544a2daaedf5",
+    "data/retailhero/phase7/prior_file_states.json": "62297df9e454bc9d20c77e7bcfe6360db6b53b223be0c553b259672c1bff4bf8"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "duckdb": "2.0.0"
+  },
+  "final_outcomes_accessed": false
+}
