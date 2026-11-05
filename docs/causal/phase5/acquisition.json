@@ -1,0 +1,91 @@
+{
+  "retrieved_at_utc": "2026-11-05T11:41:49.432878+00:00",
+  "official_page": "https://ods.ai/competitions/x5-retailhero-uplift-modeling/data",
+  "archive_url": "https://storage.yandexcloud.net/datasouls-ods/materials/9c6913e5/retailhero-uplift.zip",
+  "archive_bytes": 625190754,
+  "archive_etag": "\"b2d89a8d385f1a14e392b9fa1a6a5783\"",
+  "range_bytes_transferred": 8822004,
+  "archive_inventory": [
+    {
+      "name": "data/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "name": "data/clients.csv",
+      "bytes": 21736219,
+      "compressed_bytes": 7637725,
+      "crc32": "5adcdfb2"
+    },
+    {
+      "name": "data/uplift_train.csv",
+      "bytes": 3000616,
+      "compressed_bytes": 1181714,
+      "crc32": "44e536cf"
+    },
+    {
+      "name": "data/purchases.csv",
+      "bytes": 4463775504,
+      "compressed_bytes": 611056980,
+      "crc32": "7beba56f"
+    },
+    {
+      "name": "data/uplift_test.csv",
+      "bytes": 2201363,
+      "compressed_bytes": 1074232,
+      "crc32": "2a7224dc"
+    },
+    {
+      "name": "data/uplift_sample_submission.csv",
+      "bytes": 6057851,
+      "compressed_bytes": 3177465,
+      "crc32": "9027de33"
+    },
+    {
+      "name": "data/products.csv",
+      "bytes": 3890339,
+      "compressed_bytes": 1058991,
+      "crc32": "31877aaa"
+    },
+    {
+      "name": "uplift_solution.py",
+      "bytes": 4233,
+      "compressed_bytes": 1348,
+      "crc32": "dc03e1c2"
+    },
+    {
+      "name": "requirements.txt",
+      "bytes": 49,
+      "compressed_bytes": 46,
+      "crc32": "b0b41994"
+    },
+    {
+      "name": "README",
+      "bytes": 1035,
+      "compressed_bytes": 503,
+      "crc32": "b062b6c3"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/retailhero/raw/uplift_train.csv",
+      "member": "data/uplift_train.csv",
+      "bytes": 3000616,
+      "compressed_bytes": 1181714,
+      "zip_crc32": "44e536cf",
+      "sha256": "ae3dc4c17e98426fa4233fa03421328d259b8720e56ad0380b260ca2edd19bd4"
+    },
+    {
+      "path": "data/retailhero/raw/clients.csv",
+      "member": "data/clients.csv",
+      "bytes": 21736219,
+      "compressed_bytes": 7637725,
+      "zip_crc32": "5adcdfb2",
+      "sha256": "0135e7a3dfb2174c0fff4033cc895c070794e3c19bf5a6b2a685f4acde32e7ba"
+    }
+  ],
+  "attribution": "X5 Retail Group / RetailHero, hosted by ODS.AI",
+  "license": "No explicit dataset reuse license found on official data page or mirrored card. Attribution is not a grant of redistribution rights. Data remain local; no commercial-use permission asserted.",
+  "method": "Official archive byte ranges; selected members only; ZIP CRC checked by zipfile. ETag is not treated as a SHA-256."
+}

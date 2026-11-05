@@ -1,0 +1,28 @@
+{
+  "archive_url": "https://storage.yandexcloud.net/datasouls-ods/materials/9c6913e5/retailhero-uplift.zip",
+  "archive_etag": "\"b2d89a8d385f1a14e392b9fa1a6a5783\"",
+  "member": "data/purchases.csv",
+  "file_bytes": 4463775504,
+  "compressed_bytes": 611056980,
+  "header": [
+    "client_id",
+    "transaction_id",
+    "transaction_datetime",
+    "regular_points_received",
+    "express_points_received",
+    "regular_points_spent",
+    "express_points_spent",
+    "purchase_sum",
+    "store_id",
+    "product_id",
+    "product_quantity",
+    "trn_sum_from_iss",
+    "trn_sum_from_red"
+  ],
+  "prefix_uncompressed_bytes": 8192,
+  "prefix_sha256": "6118eb4f82d403f5d034145c49f4f72e037804d98bb3139c30c56a6c49b8492c",
+  "range_bytes_transferred": 9220,
+  "complete_prefix_rows": 82,
+  "distinct_prefix_customer_transactions": 11,
+  "scope": "8192-byte prefix only; not a representative sample. No full-table statistics or campaign cutoff inferred."
+}

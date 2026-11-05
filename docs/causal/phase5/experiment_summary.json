@@ -1,0 +1,120 @@
+{
+  "analysis_population": "train only",
+  "analysis_at_utc": "2026-11-05T11:45:34.956324+00:00",
+  "split_manifest_sha256": "77292277b07bb7a142f8dc72a88d9f171a1d387c398f1764caf875654e085549",
+  "statistics": {
+    "treated_n": 59988,
+    "treated_purchasers": 38180,
+    "treated_rate": 0.636460625458425,
+    "control_n": 60034,
+    "control_purchasers": 36174,
+    "control_rate": 0.6025585501549122,
+    "difference": 0.033902075303512746,
+    "difference_pp": 3.3902075303512746,
+    "ci95": [
+      0.028410719685583827,
+      0.03939053590575859
+    ],
+    "ci95_pp": [
+      2.8410719685583827,
+      3.9390535905758592
+    ],
+    "z": 12.095654718619056,
+    "p_two_sided": 1.113509679969795e-33,
+    "incremental_purchasers_per_1000": 33.902075303512746,
+    "incremental_per_1000_ci95": [
+      28.410719685583828,
+      39.39053590575859
+    ]
+  },
+  "training_balance": {
+    "age_by_arm": [
+      {
+        "treatment_flg": 0,
+        "n": 60034,
+        "valid_age_mean": 46.45607043404312,
+        "valid_age_variance": 263.48552638916937,
+        "unavailable_age": 63
+      },
+      {
+        "treatment_flg": 1,
+        "n": 59988,
+        "valid_age_mean": 46.56768435101768,
+        "valid_age_variance": 264.9470362299672,
+        "unavailable_age": 48
+      }
+    ],
+    "age_smd_treated_minus_control": 0.006866549601658242,
+    "gender_by_arm": [
+      {
+        "treatment_flg": 0,
+        "gender": "F",
+        "n": 22152
+      },
+      {
+        "treatment_flg": 0,
+        "gender": "M",
+        "n": 10050
+      },
+      {
+        "treatment_flg": 0,
+        "gender": "U",
+        "n": 27832
+      },
+      {
+        "treatment_flg": 1,
+        "gender": "F",
+        "n": 22230
+      },
+      {
+        "treatment_flg": 1,
+        "gender": "M",
+        "n": 10074
+      },
+      {
+        "treatment_flg": 1,
+        "gender": "U",
+        "n": 27684
+      }
+    ],
+    "gender_level_smd": {
+      "F": 0.0032795979678893255,
+      "M": 0.0014145845453658646,
+      "U": -0.004235225793317298
+    },
+    "missing_in_training": {
+      "first_issue_date": 0,
+      "first_redeem_date": 10580,
+      "age": 0,
+      "gender": 0
+    },
+    "caveat": "Descriptive assignment checks only, no subgroup effects. Age 0..120 is an audit plausibility range, not a final feature-cleaning rule; demographics have uncertain snapshot timing."
+  },
+  "assignment_check_full_metadata": {
+    "treated_n": 99981,
+    "control_n": 100058,
+    "assumed_allocation_probability": 0.5,
+    "two_sided_binomial_p": 0.8650694889546471,
+    "caveat": "Assumed 1:1 Bernoulli allocation, not a recovered protocol. Balance does not establish randomization; stratification constrains training counts."
+  },
+  "assignment_check_training": {
+    "treated_n": 59988,
+    "control_n": 60034,
+    "assumed_allocation_probability": 0.5,
+    "two_sided_binomial_p": 0.8966520195643471,
+    "caveat": "Assumed 1:1 Bernoulli allocation, not a recovered protocol. Balance does not establish randomization; stratification constrains training counts."
+  },
+  "versions": {
+    "python": "3.14.7",
+    "duckdb": "2.0.0",
+    "scipy": "1.18.1"
+  },
+  "resources": {
+    "duckdb_memory_limit": "256MB",
+    "threads": 1,
+    "max_spill": "1GB",
+    "elapsed_seconds": 1.3706995419997838,
+    "process_maxrss_bytes": 196067328
+  },
+  "holdout_outcomes_analyzed": false
+}

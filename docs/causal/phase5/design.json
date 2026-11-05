@@ -1,0 +1,15 @@
+{
+  "status": "Frozen before training outcome analysis; no models in Phase 5",
+  "seed": 20261105,
+  "split_algorithm": "Within treatment_flg, sort by SHA256(seed:treatment_flg:client_id), break digest ties by client_id. First floor(0.6*n) train; through floor(0.8*n) validation; remainder final_test.",
+  "stratification": ["treatment_flg"],
+  "outcome_used_for_splitting": false,
+  "predictor_exclusions": ["client_id", "target", "treatment_flg as ordinary response-baseline predictor"],
+  "phase5_analysis_population": "train only; retain all training customers regardless of demographic validity",
+  "primary_estimand": "Unadjusted treatment minus control difference in probability of target=1 in the experimental customer population; causal interpretation conditional on assignment and measurement assumptions",
+  "confidence_interval": "95% Newcombe difference interval combining independent Wilson score intervals without continuity correction",
+  "hypothesis_test": "Two-sided pooled two-proportion z test of equal purchase probabilities; alpha=0.05",
+  "sample_ratio_check": "Two-sided exact binomial test against assumed allocation probability 0.5; protocol ratio unavailable. Full assignment metadata and training counts only. Training ratio is constrained by treatment-stratified splitting, so training check is not an independent randomization diagnostic.",
+  "holdout_rule": "Audit structural validity without reporting validation/final-test target summaries. No holdout rates, effects, subgroup analysis, predictions, or policy selection. Raw labels remain locally accessible, so this is a procedural seal, not encryption.",
+  "scope": "Audit, training ATE and feature recommendations only; no model fitting or purchases-wide download"
+}

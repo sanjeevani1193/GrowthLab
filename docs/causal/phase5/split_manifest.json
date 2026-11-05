@@ -1,0 +1,45 @@
+{
+  "created_at_utc": "2026-11-05T11:44:23.542448+00:00",
+  "design_sha256": "aaaec58c66876774db0a73978e3408281b4e7bc111083a77a97f53ab721edfcb",
+  "seed": 20261105,
+  "input_sha256": {
+    "data/retailhero/raw/uplift_train.csv": "ae3dc4c17e98426fa4233fa03421328d259b8720e56ad0380b260ca2edd19bd4",
+    "data/retailhero/raw/clients.csv": "0135e7a3dfb2174c0fff4033cc895c070794e3c19bf5a6b2a685f4acde32e7ba"
+  },
+  "path": "data/retailhero/splits/customer_assignments.parquet",
+  "sha256": "f38834e436b38b6483af7e4adfafda695bb2ffc9a178cf050b7f6c00a1d34169",
+  "rows": 200039,
+  "counts": [
+    {
+      "split": "final_test",
+      "treatment_flg": 0,
+      "n": 20012
+    },
+    {
+      "split": "final_test",
+      "treatment_flg": 1,
+      "n": 19997
+    },
+    {
+      "split": "train",
+      "treatment_flg": 0,
+      "n": 60034
+    },
+    {
+      "split": "train",
+      "treatment_flg": 1,
+      "n": 59988
+    },
+    {
+      "split": "validation",
+      "treatment_flg": 0,
+      "n": 20012
+    },
+    {
+      "split": "validation",
+      "treatment_flg": 1,
+      "n": 19996
+    }
+  ],
+  "outcomes_in_manifest_or_split_file": false
+}

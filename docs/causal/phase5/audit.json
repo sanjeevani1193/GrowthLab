@@ -1,0 +1,139 @@
+{
+  "uplift_train": {
+    "rows": 200039,
+    "schema": [
+      {
+        "column_name": "client_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "treatment_flg",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "target",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "missing": {
+      "client_id": 0,
+      "treatment_flg": 0,
+      "target": 0
+    },
+    "duplicate_id_excess": 0
+  },
+  "clients": {
+    "rows": 400162,
+    "schema": [
+      {
+        "column_name": "client_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "first_issue_date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "first_redeem_date",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "age",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "gender",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "missing": {
+      "client_id": 0,
+      "first_issue_date": 0,
+      "first_redeem_date": 35469,
+      "age": 0,
+      "gender": 0
+    },
+    "duplicate_id_excess": 0
+  },
+  "invalid_experimental_rows": 0,
+  "client_ids_not_10_hex": {
+    "uplift_train": 0,
+    "clients": 0
+  },
+  "join": {
+    "experimental_rows": 200039,
+    "matched": 200039,
+    "unmatched": 0
+  },
+  "clients_not_in_experiment": 200123,
+  "assignment_counts": [
+    {
+      "treatment_flg": 0,
+      "n": 100058
+    },
+    {
+      "treatment_flg": 1,
+      "n": 99981
+    }
+  ],
+  "client_quality": {
+    "min_age": -7491,
+    "max_age": 1901,
+    "age_parse_failures": 0,
+    "age_outside_0_120": 313,
+    "unexpected_gender": 0,
+    "issue_parse_failures": 0,
+    "redeem_parse_failures": 0,
+    "earliest_issue": "2017-04-04 18:24:18",
+    "latest_issue": "2019-03-15 21:50:56",
+    "earliest_redeem": "2017-04-11 09:42:20",
+    "latest_redeem": "2019-11-20 01:14:10",
+    "redeem_before_issue": 536
+  },
+  "gender_counts": [
+    {
+      "gender": "F",
+      "n": 147649
+    },
+    {
+      "gender": "M",
+      "n": 66807
+    },
+    {
+      "gender": "U",
+      "n": 185706
+    }
+  ]
+}

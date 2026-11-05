@@ -1,0 +1,14 @@
+{
+  "method": "Independent Python csv streaming aggregation, training ID membership only; no holdout outcome aggregation. Compared with DuckDB output.",
+  "counts": {
+    "0": {
+      "n": 60034,
+      "purchasers": 36174
+    },
+    "1": {
+      "n": 59988,
+      "purchasers": 38180
+    }
+  },
+  "matched": true
+}
