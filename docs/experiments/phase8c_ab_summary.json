@@ -1,0 +1,177 @@
+{
+  "scope": "Synthetic A/B power study, not real voucher effectiveness evidence",
+  "study_configuration": {
+    "repetitions": 1000,
+    "outcome_master_seed": 2026110602,
+    "calibration_alpha": 0.05,
+    "example_index": 0
+  },
+  "true_control_rate": 0.2,
+  "true_treatment_rate": 0.23,
+  "true_difference_pp": 3.0,
+  "outcome_alpha_two_sided": 0.05,
+  "statistical_methods": "Unchanged Phase 8B analyze_counts: pooled two-proportion z-test; Newcombe/Wilson 95% difference CI; no continuity correction",
+  "assignment": {
+    "source": "Unchanged Phase 8A configuration and assign_customers",
+    "seed": 20261106,
+    "experiment_id_namespace": "voucher_5eur_14d_v1",
+    "total_n": 5886,
+    "control_n": 2950,
+    "treatment_n": 2936,
+    "planned_control_n": 2943,
+    "planned_treatment_n": 2943,
+    "control_delta_from_plan": 7,
+    "treatment_delta_from_plan": -7,
+    "assignment_sha256": "0023e31634e472d5f1a03ea8f5cb0e317a63f44cc2cfed7467268032b165e507",
+    "fixed_across_repetitions": true,
+    "srm": {
+      "method": "two-sided exact binomial allocation test",
+      "control_n": 2950,
+      "treatment_n": 2936,
+      "total_n": 5886,
+      "expected_control_n": 2943.0,
+      "expected_treatment_n": 2943.0,
+      "observed_treatment_fraction": 0.4988107373428474,
+      "planned_treatment_probability": 0.5,
+      "p_value": 0.8654470932079597,
+      "significance_level": 0.01,
+      "flag_srm": false
+    }
+  },
+  "theoretical_power": {
+    "balanced_normal_approximation": 0.8000560433949436,
+    "realized_allocation_normal_approximation": 0.8000726875513032,
+    "method": "Two normal rejection tails, pooled expected null variance and unpooled alternative variance; not exact finite-sample power"
+  },
+  "empirical_power": {
+    "events": 793,
+    "trials": 1000,
+    "empirical_rate": 0.793,
+    "expected_rate": 0.8000726875513032,
+    "wilson_95_interval": [
+      0.7667904475082261,
+      0.8169670720192386
+    ],
+    "expected_count": 800.0726875513033,
+    "null_count_sd": 12.647386377656767,
+    "null_central_95_count_range": [
+      775,
+      825
+    ],
+    "two_sided_binomial_p_value": 0.5799154995165018,
+    "diagnostic_alpha": 0.05,
+    "flag_departure": false
+  },
+  "comparison_to_balanced_plan": {
+    "events": 793,
+    "trials": 1000,
+    "empirical_rate": 0.793,
+    "expected_rate": 0.8000560433949436,
+    "wilson_95_interval": [
+      0.7667904475082261,
+      0.8169670720192386
+    ],
+    "expected_count": 800.0560433949436,
+    "null_count_sd": 12.647781260844594,
+    "null_central_95_count_range": [
+      775,
+      825
+    ],
+    "two_sided_binomial_p_value": 0.5799338875038063,
+    "diagnostic_alpha": 0.05,
+    "flag_departure": false
+  },
+  "detection_direction": {
+    "positive_significant": 793,
+    "negative_significant": 0,
+    "false_negatives": 207,
+    "false_negative_rate": 0.207,
+    "definition": "Empirical two-sided power counts all p<0.05; report any wrong-direction significant result separately"
+  },
+  "interval_coverage": {
+    "events": 955,
+    "trials": 1000,
+    "empirical_rate": 0.955,
+    "expected_rate": 0.95,
+    "wilson_95_interval": [
+      0.9403171620637766,
+      0.9662004877143683
+    ],
+    "expected_count": 950.0,
+    "null_count_sd": 6.892024376045114,
+    "null_central_95_count_range": [
+      936,
+      963
+    ],
+    "two_sided_binomial_p_value": 0.5138462313434613,
+    "diagnostic_alpha": 0.05,
+    "flag_departure": false
+  },
+  "difference_diagnostics": {
+    "mean_difference_pp": 3.0179525238996905,
+    "mean_estimation_error_pp": 0.017952523899690487,
+    "empirical_sd_pp": 1.0696144012714186,
+    "theoretical_alternative_sd_pp": 1.0703151480911202,
+    "mean_monte_carlo_se_pp": 0.0338463368214836
+  },
+  "random_streams": {
+    "algorithm": "NumPy PCG64",
+    "construction": "Unchanged outcome_stream: SeedSequence(master_seed, spawn_key=(experiment_index,))",
+    "independence": "Independent pseudo-random outcomes conditional on fixed synthetic roster and assignment; no persistent customer effects"
+  },
+  "example_selection": "Prespecified experiment index, not chosen by success or p-value",
+  "example": {
+    "experiment_index": 0,
+    "spawn_key": [
+      0
+    ],
+    "control_n": 2950,
+    "treatment_n": 2936,
+    "control_conversions": 562,
+    "treatment_conversions": 654,
+    "control_rate": 0.19050847457627118,
+    "treatment_rate": 0.22275204359673023,
+    "difference": 0.03224356902045905,
+    "difference_pp": 3.224356902045905,
+    "z_statistic": 3.0550409949205126,
+    "p_value_two_sided": 0.002250297609990212,
+    "significant": true,
+    "confidence_level": 0.95,
+    "difference_ci": [
+      0.011558365063619996,
+      0.052904420170539666
+    ],
+    "difference_ci_pp": [
+      1.1558365063619995,
+      5.290442017053967
+    ],
+    "covers_true_zero": false,
+    "covers_true_effect": true,
+    "effect_detected": true,
+    "detected_positive": true,
+    "significant_wrong_direction": false
+  },
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "replication_aggregate_file": {
+    "path": "data/experiments/phase8c/replications.json",
+    "sha256": "2c995b9a828f7e756ead1383c8b12986545836f7c315588b2b953df06f116d61",
+    "rows": 1000,
+    "contains_customer_records": false
+  },
+  "input_sha256": {
+    "docs/experiments/phase8a_config.json": "7938d74dc40d2e85daa7c14c82fdb06a9b611cee59c05fedc932d93eefde92eb",
+    "docs/experiments/phase8c_config.json": "d7a29a306f52f972f3a1410bfc6b0debc773e3bb0a991032fac9021d5cc822b7",
+    "src/growthlab/experimentlab/ab_testing.py": "8d18c3ef6a6d50aa0a5422233900811660ef859626749d1a338829f195beaa11",
+    "src/growthlab/experimentlab/design.py": "6912ef5299ed7a3c425f104b9b3cfe170df0ca1d9237430beb9730f9f3ef811a",
+    "src/growthlab/experimentlab/aa_testing.py": "72d5ec0ec54da4c37c225c060a55223f7f92e596b0c389244399c911ca4e434d"
+  },
+  "resources": {
+    "elapsed_seconds": 0.3942983750021085,
+    "peak_process_rss_bytes": 97861632,
+    "retention": "One binary synthetic-customer vector at a time; keep per-experiment aggregates only"
+  }
+}
