@@ -1,0 +1,16 @@
+{
+  "experiment_id": "voucher_5eur_14d_v1",
+  "business_question": "Does offering a EUR 5 voucher increase 14-day purchase probability?",
+  "control": "No voucher",
+  "treatment": "Offer a EUR 5 voucher",
+  "randomization_unit": "unique customer",
+  "primary_metric": "binary conversion within 14 days of assignment",
+  "baseline_rate": 0.2,
+  "absolute_mde": 0.03,
+  "alpha": 0.05,
+  "power": 0.8,
+  "treatment_probability": 0.5,
+  "seed": 20261106,
+  "srm_alpha": 0.01,
+  "assumptions_are_hypothetical": true
+}

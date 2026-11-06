@@ -1,0 +1,65 @@
+{
+  "scope": "Hypothetical design and synthetic-ID assignment only; no outcomes generated or analyzed",
+  "configuration": {
+    "experiment_id": "voucher_5eur_14d_v1",
+    "business_question": "Does offering a EUR 5 voucher increase 14-day purchase probability?",
+    "control": "No voucher",
+    "treatment": "Offer a EUR 5 voucher",
+    "randomization_unit": "unique customer",
+    "primary_metric": "binary conversion within 14 days of assignment",
+    "baseline_rate": 0.2,
+    "absolute_mde": 0.03,
+    "alpha": 0.05,
+    "power": 0.8,
+    "treatment_probability": 0.5,
+    "seed": 20261106,
+    "srm_alpha": 0.01,
+    "assumptions_are_hypothetical": true
+  },
+  "assignment_algorithm": "growthlab-experimentlab-sha256-v1",
+  "sample_size": {
+    "method": "equal-arm normal approximation, pooled null/unpooled alternative; no continuity correction",
+    "baseline_rate": 0.2,
+    "planning_treatment_rate": 0.23,
+    "absolute_mde": 0.03,
+    "alpha_two_sided": 0.05,
+    "power": 0.8,
+    "pooled_rate": 0.21500000000000002,
+    "variance_null_coefficient": 0.33755,
+    "variance_alternative_coefficient": 0.33710000000000007,
+    "z_alpha": 1.9599639845400534,
+    "z_power": 0.8416212335729144,
+    "unrounded_per_group": 2942.5867373842148,
+    "control_n": 2943,
+    "treatment_n": 2943,
+    "total_n": 5886
+  },
+  "independent_normal_crosscheck": {
+    "method": "numerical inversion of both normal rejection tails using SciPy, not finite-binomial exact power",
+    "unrounded_per_group": 2942.57962599342,
+    "rounded_per_group": 2943,
+    "normal_power_at_rounded_n": 0.8000560433949436,
+    "normal_power_at_one_less": 0.7999227034046891
+  },
+  "synthetic_example": {
+    "id_format": "synthetic-customer-000001 through planned total, inclusive",
+    "srm": {
+      "method": "two-sided exact binomial allocation test",
+      "control_n": 2950,
+      "treatment_n": 2936,
+      "total_n": 5886,
+      "expected_control_n": 2943.0,
+      "expected_treatment_n": 2943.0,
+      "observed_treatment_fraction": 0.4988107373428474,
+      "planned_treatment_probability": 0.5,
+      "p_value": 0.8654470932079597,
+      "significance_level": 0.01,
+      "flag_srm": false
+    },
+    "per_arm_planning_minimum_reached": {
+      "control": true,
+      "treatment": false
+    }
+  },
+  "scipy_version": "1.18.1"
+}
