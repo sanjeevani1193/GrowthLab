@@ -1,0 +1,41 @@
+{
+  "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+  "inputs": {
+    "contacted_customers": 1000,
+    "baseline_conversion": "0.20",
+    "treatment_conversion": "0.23",
+    "contribution_per_purchase_eur": "20",
+    "reward_per_redemption_eur": "5",
+    "redemption_probability": "1.0",
+    "contact_cost_per_customer_eur": "0"
+  },
+  "expected_values": {
+    "expected_purchasers_without_intervention": "200",
+    "expected_purchasers_with_intervention": "230",
+    "expected_incremental_purchasers": "30",
+    "incremental_conversion_effect_pp": "3",
+    "expected_incremental_purchase_contribution_eur": "600",
+    "expected_reward_redemptions": "230",
+    "total_reward_expenditure_eur": "1150",
+    "total_contact_expenditure_eur": "0",
+    "net_incremental_contribution_eur": "-550"
+  },
+  "break_even": {
+    "status": "attainable",
+    "attainable": true,
+    "required_treatment_probability": {
+      "exact_fraction": "4/15",
+      "decimal_approximation": "0.2666666666666666666666666666666666666667"
+    },
+    "required_conversion_change_pp": {
+      "exact_fraction": "20/3",
+      "decimal_approximation": "6.666666666666666666666666666666666666667"
+    },
+    "unconstrained_threshold": {
+      "exact_fraction": "4/15",
+      "decimal_approximation": "0.2666666666666666666666666666666666666667"
+    },
+    "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+  },
+  "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+}
