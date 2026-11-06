@@ -1,0 +1,1446 @@
+{
+  "comparison": {
+    "scope": "Hypothetical conditional comparison, not a real optimal reward or measured causal effect",
+    "comparison_criteria": [
+      "population_id",
+      "contacted_customers",
+      "horizon_days",
+      "financial_basis_id",
+      "baseline_conversion",
+      "contribution_per_purchase_eur"
+    ],
+    "comparable_by_declared_criteria": true,
+    "ranking_blocked_reasons": [],
+    "ranking": [
+      {
+        "rank": 1,
+        "scenario_id": "higher_assumed_conversion",
+        "net_incremental_contribution_eur": "500",
+        "profitable_under_assumptions": true
+      },
+      {
+        "rank": 2,
+        "scenario_id": "lower_reward_assumption",
+        "net_incremental_contribution_eur": "40",
+        "profitable_under_assumptions": true
+      },
+      {
+        "rank": 3,
+        "scenario_id": "partial_redemption",
+        "net_incremental_contribution_eur": "25",
+        "profitable_under_assumptions": true
+      },
+      {
+        "rank": 4,
+        "scenario_id": "reference_full_redemption",
+        "net_incremental_contribution_eur": "-550",
+        "profitable_under_assumptions": false
+      }
+    ],
+    "scenarios": [
+      {
+        "scenario_id": "higher_assumed_conversion",
+        "population_id": "hypothetical-cohort-A",
+        "horizon_days": 14,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Assume 30% conversion independently of reward amount; no response model inferred.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 1000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.30",
+            "contribution_per_purchase_eur": "20",
+            "reward_per_redemption_eur": "5",
+            "redemption_probability": "1",
+            "contact_cost_per_customer_eur": "0"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "200",
+            "expected_purchasers_with_intervention": "300",
+            "expected_incremental_purchasers": "100",
+            "incremental_conversion_effect_pp": "10",
+            "expected_incremental_purchase_contribution_eur": "2000",
+            "expected_reward_redemptions": "300",
+            "total_reward_expenditure_eur": "1500",
+            "total_contact_expenditure_eur": "0",
+            "net_incremental_contribution_eur": "500"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "20/3",
+              "decimal_approximation": "6.666666666666666666666666666666666666667"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "0.5",
+        "profitable_under_assumptions": true,
+        "financial_status": "positive"
+      },
+      {
+        "scenario_id": "lower_reward_assumption",
+        "population_id": "hypothetical-cohort-A",
+        "horizon_days": 14,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Assume 23% conversion with EUR 2 reward and EUR 0.10 contact cost; not a causal reward-response claim.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 1000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.23",
+            "contribution_per_purchase_eur": "20",
+            "reward_per_redemption_eur": "2",
+            "redemption_probability": "1",
+            "contact_cost_per_customer_eur": "0.10"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "200",
+            "expected_purchasers_with_intervention": "230",
+            "expected_incremental_purchasers": "30",
+            "incremental_conversion_effect_pp": "3",
+            "expected_incremental_purchase_contribution_eur": "600",
+            "expected_reward_redemptions": "230",
+            "total_reward_expenditure_eur": "460",
+            "total_contact_expenditure_eur": "100",
+            "net_incremental_contribution_eur": "40"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "41/180",
+              "decimal_approximation": "0.2277777777777777777777777777777777777778"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "25/9",
+              "decimal_approximation": "2.777777777777777777777777777777777777778"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "41/180",
+              "decimal_approximation": "0.2277777777777777777777777777777777777778"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "0.04",
+        "profitable_under_assumptions": true,
+        "financial_status": "positive"
+      },
+      {
+        "scenario_id": "partial_redemption",
+        "population_id": "hypothetical-cohort-A",
+        "horizon_days": 14,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Assume the same 23% conversion and 50% redemption, not an observed redemption estimate.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 1000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.23",
+            "contribution_per_purchase_eur": "20",
+            "reward_per_redemption_eur": "5",
+            "redemption_probability": "0.5",
+            "contact_cost_per_customer_eur": "0"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "200",
+            "expected_purchasers_with_intervention": "230",
+            "expected_incremental_purchasers": "30",
+            "incremental_conversion_effect_pp": "3",
+            "expected_incremental_purchase_contribution_eur": "600",
+            "expected_reward_redemptions": "115",
+            "total_reward_expenditure_eur": "575",
+            "total_contact_expenditure_eur": "0",
+            "net_incremental_contribution_eur": "25"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "8/35",
+              "decimal_approximation": "0.2285714285714285714285714285714285714286"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "20/7",
+              "decimal_approximation": "2.857142857142857142857142857142857142857"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "8/35",
+              "decimal_approximation": "0.2285714285714285714285714285714285714286"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "0.025",
+        "profitable_under_assumptions": true,
+        "financial_status": "positive"
+      },
+      {
+        "scenario_id": "reference_full_redemption",
+        "population_id": "hypothetical-cohort-A",
+        "horizon_days": 14,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 1000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.23",
+            "contribution_per_purchase_eur": "20",
+            "reward_per_redemption_eur": "5",
+            "redemption_probability": "1",
+            "contact_cost_per_customer_eur": "0"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "200",
+            "expected_purchasers_with_intervention": "230",
+            "expected_incremental_purchasers": "30",
+            "incremental_conversion_effect_pp": "3",
+            "expected_incremental_purchase_contribution_eur": "600",
+            "expected_reward_redemptions": "230",
+            "total_reward_expenditure_eur": "1150",
+            "total_contact_expenditure_eur": "0",
+            "net_incremental_contribution_eur": "-550"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "20/3",
+              "decimal_approximation": "6.666666666666666666666666666666666666667"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "-0.55",
+        "profitable_under_assumptions": false,
+        "financial_status": "negative"
+      }
+    ],
+    "ranking_rule": "Descending expected net incremental contribution; equal amounts share a rank and IDs order ties without preference. No ranking if comparability fails."
+  },
+  "non_comparable_demonstration": {
+    "scope": "Hypothetical conditional comparison, not a real optimal reward or measured causal effect",
+    "comparison_criteria": [
+      "population_id",
+      "contacted_customers",
+      "horizon_days",
+      "financial_basis_id",
+      "baseline_conversion",
+      "contribution_per_purchase_eur"
+    ],
+    "comparable_by_declared_criteria": false,
+    "ranking_blocked_reasons": [
+      "population_id",
+      "contacted_customers",
+      "horizon_days",
+      "contribution_per_purchase_eur"
+    ],
+    "ranking": null,
+    "scenarios": [
+      {
+        "scenario_id": "different_context",
+        "population_id": "hypothetical-cohort-B",
+        "horizon_days": 30,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Different population, contact count, horizon and contribution; no cross-context ranking.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 2000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.23",
+            "contribution_per_purchase_eur": "25",
+            "reward_per_redemption_eur": "5",
+            "redemption_probability": "0.5",
+            "contact_cost_per_customer_eur": "0"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "400",
+            "expected_purchasers_with_intervention": "460",
+            "expected_incremental_purchasers": "60",
+            "incremental_conversion_effect_pp": "3",
+            "expected_incremental_purchase_contribution_eur": "1500",
+            "expected_reward_redemptions": "230",
+            "total_reward_expenditure_eur": "1150",
+            "total_contact_expenditure_eur": "0",
+            "net_incremental_contribution_eur": "350"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "2/9",
+              "decimal_approximation": "0.2222222222222222222222222222222222222222"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "20/9",
+              "decimal_approximation": "2.222222222222222222222222222222222222222"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "2/9",
+              "decimal_approximation": "0.2222222222222222222222222222222222222222"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "0.175",
+        "profitable_under_assumptions": true,
+        "financial_status": "positive"
+      },
+      {
+        "scenario_id": "reference_full_redemption",
+        "population_id": "hypothetical-cohort-A",
+        "horizon_days": 14,
+        "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+        "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+        "engine_result": {
+          "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+          "inputs": {
+            "contacted_customers": 1000,
+            "baseline_conversion": "0.20",
+            "treatment_conversion": "0.23",
+            "contribution_per_purchase_eur": "20",
+            "reward_per_redemption_eur": "5",
+            "redemption_probability": "1",
+            "contact_cost_per_customer_eur": "0"
+          },
+          "expected_values": {
+            "expected_purchasers_without_intervention": "200",
+            "expected_purchasers_with_intervention": "230",
+            "expected_incremental_purchasers": "30",
+            "incremental_conversion_effect_pp": "3",
+            "expected_incremental_purchase_contribution_eur": "600",
+            "expected_reward_redemptions": "230",
+            "total_reward_expenditure_eur": "1150",
+            "total_contact_expenditure_eur": "0",
+            "net_incremental_contribution_eur": "-550"
+          },
+          "break_even": {
+            "status": "attainable",
+            "attainable": true,
+            "required_treatment_probability": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "required_conversion_change_pp": {
+              "exact_fraction": "20/3",
+              "decimal_approximation": "6.666666666666666666666666666666666666667"
+            },
+            "unconstrained_threshold": {
+              "exact_fraction": "4/15",
+              "decimal_approximation": "0.2666666666666666666666666666666666666667"
+            },
+            "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+          },
+          "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+        },
+        "net_contribution_per_contact_eur": "-0.55",
+        "profitable_under_assumptions": false,
+        "financial_status": "negative"
+      }
+    ],
+    "ranking_rule": "Descending expected net incremental contribution; equal amounts share a rank and IDs order ties without preference. No ranking if comparability fails."
+  },
+  "sensitivities": {
+    "treatment_conversion": {
+      "base_scenario_id": "reference_full_redemption",
+      "field": "treatment_conversion",
+      "held_constant_inputs": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "contribution_per_purchase_eur": "20",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "1",
+        "contact_cost_per_customer_eur": "0"
+      },
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "points": [
+        {
+          "assumed_value": "0.20",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__treatment_conversion_000",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.20",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "200",
+                "expected_incremental_purchasers": "0",
+                "incremental_conversion_effect_pp": "0",
+                "expected_incremental_purchase_contribution_eur": "0",
+                "expected_reward_redemptions": "200",
+                "total_reward_expenditure_eur": "1000",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-1000"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-1",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "0.23",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__treatment_conversion_001",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-550"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.55",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "0.26",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__treatment_conversion_002",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.26",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "260",
+                "expected_incremental_purchasers": "60",
+                "incremental_conversion_effect_pp": "6",
+                "expected_incremental_purchase_contribution_eur": "1200",
+                "expected_reward_redemptions": "260",
+                "total_reward_expenditure_eur": "1300",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-100"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.1",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "0.27",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__treatment_conversion_003",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.27",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "270",
+                "expected_incremental_purchasers": "70",
+                "incremental_conversion_effect_pp": "7",
+                "expected_incremental_purchase_contribution_eur": "1400",
+                "expected_reward_redemptions": "270",
+                "total_reward_expenditure_eur": "1350",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "50"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.05",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        },
+        {
+          "assumed_value": "0.30",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__treatment_conversion_004",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.30",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "300",
+                "expected_incremental_purchasers": "100",
+                "incremental_conversion_effect_pp": "10",
+                "expected_incremental_purchase_contribution_eur": "2000",
+                "expected_reward_redemptions": "300",
+                "total_reward_expenditure_eur": "1500",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "500"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.5",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        }
+      ],
+      "interpretation": "One assumption changes at a time. Other inputs, including conversion when reward changes, stay fixed. These points are not a response curve, confidence interval or optimization.",
+      "ranking": null
+    },
+    "reward_per_redemption_eur": {
+      "base_scenario_id": "reference_full_redemption",
+      "field": "reward_per_redemption_eur",
+      "held_constant_inputs": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "contribution_per_purchase_eur": "20",
+        "redemption_probability": "1",
+        "contact_cost_per_customer_eur": "0"
+      },
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "points": [
+        {
+          "assumed_value": "0",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__reward_per_redemption_eur_000",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "0",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "0",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "600"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "1/5",
+                  "decimal_approximation": "0.2"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "0",
+                  "decimal_approximation": "0"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "1/5",
+                  "decimal_approximation": "0.2"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.6",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        },
+        {
+          "assumed_value": "2",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__reward_per_redemption_eur_001",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "2",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "460",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "140"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "2/9",
+                  "decimal_approximation": "0.2222222222222222222222222222222222222222"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/9",
+                  "decimal_approximation": "2.222222222222222222222222222222222222222"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "2/9",
+                  "decimal_approximation": "0.2222222222222222222222222222222222222222"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.14",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        },
+        {
+          "assumed_value": "5",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__reward_per_redemption_eur_002",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-550"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.55",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "8",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__reward_per_redemption_eur_003",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "8",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1840",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-1240"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "1/3",
+                  "decimal_approximation": "0.3333333333333333333333333333333333333333"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "40/3",
+                  "decimal_approximation": "13.33333333333333333333333333333333333333"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "1/3",
+                  "decimal_approximation": "0.3333333333333333333333333333333333333333"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-1.24",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        }
+      ],
+      "interpretation": "One assumption changes at a time. Other inputs, including conversion when reward changes, stay fixed. These points are not a response curve, confidence interval or optimization.",
+      "ranking": null
+    },
+    "redemption_probability": {
+      "base_scenario_id": "reference_full_redemption",
+      "field": "redemption_probability",
+      "held_constant_inputs": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "contribution_per_purchase_eur": "20",
+        "reward_per_redemption_eur": "5",
+        "contact_cost_per_customer_eur": "0"
+      },
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "points": [
+        {
+          "assumed_value": "0",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__redemption_probability_000",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "0",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "0",
+                "total_reward_expenditure_eur": "0",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "600"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "1/5",
+                  "decimal_approximation": "0.2"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "0",
+                  "decimal_approximation": "0"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "1/5",
+                  "decimal_approximation": "0.2"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.6",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        },
+        {
+          "assumed_value": "0.5",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__redemption_probability_001",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "0.5",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "115",
+                "total_reward_expenditure_eur": "575",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "25"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "8/35",
+                  "decimal_approximation": "0.2285714285714285714285714285714285714286"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/7",
+                  "decimal_approximation": "2.857142857142857142857142857142857142857"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "8/35",
+                  "decimal_approximation": "0.2285714285714285714285714285714285714286"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.025",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        },
+        {
+          "assumed_value": "1",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__redemption_probability_002",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-550"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.55",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        }
+      ],
+      "interpretation": "One assumption changes at a time. Other inputs, including conversion when reward changes, stay fixed. These points are not a response curve, confidence interval or optimization.",
+      "ranking": null
+    },
+    "contribution_per_purchase_eur": {
+      "base_scenario_id": "reference_full_redemption",
+      "field": "contribution_per_purchase_eur",
+      "held_constant_inputs": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "1",
+        "contact_cost_per_customer_eur": "0"
+      },
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "points": [
+        {
+          "assumed_value": "10",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contribution_per_purchase_eur_000",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "10",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "300",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-850"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "2/5",
+                  "decimal_approximation": "0.4"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20",
+                  "decimal_approximation": "20"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "2/5",
+                  "decimal_approximation": "0.4"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.85",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "20",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contribution_per_purchase_eur_001",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-550"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.55",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "40",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contribution_per_purchase_eur_002",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "40",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "1200",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "50"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "8/35",
+                  "decimal_approximation": "0.2285714285714285714285714285714285714286"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/7",
+                  "decimal_approximation": "2.857142857142857142857142857142857142857"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "8/35",
+                  "decimal_approximation": "0.2285714285714285714285714285714285714286"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "0.05",
+            "profitable_under_assumptions": true,
+            "financial_status": "positive"
+          }
+        }
+      ],
+      "interpretation": "One assumption changes at a time. Other inputs, including conversion when reward changes, stay fixed. These points are not a response curve, confidence interval or optimization.",
+      "ranking": null
+    },
+    "contact_cost_per_customer_eur": {
+      "base_scenario_id": "reference_full_redemption",
+      "field": "contact_cost_per_customer_eur",
+      "held_constant_inputs": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "contribution_per_purchase_eur": "20",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "1"
+      },
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "points": [
+        {
+          "assumed_value": "0",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contact_cost_per_customer_eur_000",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "0",
+                "net_incremental_contribution_eur": "-550"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "20/3",
+                  "decimal_approximation": "6.666666666666666666666666666666666666667"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "4/15",
+                  "decimal_approximation": "0.2666666666666666666666666666666666666667"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.55",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "0.05",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contact_cost_per_customer_eur_001",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0.05"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "50",
+                "net_incremental_contribution_eur": "-600"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "27/100",
+                  "decimal_approximation": "0.27"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "7",
+                  "decimal_approximation": "7"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "27/100",
+                  "decimal_approximation": "0.27"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.6",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        },
+        {
+          "assumed_value": "0.20",
+          "evaluation": {
+            "scenario_id": "reference_full_redemption__contact_cost_per_customer_eur_002",
+            "population_id": "hypothetical-cohort-A",
+            "horizon_days": 14,
+            "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+            "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+            "engine_result": {
+              "scope": "Hypothetical deterministic expected values; no observed campaign results or reward optimization",
+              "inputs": {
+                "contacted_customers": 1000,
+                "baseline_conversion": "0.20",
+                "treatment_conversion": "0.23",
+                "contribution_per_purchase_eur": "20",
+                "reward_per_redemption_eur": "5",
+                "redemption_probability": "1",
+                "contact_cost_per_customer_eur": "0.20"
+              },
+              "expected_values": {
+                "expected_purchasers_without_intervention": "200",
+                "expected_purchasers_with_intervention": "230",
+                "expected_incremental_purchasers": "30",
+                "incremental_conversion_effect_pp": "3",
+                "expected_incremental_purchase_contribution_eur": "600",
+                "expected_reward_redemptions": "230",
+                "total_reward_expenditure_eur": "1150",
+                "total_contact_expenditure_eur": "200",
+                "net_incremental_contribution_eur": "-750"
+              },
+              "break_even": {
+                "status": "attainable",
+                "attainable": true,
+                "required_treatment_probability": {
+                  "exact_fraction": "7/25",
+                  "decimal_approximation": "0.28"
+                },
+                "required_conversion_change_pp": {
+                  "exact_fraction": "8",
+                  "decimal_approximation": "8"
+                },
+                "unconstrained_threshold": {
+                  "exact_fraction": "7/25",
+                  "decimal_approximation": "0.28"
+                },
+                "explanation": "Equality at this threshold; nonnegative net contribution at or above it, within [0,1]."
+              },
+              "precision": "Expected values are exact decimal strings; break-even fractions are exact and displayed decimal ratios are approximations."
+            },
+            "net_contribution_per_contact_eur": "-0.75",
+            "profitable_under_assumptions": false,
+            "financial_status": "negative"
+          }
+        }
+      ],
+      "interpretation": "One assumption changes at a time. Other inputs, including conversion when reward changes, stay fixed. These points are not a response curve, confidence interval or optimization.",
+      "ranking": null
+    }
+  },
+  "input_sha256": {
+    "docs/rewards/phase9b_scenario_config.json": "0716cd4c96ab66ae8690cba4254bd8014dad888dce42775e306bc7e741fc00c2",
+    "src/growthlab/rewards/scenarios.py": "1a5b5ba141f6fe26f2c8ea02a736c5f14a33c86c7d18fd60c18a7475772b8cea",
+    "src/growthlab/rewards/economics.py": "76e1d3266d5f23e2cca89a160ad49f4fed0ecb9921a5c461dc3659bd3b13e239"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "reference_full_redemption",
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "assumptions_note": "Assume 23% conversion and full redemption; Phase 9A reference.",
+      "economics": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "1",
+        "contribution_per_purchase_eur": "20",
+        "contact_cost_per_customer_eur": "0"
+      }
+    },
+    {
+      "scenario_id": "partial_redemption",
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "assumptions_note": "Assume the same 23% conversion and 50% redemption, not an observed redemption estimate.",
+      "economics": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "0.5",
+        "contribution_per_purchase_eur": "20",
+        "contact_cost_per_customer_eur": "0"
+      }
+    },
+    {
+      "scenario_id": "higher_assumed_conversion",
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "assumptions_note": "Assume 30% conversion independently of reward amount; no response model inferred.",
+      "economics": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.30",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "1",
+        "contribution_per_purchase_eur": "20",
+        "contact_cost_per_customer_eur": "0"
+      }
+    },
+    {
+      "scenario_id": "lower_reward_assumption",
+      "population_id": "hypothetical-cohort-A",
+      "horizon_days": 14,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "assumptions_note": "Assume 23% conversion with EUR 2 reward and EUR 0.10 contact cost; not a causal reward-response claim.",
+      "economics": {
+        "contacted_customers": 1000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "reward_per_redemption_eur": "2",
+        "redemption_probability": "1",
+        "contribution_per_purchase_eur": "20",
+        "contact_cost_per_customer_eur": "0.10"
+      }
+    }
+  ],
+  "non_comparable_examples": [
+    {
+      "scenario_id": "different_context",
+      "population_id": "hypothetical-cohort-B",
+      "horizon_days": 30,
+      "financial_basis_id": "EUR-single-purchase-no-fixed-costs-v1",
+      "assumptions_note": "Different population, contact count, horizon and contribution; no cross-context ranking.",
+      "economics": {
+        "contacted_customers": 2000,
+        "baseline_conversion": "0.20",
+        "treatment_conversion": "0.23",
+        "reward_per_redemption_eur": "5",
+        "redemption_probability": "0.5",
+        "contribution_per_purchase_eur": "25",
+        "contact_cost_per_customer_eur": "0"
+      }
+    }
+  ],
+  "sensitivity_base_id": "reference_full_redemption",
+  "sensitivities": {
+    "treatment_conversion": [
+      "0.20",
+      "0.23",
+      "0.26",
+      "0.27",
+      "0.30"
+    ],
+    "reward_per_redemption_eur": [
+      "0",
+      "2",
+      "5",
+      "8"
+    ],
+    "redemption_probability": [
+      "0",
+      "0.5",
+      "1"
+    ],
+    "contribution_per_purchase_eur": [
+      "10",
+      "20",
+      "40"
+    ],
+    "contact_cost_per_customer_eur": [
+      "0",
+      "0.05",
+      "0.20"
+    ]
+  }
+}
