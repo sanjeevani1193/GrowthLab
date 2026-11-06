@@ -1,0 +1,152 @@
+{
+  "scope": "Synthetic A/A calibration only; true treatment effect exactly zero, not empirical voucher evidence",
+  "study_configuration": {
+    "repetitions": 1000,
+    "outcome_master_seed": 2026110601,
+    "calibration_alpha": 0.05,
+    "example_index": 0
+  },
+  "true_control_rate": 0.2,
+  "true_treatment_rate": 0.2,
+  "true_difference_pp": 0.0,
+  "outcome_alpha_two_sided": 0.05,
+  "confidence_interval_method": "95% Newcombe difference of independent Wilson score intervals; no continuity correction",
+  "assignment": {
+    "source": "Unchanged Phase 8A configuration and assign_customers function",
+    "seed": 20261106,
+    "experiment_id_namespace": "voucher_5eur_14d_v1",
+    "total_n": 5886,
+    "control_n": 2950,
+    "treatment_n": 2936,
+    "assignment_sha256": "0023e31634e472d5f1a03ea8f5cb0e317a63f44cc2cfed7467268032b165e507",
+    "fixed_across_repetitions": true,
+    "srm": {
+      "method": "two-sided exact binomial allocation test",
+      "control_n": 2950,
+      "treatment_n": 2936,
+      "total_n": 5886,
+      "expected_control_n": 2943.0,
+      "expected_treatment_n": 2943.0,
+      "observed_treatment_fraction": 0.4988107373428474,
+      "planned_treatment_probability": 0.5,
+      "p_value": 0.8654470932079597,
+      "significance_level": 0.01,
+      "flag_srm": false
+    }
+  },
+  "random_streams": {
+    "algorithm": "NumPy PCG64",
+    "construction": "SeedSequence(master_seed, spawn_key=(experiment_index,))",
+    "independence": "Independent pseudo-random outcome streams conditional on the fixed roster/assignment; no persistent customer effects"
+  },
+  "false_positives": {
+    "events": 43,
+    "trials": 1000,
+    "empirical_rate": 0.043,
+    "expected_rate": 0.05,
+    "wilson_95_interval": [
+      0.03207865341171336,
+      0.057419003844084
+    ],
+    "expected_count": 50.0,
+    "null_count_sd": 6.892024376045111,
+    "null_central_95_count_range": [
+      37,
+      64
+    ],
+    "two_sided_binomial_p_value": 0.3453488275048875,
+    "diagnostic_alpha": 0.05,
+    "flag_departure": false
+  },
+  "interval_coverage": {
+    "events": 957,
+    "trials": 1000,
+    "empirical_rate": 0.957,
+    "expected_rate": 0.95,
+    "wilson_95_interval": [
+      0.942580996155916,
+      0.9679213465882865
+    ],
+    "expected_count": 950.0,
+    "null_count_sd": 6.892024376045114,
+    "null_central_95_count_range": [
+      936,
+      963
+    ],
+    "two_sided_binomial_p_value": 0.34534882750488716,
+    "diagnostic_alpha": 0.05,
+    "flag_departure": false
+  },
+  "difference_diagnostics": {
+    "mean_difference_pp": -0.06800932896134484,
+    "empirical_sd_pp": 1.004448875927083,
+    "theoretical_null_sd_pp": 1.0427521323024602,
+    "mean_difference_monte_carlo_se_pp": 0.03297471773073012
+  },
+  "p_value_diagnostics": {
+    "mean": 0.5120989823248051,
+    "decile_counts": [
+      82,
+      100,
+      108,
+      99,
+      96,
+      99,
+      89,
+      127,
+      85,
+      115
+    ],
+    "significance_vs_ci_exclusion_disagreements": 0
+  },
+  "example_selection": "Prespecified experiment_index, not selected by p-value",
+  "example": {
+    "experiment_index": 0,
+    "spawn_key": [
+      0
+    ],
+    "control_n": 2950,
+    "treatment_n": 2936,
+    "control_conversions": 625,
+    "treatment_conversions": 572,
+    "control_rate": 0.211864406779661,
+    "treatment_rate": 0.19482288828337874,
+    "difference": -0.01704151849628227,
+    "difference_pp": -1.704151849628227,
+    "z_statistic": -1.624128028129541,
+    "p_value_two_sided": 0.10434848724768665,
+    "significant": false,
+    "confidence_level": 0.95,
+    "difference_ci": [
+      -0.037592766284000545,
+      0.0035279899190717133
+    ],
+    "difference_ci_pp": [
+      -3.7592766284000545,
+      0.35279899190717134
+    ],
+    "covers_true_zero": true
+  },
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "replication_aggregate_file": {
+    "path": "data/experiments/phase8b/replications.json",
+    "sha256": "43f422613dcc6fb239408e15ba59edbf41db66cc7b5f71762e03175fd9f6420b",
+    "rows": 1000,
+    "contains_customer_records": false
+  },
+  "input_sha256": {
+    "docs/experiments/phase8a_config.json": "7938d74dc40d2e85daa7c14c82fdb06a9b611cee59c05fedc932d93eefde92eb",
+    "docs/experiments/phase8b_config.json": "bd85f9e58d44b07bd3970e29ce6b35e2aa22f43d39646620f4b07d10ad1a4413",
+    "src/growthlab/experimentlab/aa_testing.py": "72d5ec0ec54da4c37c225c060a55223f7f92e596b0c389244399c911ca4e434d",
+    "src/growthlab/experimentlab/design.py": "6912ef5299ed7a3c425f104b9b3cfe170df0ca1d9237430beb9730f9f3ef811a"
+  },
+  "resources": {
+    "elapsed_seconds": 0.2137393750017509,
+    "peak_process_rss_bytes": 97550336,
+    "retention": "One binary customer vector at a time; retain per-experiment aggregates only"
+  }
+}
