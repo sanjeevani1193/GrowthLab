@@ -1,0 +1,255 @@
+{
+  "protocol": {
+    "candidate_method": "Unchanged Phase 10B1 personal_backfilled, exactly 100; canonical hashes must match Phase 10B2A",
+    "features": [
+      "product_views",
+      "product_carts",
+      "product_purchases",
+      "hours_since_product_event",
+      "product_buyers",
+      "customer_events",
+      "from_personal_history"
+    ],
+    "feature_history": "Previous calendar month, inclusive start and exclusive prediction timestamp, UTC; exact-row-deduplicated events; all four event types retained for recency/activity",
+    "missing_feature_policy": "Unseen user-product: zero event counts, NaN recency, source flag 0; missing buyer count 0. No fitted imputation/scaling.",
+    "training_snapshot": "2019-11-01",
+    "validation_snapshot": "2019-12-01",
+    "reserved_final_snapshot": "2020-01-01; not accessed or evaluated",
+    "model_class": "sklearn.ensemble.HistGradientBoostingClassifier",
+    "model_parameters": {
+      "loss": "log_loss",
+      "learning_rate": 0.08,
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "max_depth": null,
+      "min_samples_leaf": 50,
+      "l2_regularization": 1.0,
+      "max_bins": 63,
+      "early_stopping": false,
+      "categorical_features": null,
+      "class_weight": null,
+      "random_state": 20261109
+    },
+    "training_sampling": {
+      "positive_inclusion_probability": 1.0,
+      "negative_inclusion_probability": 0.02,
+      "seed": 20261109,
+      "method": "SHA256 of growthlab-10b2b:seed:user:product; first unsigned 64 bits < floor(2^64/50); independent rowwise training-only negative sampling",
+      "sample_weight": "1 for retained positives, 50 for retained negatives; inverse inclusion weighting approximates full candidate-pair log loss, not equal-user ranking loss",
+      "maximum_retained_rows": 1500000
+    },
+    "score": "decision_function margin; not a validated calibrated purchase probability",
+    "ml_ties": "Descending margin, then frozen personalized-recency position, then product ID; no score rounding",
+    "evaluation": "All validation customers and all 100 candidates; frozen Recall/NDCG definitions at K=5,10,20; primary macro Recall@10 and macro NDCG@10; micro recall separately",
+    "uncertainty": {
+      "method": "Paired purchaser-level percentile bootstrap of ML minus recency metric differences; same sampled user indices for all six endpoints",
+      "replications": 2000,
+      "confidence_level": 0.95,
+      "seed": 20261110,
+      "replication_batch": 25,
+      "limitations": "Pointwise intervals conditional on fitted model, this cohort, fixed retrieval and sampling; no training-refit, temporal or shared-product uncertainty; secondary endpoints exploratory, no simultaneous correction"
+    },
+    "selection": "Prefer ML only if both primary validation differences have 95% paired lower bounds above zero; otherwise retain recency. No business-value threshold supplied; do not invent one.",
+    "customer_batch_size": 1000,
+    "memory_limit": "256MB",
+    "spill_cap": "4GB",
+    "threads": 1,
+    "scope": "One prespecified model fit, no hyperparameter search, no final-test labels, no change to candidates or earlier modules"
+  },
+  "protocol_sha256": "2927fe262f8fc1efa4939361bf2ad7a99d563fd6afc7024c69b959459d0335bf",
+  "source_sha256": "5a055033566302117600427b678179dc16f90cfd5606f83382c410f09c112750",
+  "prior_baseline_summary_sha256": "3fcf1d0fe77a344288c9c42749bcc204586d1159c87da3161682917812e724db",
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "duckdb": "2.0.0"
+  },
+  "final_test_accessed": false,
+  "feature_layers": {
+    "train": {
+      "path": "data/ranking/phase10b2b/train_features.duckdb",
+      "sha256": "6c009db28b8473e20fb57e1085df78a0f92fbe805ecd7be63856162deb90e4c1",
+      "source_sha256": "14b09cb548c9c8e9e22282d28e244404e2ca6bb6028afb887f776392546fd7fb",
+      "stats": {
+        "historical_pairs": 2134748,
+        "historical_events": 3889128,
+        "earliest_pair_latest": "2019-10-01 00:00:19",
+        "latest_pair_event": "2019-10-31 23:59:54",
+        "historical_customers": 399664
+      }
+    },
+    "validation": {
+      "path": "data/ranking/phase10b2b/validation_features.duckdb",
+      "sha256": "8ee268e21ec1c5a5804d4479a49c7e94b223196553dc918c57e1229adba5545b",
+      "source_sha256": "cc3b606170c00f2cac0dcbbce85f3cbea99e93d949286af99fde7c1717e9edf2",
+      "stats": {
+        "historical_pairs": 2389836,
+        "historical_events": 4389144,
+        "earliest_pair_latest": "2019-11-01 00:00:02",
+        "latest_pair_event": "2019-11-30 23:59:58",
+        "historical_customers": 368232
+      }
+    }
+  },
+  "original_fit_source_sha256": "50ecf82601d19f2f731ce8dc5e84fb925cab15c1fb039499dbace839ede92cfc",
+  "recovery_note": "Original fit and full validation completed; final resource-summary export failed on Path subscripting. Export fixed; saved sampled arrays reconstructed and saved model evaluated without fitting. Original fit duration/peak was not retained; resources describe this verification run.",
+  "saved_model_sha256_before": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+  "training": {
+    "full_candidate_rows": 39966400,
+    "full_positive_rows": 20286,
+    "full_negative_rows": 39946114,
+    "retained_rows": 819703,
+    "retained_positive_rows": 20286,
+    "retained_negative_rows": 799417,
+    "full_positive_rate": 0.0005075763641458825,
+    "sample_positive_rate": 0.02474798799077227,
+    "weighted_positive_rate": 0.0005072624093499119,
+    "weighted_total_rows": 39991136.0,
+    "sample_identity_sha256": "176fa6671899c3d83cb060d2db0660f851892aa38091587f26767307030fcee7",
+    "candidate_sha256": "659053cea65ce8e97d60eee66602f5f609c9b414340a4d4f6fff6d52daf16167",
+    "array_bytes": 30329011,
+    "sampling_seconds": 93.13773391698487,
+    "fit_seconds": null,
+    "iterations": 100,
+    "fit_performed_this_run": false
+  },
+  "validation": {
+    "eligible_users": 368232,
+    "purchasing_users": 5693,
+    "relevant_pairs": 59298,
+    "candidate_hits": 17292,
+    "candidate_recall_micro": 0.2916118587473439,
+    "candidate_recall_macro": 0.32367365853137103,
+    "eligible_user_coverage": 1.0,
+    "methods": {
+      "global_popularity": {
+        "5": {
+          "hits": 1427,
+          "recall_macro": 0.026859865790654924,
+          "recall_micro": 0.024064892576478127,
+          "ndcg_macro": 0.058683359502492816
+        },
+        "10": {
+          "hits": 2338,
+          "recall_macro": 0.04221617747506651,
+          "recall_micro": 0.03942797396202233,
+          "ndcg_macro": 0.05624230013863569
+        },
+        "20": {
+          "hits": 3542,
+          "recall_macro": 0.061265851744067935,
+          "recall_micro": 0.05973220007420149,
+          "ndcg_macro": 0.05926555385304061
+        }
+      },
+      "personal_recency": {
+        "5": {
+          "hits": 3964,
+          "recall_macro": 0.11549458409224232,
+          "recall_micro": 0.06684879759856993,
+          "ndcg_macro": 0.1699309735851416
+        },
+        "10": {
+          "hits": 6587,
+          "recall_macro": 0.16749878436181748,
+          "recall_micro": 0.1110830044858174,
+          "ndcg_macro": 0.17786011898043547
+        },
+        "20": {
+          "hits": 9942,
+          "recall_macro": 0.22192787317656162,
+          "recall_micro": 0.16766164120206414,
+          "ndcg_macro": 0.19368175381462568
+        }
+      },
+      "ml": {
+        "5": {
+          "hits": 4879,
+          "recall_macro": 0.12998310269861643,
+          "recall_micro": 0.08227933488481905,
+          "ndcg_macro": 0.21135217134948295
+        },
+        "10": {
+          "hits": 7470,
+          "recall_macro": 0.17631806353596183,
+          "recall_micro": 0.12597389456642719,
+          "ndcg_macro": 0.20650145260531189
+        },
+        "20": {
+          "hits": 10434,
+          "recall_macro": 0.22209935385585777,
+          "recall_micro": 0.17595871698876858,
+          "ndcg_macro": 0.21356511047523122
+        }
+      }
+    },
+    "candidate_sha256": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+    "method_universe_sha256": {
+      "global_popularity": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+      "personal_recency": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+      "ml": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996"
+    },
+    "paired_uncertainty": {
+      "mean_difference": [
+        0.014488518606374408,
+        0.0414211977643427,
+        0.008819279174144323,
+        0.02864133362487703,
+        0.0001714806792961029,
+        0.01988335666060547
+      ],
+      "lower_95": [
+        0.011017520657511718,
+        0.03605555228711242,
+        0.00529292479622646,
+        0.024381693164416143,
+        -0.002718347113929974,
+        0.016324415462744987
+      ],
+      "upper_95": [
+        0.017874855201733476,
+        0.04656555779819849,
+        0.012143351478957573,
+        0.03274039231819404,
+        0.0030760190278167313,
+        0.023330695779109716
+      ],
+      "purchasers": 5693,
+      "replications": 2000,
+      "seed": 20261110,
+      "endpoints": [
+        "recall_macro@5",
+        "ndcg_macro@5",
+        "recall_macro@10",
+        "ndcg_macro@10",
+        "recall_macro@20",
+        "ndcg_macro@20"
+      ]
+    },
+    "mistakes": {
+      "relevant_pairs": 59298,
+      "absent_from_candidates": 42006,
+      "retrieved_not_top10_ml": 9822,
+      "top10_ml_only": 2517,
+      "top10_recency_only": 1634,
+      "top10_both": 4953,
+      "relevant_personal_candidates": 13851,
+      "relevant_backfill_candidates": 3441
+    },
+    "selected_method": "ml",
+    "elapsed_seconds": 212.95715008300613
+  },
+  "local_artifacts": {
+    "data/ranking/phase10b2b/model.joblib": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+    "data/ranking/phase10b2b/training_arrays.npz": "ea9226d7eed1f26b8e47843fd81cc4e25f17bd85e090006b2c1d6f522c87c879",
+    "data/ranking/phase10b2b/purchaser_metrics.npz": "8067e0f25c6248e82189d4d36a3fe3d47da67faeb31a6e62db4d59d0cc1f3776",
+    "data/ranking/phase10b2b/experiment_freeze.json": "cb8e2cd54be24e6fe7a1c0d87c8505b2ae989f4fa2b06529244ccd3c8e6efe10"
+  },
+  "resources": {
+    "elapsed_seconds": 307.8074569159944,
+    "peak_process_rss": 350732288,
+    "rss_units": "bytes on macOS; KiB on Linux",
+    "feature_database_bytes": 68444160
+  }
+}

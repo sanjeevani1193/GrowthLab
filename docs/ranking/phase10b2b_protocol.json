@@ -1,0 +1,49 @@
+{
+  "candidate_method": "Unchanged Phase 10B1 personal_backfilled, exactly 100; canonical hashes must match Phase 10B2A",
+  "features": ["product_views", "product_carts", "product_purchases", "hours_since_product_event", "product_buyers", "customer_events", "from_personal_history"],
+  "feature_history": "Previous calendar month, inclusive start and exclusive prediction timestamp, UTC; exact-row-deduplicated events; all four event types retained for recency/activity",
+  "missing_feature_policy": "Unseen user-product: zero event counts, NaN recency, source flag 0; missing buyer count 0. No fitted imputation/scaling.",
+  "training_snapshot": "2019-11-01",
+  "validation_snapshot": "2019-12-01",
+  "reserved_final_snapshot": "2020-01-01; not accessed or evaluated",
+  "model_class": "sklearn.ensemble.HistGradientBoostingClassifier",
+  "model_parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.08,
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "max_depth": null,
+    "min_samples_leaf": 50,
+    "l2_regularization": 1.0,
+    "max_bins": 63,
+    "early_stopping": false,
+    "categorical_features": null,
+    "class_weight": null,
+    "random_state": 20261109
+  },
+  "training_sampling": {
+    "positive_inclusion_probability": 1.0,
+    "negative_inclusion_probability": 0.02,
+    "seed": 20261109,
+    "method": "SHA256 of growthlab-10b2b:seed:user:product; first unsigned 64 bits < floor(2^64/50); independent rowwise training-only negative sampling",
+    "sample_weight": "1 for retained positives, 50 for retained negatives; inverse inclusion weighting approximates full candidate-pair log loss, not equal-user ranking loss",
+    "maximum_retained_rows": 1500000
+  },
+  "score": "decision_function margin; not a validated calibrated purchase probability",
+  "ml_ties": "Descending margin, then frozen personalized-recency position, then product ID; no score rounding",
+  "evaluation": "All validation customers and all 100 candidates; frozen Recall/NDCG definitions at K=5,10,20; primary macro Recall@10 and macro NDCG@10; micro recall separately",
+  "uncertainty": {
+    "method": "Paired purchaser-level percentile bootstrap of ML minus recency metric differences; same sampled user indices for all six endpoints",
+    "replications": 2000,
+    "confidence_level": 0.95,
+    "seed": 20261110,
+    "replication_batch": 25,
+    "limitations": "Pointwise intervals conditional on fitted model, this cohort, fixed retrieval and sampling; no training-refit, temporal or shared-product uncertainty; secondary endpoints exploratory, no simultaneous correction"
+  },
+  "selection": "Prefer ML only if both primary validation differences have 95% paired lower bounds above zero; otherwise retain recency. No business-value threshold supplied; do not invent one.",
+  "customer_batch_size": 1000,
+  "memory_limit": "256MB",
+  "spill_cap": "4GB",
+  "threads": 1,
+  "scope": "One prespecified model fit, no hyperparameter search, no final-test labels, no change to candidates or earlier modules"
+}
