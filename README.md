@@ -5,13 +5,74 @@ A staged Customer Intelligence & Causal Decision Science portfolio project.
 **Module 1 — REES46 Customer Purchase Prediction is complete through Phase 4.**
 It includes acquisition/audit, reviewed cleaning policies, customer features,
 chronological model comparison, validation-only calibration, and a frozen test
-benchmark. The completed local run passes **all 66 tests with no skips**.
+benchmark. The Phase 4 completion suite passed **66 tests with no skips**.
 
 **Module 2 — RetailHero SMS experiment and uplift-policy evaluation is complete
-through the final held-out evaluation (Phase 7), pending review and commit.**
+through the final held-out evaluation (Phase 7), committed and pushed.**
 It uses a separate retailer dataset and customer population from Module 1.
 Campaign-effect estimates depend on an unverified randomization protocol and
-treatment-propensity assumptions. No dashboard, API, or cloud deployment is included.
+treatment-propensity assumptions. The studies remain independent; their customers are never joined.
+
+**Phases 0–10C are preserved at `cf97aca9ca95d7e5ee754dec0717dae815cf657b`.**
+Experiment planning/simulations, hypothetical reward economics and final offline
+product ranking are also complete. **Phase 11 Decision Studio is implemented
+locally and visually approved for preservation; it has not been deployed.** The current
+full local suite passes **338 tests with no skips**.
+
+## GrowthLab Decision Studio
+
+A Streamlit and Plotly interface for exploring frozen evidence and hypothetical
+decisions. Seven workspaces cover Overview, Purchase Intelligence, RetailHero
+Targeting, Experiment Lab, Reward Economics, Product Ranking and Methodology.
+
+- Compare purchase models, top-decile purchaser capture and calibration.
+- Inspect assumption-dependent RetailHero policies at saved 10/20/30% budgets.
+- Change experiment-design assumptions; keep saved synthetic A/A and A/B results distinct.
+- Calculate hypothetical reward contribution, break-even, scenarios and sensitivity.
+- Compare final ranking at K=5/10/20, macro/micro recall and paired uncertainty.
+
+Verified headlines: purchase **AUC 0.8487 / 5.92× predictive lift**; observed
+RetailHero **training** SMS/control difference **+3.39 pp**, with learned targeting
+superiority **not established**; synthetic **4.3% A/A false positives / 79.3% A/B
+power**; final ML ranking **18.42% macro Recall@10 / 0.21625 NDCG@10**. These answer
+different questions and do not establish increased real-world sales.
+
+Run from the repository root with Python **3.12+** (tested with 3.14.7):
+
+```sh
+python3 -m venv .venv-studio
+source .venv-studio/bin/activate
+python -m pip install -r requirements-studio.lock
+python -m streamlit run streamlit_app.py
+```
+
+Open the localhost URL printed by Streamlit. The public app uses only permitted,
+committed **aggregate JSON** and pure planning/economics functions. It needs no
+raw datasets, customer records, trained models, credentials or paid services.
+The UI lock is separate from the research/modeling environments below.
+
+See the [implementation and testing report](docs/decision_studio/phase11_implementation.md),
+[metric/chart source map](docs/decision_studio/evidence_map.md), and
+[fingerprinted evidence manifest](docs/decision_studio/evidence_manifest.json).
+The 25 UI tests include all seven pages and a separate no-data-directory run.
+Actual Chromium smoke checks cover desktop, mobile layouts and working controls.
+No Docker or cloud deployment has been started.
+
+| Additional completed study | Methodology |
+| --- | --- |
+| Synthetic experiment design and randomization | [Phase 8A](docs/experiments/phase8a_design.md) |
+| Synthetic A/A calibration | [Phase 8B](docs/experiments/phase8b_aa_testing.md) |
+| Synthetic A/B power validation | [Phase 8C](docs/experiments/phase8c_ab_testing.md) |
+| Hypothetical reward economics | [Phase 9A](docs/rewards/phase9a_economics.md) |
+| Hypothetical scenarios and sensitivity | [Phase 9B](docs/rewards/phase9b_scenarios.md) |
+| REES46 ranking audit/design | [Phase 10A](docs/ranking/phase10a_data_design.md) |
+| Candidate generation | [Phase 10B1](docs/ranking/phase10b1_candidate_generation.md) |
+| Ranking baselines | [Phase 10B2A](docs/ranking/phase10b2a_ranking_baselines.md) |
+| Lightweight ML reranking | [Phase 10B2B](docs/ranking/phase10b2b_ml_reranking.md) |
+| Final offline ranking evaluation | [Phase 10C](docs/ranking/phase10c_final_evaluation.md) |
+
+The following sections retain the detailed Module 1 and independent Module 2
+research findings and reproduction instructions.
 
 ## Business problem and prediction target
 
@@ -176,7 +237,8 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 
 Full verification requires existing local artifacts, intentionally not shipped
 in Git. Some saved-artifact tests skip when local artifacts are absent; the
-completed local run passes **all 66 tests with no skips**.
+Phase 4 completion run passed **all 66 tests with no skips**; the current full
+local suite passes **338 tests**.
 
 **Full re-creation belongs in a separate reproduction workspace/run record.**
 It requires the five official monthly files (~2.43 GB expanded) and sufficient
@@ -288,7 +350,8 @@ PYTHONPATH=src .venv/bin/python -m growthlab.retailhero.final_evaluation --verif
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The completed local repository suite passes **120 tests with no skips**. Raw
+At Phase 7 completion the local suite passed **120 tests with no skips**; the
+current full suite passes **338**. Raw
 history, customer features, models, predictions, and bootstrap draws are ignored;
 only aggregate evidence/figures, protocols, source and tests are reviewable.
 
@@ -300,5 +363,6 @@ only aggregate evidence/figures, protocols, source and tests are reviewable.
 | [Phase 7 final report](docs/causal/phase7_final_evaluation.md) | Final intervals, curves, interpretation and verification |
 | [Final aggregate evidence](docs/causal/phase7/final_summary.json) | Full-precision held-out estimates and provenance |
 
-Phase 7 is pending user review and has not been committed or pushed. The
-interactive GrowthLab Decision Studio is a proposed next step, not implemented.
+Phase 7 is preserved. The local Phase 11 Decision Studio presents these frozen
+findings alongside the separate prediction, simulation, economics and ranking
+workspaces; see the run instructions above. Phase 11 is visually approved and preserved with the application source and tests.

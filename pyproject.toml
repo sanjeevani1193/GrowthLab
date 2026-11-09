@@ -11,6 +11,11 @@ requires-python = ">=3.11"
 dependencies = ["duckdb==2.0.0"]
 
 [project.optional-dependencies]
+studio = [
+    "streamlit==1.67.0",
+    "plotly==7.1.0",
+    "scipy==1.18.1",
+]
 modeling = [
     "numpy==2.5.4",
     "scikit-learn==1.9.1",

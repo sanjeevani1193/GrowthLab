@@ -1,0 +1,312 @@
+{
+  "scope": "Only committed aggregate evidence; no customer records/models/raw data. Metric mappings documented in evidence_map.md.",
+  "research_commit": "cf97aca9ca95d7e5ee754dec0717dae815cf657b",
+  "sources": {
+    "purchase": {
+      "path": "docs/phase4/test_summary.json",
+      "sha256": "71b07ebcebd6a3728ffaf801c4fbc8d52e45803da3baf1dc4f5857f9c2a94f2d",
+      "required_paths": [
+        [
+          "models",
+          "xgboost",
+          "test",
+          "roc_auc"
+        ],
+        [
+          "models",
+          "xgboost",
+          "test",
+          "lift_at_top_10_percent"
+        ],
+        [
+          "models",
+          "logistic_regression",
+          "test"
+        ],
+        [
+          "models",
+          "xgboost",
+          "reliability"
+        ],
+        [
+          "models",
+          "xgboost_calibrated",
+          "reliability"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "models",
+          "xgboost",
+          "test",
+          "roc_auc"
+        ],
+        [
+          "models",
+          "xgboost",
+          "test",
+          "lift_at_top_10_percent"
+        ]
+      ]
+    },
+    "purchase_spec": {
+      "path": "docs/phase2_specification.json",
+      "sha256": "ce7c8522905bfb72e344674b01eaf7b7a4a603eb3cc96ccdf88896b0479a44de",
+      "required_paths": [
+        [
+          "feature_columns"
+        ],
+        [
+          "primary_splits"
+        ]
+      ],
+      "numeric_paths": []
+    },
+    "experiment": {
+      "path": "docs/causal/phase5/experiment_summary.json",
+      "sha256": "9164d11732c4b5a74a92cb7e865d003c278462c7b155e2a86c2a039b47a038a6",
+      "required_paths": [
+        [
+          "statistics",
+          "treated_rate"
+        ],
+        [
+          "statistics",
+          "control_rate"
+        ],
+        [
+          "statistics",
+          "difference_pp"
+        ],
+        [
+          "statistics",
+          "ci95_pp"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "statistics",
+          "treated_rate"
+        ],
+        [
+          "statistics",
+          "control_rate"
+        ],
+        [
+          "statistics",
+          "difference_pp"
+        ]
+      ]
+    },
+    "uplift": {
+      "path": "docs/causal/phase7/final_summary.json",
+      "sha256": "c26bfe05eb95b77769225d5867257bc909d3bd14dbc3a9c2a68984c6b7478407",
+      "required_paths": [
+        [
+          "n"
+        ],
+        [
+          "primary",
+          "difference_per_1000"
+        ],
+        [
+          "primary",
+          "ci95_per_1000"
+        ],
+        [
+          "policies"
+        ],
+        [
+          "paired_policy_differences"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "n"
+        ],
+        [
+          "primary",
+          "difference_per_1000"
+        ]
+      ]
+    },
+    "planning": {
+      "path": "docs/experiments/phase8a_planning_summary.json",
+      "sha256": "88bd8a231ee610d3fb9c5579e9d07abad3c958c5f1fd4bba894370855eec1dad",
+      "required_paths": [
+        [
+          "sample_size"
+        ],
+        [
+          "synthetic_example",
+          "srm"
+        ]
+      ],
+      "numeric_paths": []
+    },
+    "aa": {
+      "path": "docs/experiments/phase8b_aa_summary.json",
+      "sha256": "b2690b03f70a10d74961b01e354e8f30363401793b02030fc18bda834ee19ed3",
+      "required_paths": [
+        [
+          "false_positives",
+          "empirical_rate"
+        ],
+        [
+          "false_positives",
+          "wilson_95_interval"
+        ],
+        [
+          "example"
+        ],
+        [
+          "interval_coverage"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "false_positives",
+          "empirical_rate"
+        ]
+      ]
+    },
+    "ab": {
+      "path": "docs/experiments/phase8c_ab_summary.json",
+      "sha256": "f4bedd7529a58841a0dd7bc171f096334101035adceada367aa982953ce6eaab",
+      "required_paths": [
+        [
+          "empirical_power",
+          "empirical_rate"
+        ],
+        [
+          "empirical_power",
+          "wilson_95_interval"
+        ],
+        [
+          "example"
+        ],
+        [
+          "interval_coverage"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "empirical_power",
+          "empirical_rate"
+        ]
+      ]
+    },
+    "reward_config": {
+      "path": "docs/rewards/phase9b_scenario_config.json",
+      "sha256": "0716cd4c96ab66ae8690cba4254bd8014dad888dce42775e306bc7e741fc00c2",
+      "required_paths": [
+        [
+          "scenarios"
+        ],
+        [
+          "sensitivities"
+        ]
+      ],
+      "numeric_paths": []
+    },
+    "reward_summary": {
+      "path": "docs/rewards/phase9b_scenario_summary.json",
+      "sha256": "ce43059634d556bd77583427e58eca205209b80ec6bbbba6793f1e5490a2d36e",
+      "required_paths": [
+        [
+          "comparison",
+          "scenarios"
+        ],
+        [
+          "sensitivities"
+        ]
+      ],
+      "numeric_paths": []
+    },
+    "reward_reference": {
+      "path": "docs/rewards/phase9a_reference_summary.json",
+      "sha256": "0d1543a8deba9c6cde0c71c8d4dc228a2873f82fb4fb17fd5e7ab40baa5b224b",
+      "required_paths": [
+        [
+          "inputs"
+        ],
+        [
+          "expected_values"
+        ],
+        [
+          "break_even"
+        ]
+      ],
+      "numeric_paths": []
+    },
+    "ranking": {
+      "path": "docs/ranking/phase10c_summary.json",
+      "sha256": "6e8f502071d58253f1692e04cd74ffb0a868c9b1184ecb666366c234027bf792",
+      "required_paths": [
+        [
+          "methods",
+          "ml",
+          "10",
+          "recall_macro"
+        ],
+        [
+          "methods",
+          "ml",
+          "10",
+          "ndcg_macro"
+        ],
+        [
+          "candidate_recall_macro"
+        ],
+        [
+          "candidate_recall_micro"
+        ],
+        [
+          "paired_uncertainty"
+        ],
+        [
+          "errors"
+        ]
+      ],
+      "numeric_paths": [
+        [
+          "methods",
+          "ml",
+          "10",
+          "recall_macro"
+        ],
+        [
+          "methods",
+          "ml",
+          "10",
+          "ndcg_macro"
+        ],
+        [
+          "candidate_recall_macro"
+        ],
+        [
+          "candidate_recall_micro"
+        ]
+      ]
+    },
+    "ranking_protocol": {
+      "path": "docs/ranking/phase10c_protocol.json",
+      "sha256": "a2d2fb67a8ecca241d1a89d752c34cbe349ccdaa305c400a51662d0f87098f97",
+      "required_paths": [
+        [
+          "features"
+        ],
+        [
+          "history_start"
+        ],
+        [
+          "prediction_time"
+        ],
+        [
+          "outcome_end"
+        ]
+      ],
+      "numeric_paths": []
+    }
+  }
+}

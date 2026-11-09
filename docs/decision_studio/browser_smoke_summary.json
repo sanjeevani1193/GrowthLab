@@ -1,0 +1,96 @@
+{
+  "pages": [
+    {
+      "page": "Overview",
+      "charts": 0,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Purchase Intelligence",
+      "charts": 3,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "RetailHero Targeting",
+      "charts": 2,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Experiment Lab",
+      "charts": 1,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Reward Economics",
+      "charts": 2,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Product Ranking",
+      "charts": 2,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Methodology",
+      "charts": 0,
+      "document_width": 1440,
+      "viewport": 1440
+    },
+    {
+      "page": "Mobile overview",
+      "charts": 0,
+      "document_width": 390,
+      "viewport": 390
+    },
+    {
+      "page": "Mobile overview expanded sources",
+      "charts": 0,
+      "document_width": 390,
+      "viewport": 390
+    },
+    {
+      "page": "Mobile ranking",
+      "charts": 2,
+      "document_width": 390,
+      "viewport": 390
+    },
+    {
+      "page": "Mobile Purchase Intelligence",
+      "charts": 3,
+      "document_width": 390,
+      "viewport": 390
+    },
+    {
+      "page": "Mobile Reward Economics",
+      "charts": 2,
+      "document_width": 390,
+      "viewport": 390
+    },
+    {
+      "page": "Mobile Methodology",
+      "charts": 0,
+      "document_width": 390,
+      "viewport": 390
+    }
+  ],
+  "interactions": [
+    "Overview evidence links expand from Evidence & Sources",
+    "Purchase model: Logistic Regression AUC 0.8081",
+    "RetailHero: 10% budget \u2192 4,001 contacts and saved estimates",
+    "Unequal allocation selected; saved A/B power stays 79.3%",
+    "Zero reward \u2192 \u20ac600 net; scenario and sensitivity tabs render",
+    "Ranking K=20 macro 22.69% \u2192 micro 18.85%",
+    "Methodology wraps full cell descriptions; mobile table scroll reaches Evidence column"
+  ],
+  "browser_errors": [],
+  "checked_at_utc": "2026-11-09T15:35:21.488008+00:00",
+  "tool": "Playwright 1.64.1 / Chromium 156",
+  "scope": "Approved Phase 11 UI polish; no analytical calculations changed, no research scoring or outcome access",
+  "visual_review": "Desktop and mobile screenshots inspected: calendar-day wording, full wrapping methodology table and mobile horizontal scrolling, negative EUR formatting, macro/micro denominator labels, and expanded Evidence & Sources. No document overflow or browser errors. Not an exhaustive accessibility or cross-browser audit."
+}
