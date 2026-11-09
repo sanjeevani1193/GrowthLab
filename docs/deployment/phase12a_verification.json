@@ -1,0 +1,201 @@
+{
+  "status": "verified locally; not committed or deployed",
+  "verified_at_utc": "2026-11-09T16:04:11.404858+00:00",
+  "research_and_ui_commit": "8b5b25054e66f7ea69f2778818db6ae01fca01c9",
+  "base_image": "python:3.14.7-slim-bookworm@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+  "image_id": "sha256:05387fa1d6f484fb9b1f38b9dd15dede4943f2212b72599f8286c0342720742c",
+  "image_size_bytes": 727417590,
+  "tested_platform": "linux/arm64",
+  "initial_dependency_build_seconds": 71.76,
+  "final_build_with_cached_dependencies_seconds": 13.06,
+  "startup": {
+    "image": "growthlab-studio:phase12a",
+    "startup_to_http_health_seconds": 1.731,
+    "health_status": 200,
+    "health_body": "ok",
+    "bind": "127.0.0.1:8502",
+    "memory_limit_bytes": 536870912,
+    "cpu_limit": 1,
+    "source_mounts": false
+  },
+  "docker_health": "healthy",
+  "runtime_packages_verified": 36,
+  "runtime_file_count": 31,
+  "build_context_file_count": 33,
+  "build_context_bytes": 240599,
+  "runtime_file_sha256": {
+    "streamlit_app.py": "d701f8c9b1a2f7285da294a7d52f2a9139bee5217fa743ac50850d1be89d46e3",
+    "requirements-studio.lock": "9bfc1aee4d337e566248eeee5dfa3dd7710af0090218f589d3e1f37e41e23a2d",
+    "requirements-container.lock": "d884ebc025c3040afbd6a10acfb2c3781d2dd3247fde24343382c078791b81df",
+    "docs/phase2_specification.json": "ce7c8522905bfb72e344674b01eaf7b7a4a603eb3cc96ccdf88896b0479a44de",
+    "docker/entrypoint.py": "b33ed63c8351f523a70b2b8150f76123b5119fb80b0670ce74c8f8fa646914b3",
+    "docker/healthcheck.py": "6ae86b692b54db8e4eb2da6a5bde452c45660639598dfa9426121ffbde4245f6",
+    ".streamlit/config.toml": "bfb9974f3d8fe94e3315c21db8ab190c8c015d579b8de8594970d14513098619",
+    "src/growthlab/__init__.py": "c2c600172c595ac47d97917874a20aa3890a183bad87def70b32655cc5272da1",
+    "src/growthlab/rewards/economics.py": "76e1d3266d5f23e2cca89a160ad49f4fed0ecb9921a5c461dc3659bd3b13e239",
+    "src/growthlab/rewards/__init__.py": "30474841e80f5dc20be7487a1936395a76d007e13d6a0a4fd3ecd7c4e1ea962e",
+    "src/growthlab/rewards/scenarios.py": "1a5b5ba141f6fe26f2c8ea02a736c5f14a33c86c7d18fd60c18a7475772b8cea",
+    "src/growthlab/experimentlab/design.py": "6912ef5299ed7a3c425f104b9b3cfe170df0ca1d9237430beb9730f9f3ef811a",
+    "src/growthlab/experimentlab/__init__.py": "80ad3feefcf4bac29fe5760bb1c871463ca7c653958ed694e28ab76e146b4163",
+    "src/growthlab/studio/evidence.py": "e055bb058141430633227a0dda9809b983eb0ae430df646779ccb71ae0b86838",
+    "src/growthlab/studio/calculations.py": "2a6fbc7944602e2afc50c8cdffc73694f7da66983bcba83589341d4bf058cb31",
+    "src/growthlab/studio/pages.py": "5a2f4bdce0cc67fc363165014adf3bb4385395e91b827d664665461ab5ec256e",
+    "src/growthlab/studio/ui.py": "eed3a7c384ad0bc5e3ba0eccb86eadea792a2350d55fe7d6cb6ff746e98da3f3",
+    "src/growthlab/studio/app.py": "5da0c51239cadd8db14b897ca5cb8aaa24a51579d3091135e4b9ccbd38fcd651",
+    "src/growthlab/studio/__init__.py": "3a3e98495dcafc26b5bbddbba1e11f81077634bbc1ef2e312337cc176b616830",
+    "docs/decision_studio/evidence_manifest.json": "c7ed15dec56f76860d74b43657b887da90fa4f727ba2ebb0785e2f9a593fdc9b",
+    "docs/ranking/phase10c_summary.json": "6e8f502071d58253f1692e04cd74ffb0a868c9b1184ecb666366c234027bf792",
+    "docs/ranking/phase10c_protocol.json": "a2d2fb67a8ecca241d1a89d752c34cbe349ccdaa305c400a51662d0f87098f97",
+    "docs/rewards/phase9b_scenario_summary.json": "ce43059634d556bd77583427e58eca205209b80ec6bbbba6793f1e5490a2d36e",
+    "docs/rewards/phase9b_scenario_config.json": "0716cd4c96ab66ae8690cba4254bd8014dad888dce42775e306bc7e741fc00c2",
+    "docs/rewards/phase9a_reference_summary.json": "0d1543a8deba9c6cde0c71c8d4dc228a2873f82fb4fb17fd5e7ab40baa5b224b",
+    "docs/experiments/phase8b_aa_summary.json": "b2690b03f70a10d74961b01e354e8f30363401793b02030fc18bda834ee19ed3",
+    "docs/experiments/phase8c_ab_summary.json": "f4bedd7529a58841a0dd7bc171f096334101035adceada367aa982953ce6eaab",
+    "docs/experiments/phase8a_planning_summary.json": "88bd8a231ee610d3fb9c5579e9d07abad3c958c5f1fd4bba894370855eec1dad",
+    "docs/phase4/test_summary.json": "71b07ebcebd6a3728ffaf801c4fbc8d52e45803da3baf1dc4f5857f9c2a94f2d",
+    "docs/causal/phase5/experiment_summary.json": "9164d11732c4b5a74a92cb7e865d003c278462c7b155e2a86c2a039b47a038a6",
+    "docs/causal/phase7/final_summary.json": "c26bfe05eb95b77769225d5867257bc909d3bd14dbc3a9c2a68984c6b7478407"
+  },
+  "resource_snapshot": {
+    "memory_usage_bytes": 184926208,
+    "peak_usage_bytes": null,
+    "memory_limit_bytes": 536870912,
+    "pids": 14,
+    "memory_stats_keys": [
+      "usage",
+      "stats",
+      "limit"
+    ]
+  },
+  "resource_note": "Snapshot after browser interactions; Docker API does not expose peak usage. Not a concurrency/load benchmark.",
+  "browser_checks": {
+    "pages": [
+      {
+        "page": "Overview",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Purchase Intelligence",
+        "charts": 3,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "RetailHero Targeting",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Experiment Lab",
+        "charts": 1,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Reward Economics",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Product Ranking",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Methodology",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Mobile overview",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile overview expanded sources",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile ranking",
+        "charts": 2,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Purchase Intelligence",
+        "charts": 3,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Reward Economics",
+        "charts": 2,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Methodology",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      }
+    ],
+    "interactions": [
+      "Overview evidence links expand from Evidence & Sources",
+      "Purchase model: Logistic Regression AUC 0.8081",
+      "RetailHero: 10% budget \u2192 4,001 contacts and saved estimates",
+      "Unequal allocation selected; saved A/B power stays 79.3%",
+      "Zero reward \u2192 \u20ac600 net; scenario and sensitivity tabs render",
+      "Ranking K=20 macro 22.69% \u2192 micro 18.85%",
+      "Methodology wraps full cell descriptions; mobile table scroll reaches Evidence column"
+    ],
+    "browser_errors": []
+  },
+  "tests": {
+    "baseline": 338,
+    "packaging": 6,
+    "full_suite": 344,
+    "full_suite_seconds": 48.98,
+    "skipped": 0
+  },
+  "alternate_port": {
+    "port": 8091,
+    "host_bind": "127.0.0.1:8503",
+    "http_health": 200,
+    "docker_health": "healthy",
+    "graceful_exit_code": 0,
+    "temporary_container_removed": true,
+    "invalid_port_rejected": true
+  },
+  "preservation": {
+    "frozen_module1_and_retailhero_passed": true,
+    "prior_file_states_checked": 82,
+    "additional_artifact_hashes_checked": 29,
+    "dashboard_evidence_hashes_checked": 12,
+    "outcomes_parsed": false,
+    "research_recomputed": false
+  },
+  "privacy": {
+    "no_host_data_or_model_mounts": true,
+    "no_raw_data_models_predictions_or_host_paths_in_app_files": true,
+    "final_logs_checked": true,
+    "localhost_only": true,
+    "public_registry_push": false,
+    "cloud_resources_created": false
+  },
+  "amd64_runtime_tested": false,
+  "verification_containers_stopped_and_removed": true,
+  "packaging_sha256": {
+    "Dockerfile": "50184af2167ba1f8b118846ebf1ac6f3584eb825ec03df2bf4e78c210f3c3511",
+    ".dockerignore": "cdf927b9af734a2b63c071ad84f2149329480a223fd920a70767d29d9cb4850d"
+  }
+}

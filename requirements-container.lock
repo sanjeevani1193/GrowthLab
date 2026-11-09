@@ -1,0 +1,3 @@
+# Linux adds Streamlit's mandatory non-Darwin dependency; preserve the UI pins.
+-r requirements-studio.lock
+watchdog==7.1.0; platform_system != "Darwin"

@@ -15,9 +15,10 @@ treatment-propensity assumptions. The studies remain independent; their customer
 
 **Phases 0–10C are preserved at `cf97aca9ca95d7e5ee754dec0717dae815cf657b`.**
 Experiment planning/simulations, hypothetical reward economics and final offline
-product ranking are also complete. **Phase 11 Decision Studio is implemented
-locally and visually approved for preservation; it has not been deployed.** The current
-full local suite passes **338 tests with no skips**.
+product ranking are also complete. **Phase 11 Decision Studio is preserved at
+`8b5b25054e66f7ea69f2778818db6ae01fca01c9`. Phase 12A local Docker packaging is
+verified and approved for preservation; no public deployment has occurred.** The current
+full local suite passes **344 tests with no skips** (338 existing + six packaging checks).
 
 ## GrowthLab Decision Studio
 
@@ -56,7 +57,45 @@ See the [implementation and testing report](docs/decision_studio/phase11_impleme
 [fingerprinted evidence manifest](docs/decision_studio/evidence_manifest.json).
 The 25 UI tests include all seven pages and a separate no-data-directory run.
 Actual Chromium smoke checks cover desktop, mobile layouts and working controls.
-No Docker or cloud deployment has been started.
+Local Docker packaging is verified; no cloud deployment has been started.
+
+## Local Docker run (Phase 12A)
+
+On this Apple Silicon Mac, build and run the public aggregate-only app:
+
+```sh
+docker build --platform linux/arm64 -t growthlab-studio:phase12a .
+docker run -d --name growthlab-phase12a --pull=never \
+  --platform linux/arm64 -p 127.0.0.1:8502:8080 \
+  --memory=512m --cpus=1 --pids-limit=128 \
+  --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m \
+  --cap-drop=ALL --security-opt=no-new-privileges:true \
+  growthlab-studio:phase12a
+```
+
+Open **http://127.0.0.1:8502**. Host port 8501 remains available for the original
+Streamlit process. The image runs as UID 10001, binds internally to `0.0.0.0`,
+and defaults to `PORT=8080`. To override it, pass `-e PORT=8091` and use a matching
+mapping such as `-p 127.0.0.1:8503:8091`. No raw data, model or source volume is needed.
+
+```sh
+docker inspect --format '{{.State.Health.Status}}' growthlab-phase12a
+docker exec growthlab-phase12a python docker/healthcheck.py
+docker stop --time 10 growthlab-phase12a
+docker rm growthlab-phase12a
+```
+
+The expected health endpoint is `/_stcore/health` (**HTTP 200 / `ok`**).
+The verified image is **727.4 MB (~694 MiB)**; fresh HTTP readiness was **1.73 s**
+with a 512 MiB limit. All seven workspaces and planning/reward interactions passed
+inside the container. These are local smoke checks, not production load benchmarks.
+
+See [Docker design, exact commands and verification](docs/deployment/phase12a_docker.md)
+and the [small verification receipt](docs/deployment/phase12a_verification.json).
+The build uses the existing UI pins plus Linux-required `watchdog`; the original
+locks and app are unchanged. Only native Linux ARM64 was executed. Future Cloud
+Run release requires a native **Linux AMD64** build/test; no emulation, external
+image push or cloud resource creation was performed. Phase 12A is preserved; its verification containers have been stopped and removed.
 
 | Additional completed study | Methodology |
 | --- | --- |
@@ -238,7 +277,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 Full verification requires existing local artifacts, intentionally not shipped
 in Git. Some saved-artifact tests skip when local artifacts are absent; the
 Phase 4 completion run passed **all 66 tests with no skips**; the current full
-local suite passes **338 tests**.
+local suite passes **344 tests**.
 
 **Full re-creation belongs in a separate reproduction workspace/run record.**
 It requires the five official monthly files (~2.43 GB expanded) and sufficient
@@ -351,7 +390,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
 At Phase 7 completion the local suite passed **120 tests with no skips**; the
-current full suite passes **338**. Raw
+current full suite passes **344**. Raw
 history, customer features, models, predictions, and bootstrap draws are ignored;
 only aggregate evidence/figures, protocols, source and tests are reviewable.
 
