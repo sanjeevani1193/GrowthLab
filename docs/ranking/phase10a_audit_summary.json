@@ -1,0 +1,385 @@
+{
+  "scope": "Descriptive audit; development candidate coverage only; no final-test evaluation",
+  "source_sha256": {
+    "data/features/phase2/cleaned/2019-Oct.parquet": "14b09cb548c9c8e9e22282d28e244404e2ca6bb6028afb887f776392546fd7fb",
+    "data/features/phase2/cleaned/2019-Nov.parquet": "cc3b606170c00f2cac0dcbbce85f3cbea99e93d949286af99fde7c1717e9edf2",
+    "data/features/phase2/cleaned/2019-Dec.parquet": "65f57d559704dc949e0178e21eb10da84b7084fb9af161ee27f812766c624fd6",
+    "data/features/phase2/cleaned/2020-Jan.parquet": "1e21d49b99c92403274aa67568b9070ccadccd52d825265380c2e2193cfef100",
+    "data/features/phase2/cleaned/2020-Feb.parquet": "d8789b4645f790174785b91a589026805f4d6cff7840e4222a5b2738ca5b3d6d"
+  },
+  "global": {
+    "totals": {
+      "events": 19583742,
+      "customers": 1639358,
+      "products": 54571,
+      "first_event": "2019-10-01 00:00:00",
+      "last_event": "2020-02-29 23:59:59"
+    },
+    "event_types": [
+      {
+        "event_type": "cart",
+        "events": 5652991
+      },
+      {
+        "event_type": "purchase",
+        "events": 1286102
+      },
+      {
+        "event_type": "remove_from_cart",
+        "events": 2987859
+      },
+      {
+        "event_type": "view",
+        "events": 9656790
+      }
+    ],
+    "pairs": {
+      "distinct_customer_product_pairs": 10157408,
+      "repeated_pairs": 4514189,
+      "customers_repeating_product": 648528,
+      "purchased_pairs": 1225886,
+      "pairs_bought_at_multiple_times": 51041,
+      "customers_rebuying_product": 11898,
+      "customers_rebuying_product_on_multiple_dates": 10175
+    },
+    "users": {
+      "customers": 1639358,
+      "single_event_customers": 769703,
+      "customers_with_multiple_products": 648395,
+      "purchasers": 110518,
+      "customers_with_multiple_purchase_rows": 99086,
+      "event_quantiles": [
+        2,
+        18,
+        45,
+        200
+      ],
+      "product_quantiles": [
+        1,
+        11,
+        24,
+        93
+      ],
+      "max_events": 26098,
+      "max_products": 5105
+    },
+    "purchase_occasions": {
+      "customers_with_multiple_purchase_times": 24849,
+      "customers_with_multiple_purchase_dates": 22738
+    },
+    "products": {
+      "products": 54571,
+      "products_with_purchases": 40777,
+      "products_with_at_least_5_buyers": 26947,
+      "products_with_at_least_20_buyers": 12006,
+      "products_without_purchases": 13794,
+      "buyer_quantiles": [
+        4,
+        48,
+        93,
+        293
+      ],
+      "max_buyers": 7049
+    },
+    "popularity": [
+      {
+        "cutoff": 100,
+        "products": 100,
+        "distinct_buyer_product_pairs": 130827,
+        "purchase_rows": 140806,
+        "pair_share": 0.10672036388375428,
+        "purchase_row_share": 0.10948276264246537
+      },
+      {
+        "cutoff": 500,
+        "products": 500,
+        "distinct_buyer_product_pairs": 308710,
+        "purchase_rows": 329690,
+        "pair_share": 0.25182602623734995,
+        "purchase_row_share": 0.25634825231591274
+      },
+      {
+        "cutoff": 546,
+        "products": 546,
+        "distinct_buyer_product_pairs": 322515,
+        "purchase_rows": 344207,
+        "pair_share": 0.2630872691261667,
+        "purchase_row_share": 0.267635848478581
+      },
+      {
+        "cutoff": 5458,
+        "products": 5458,
+        "distinct_buyer_product_pairs": 842490,
+        "purchase_rows": 888764,
+        "pair_share": 0.6872498747844417,
+        "purchase_row_share": 0.6910524981688855
+      }
+    ],
+    "metadata": {
+      "events": 19583742,
+      "missing_category_id": 0,
+      "missing_category_code": 19240810,
+      "missing_brand": 8265149,
+      "negative_prices": 124,
+      "zero_prices": 86326
+    },
+    "catalog_changes": {
+      "products_with_multiple_category_ids": 1619,
+      "products_with_multiple_brands": 24
+    },
+    "observed_pair_density": 0.00011353955320219336
+  },
+  "snapshots": [
+    {
+      "split": "train",
+      "history_start": "2019-10-01",
+      "prediction_time": "2019-11-01",
+      "outcome_end": "2019-11-15",
+      "history": {
+        "customers": 399664,
+        "customers_with_2_products": 149395,
+        "customers_with_5_events": 92519,
+        "unique_product_quantiles": [
+          1,
+          11,
+          24,
+          72
+        ],
+        "max_products": 1203
+      },
+      "catalog": {
+        "observed_products": 41899,
+        "purchased_products": 26281,
+        "products_with_5_buyers": 10479,
+        "products_with_20_buyers": 2673
+      },
+      "active_days": {
+        "customers_with_2_active_dates": 70874
+      },
+      "cooccurrence_work": {
+        "uncapped_user_pair_emissions": 61445192.0,
+        "capped_50_user_pair_emissions": 19876952.0
+      },
+      "future_population": {
+        "purchased_pairs": 123488,
+        "purchasers": 13627,
+        "pairs_from_customers_without_window_history": 57470,
+        "purchasers_without_window_history": 7600,
+        "pairs_for_products_absent_from_window_history": 2241
+      },
+      "warm_outcomes": {
+        "purchased_pairs": 66018,
+        "purchasers": 6027,
+        "previously_interacted_pairs": 17390,
+        "previously_purchased_pairs": 1902,
+        "new_product_pairs": 1485
+      },
+      "outcomes_accessed": true
+    },
+    {
+      "split": "validation",
+      "history_start": "2019-11-01",
+      "prediction_time": "2019-12-01",
+      "outcome_end": "2019-12-15",
+      "history": {
+        "customers": 368232,
+        "customers_with_2_products": 160084,
+        "customers_with_5_events": 103053,
+        "unique_product_quantiles": [
+          1,
+          14,
+          29,
+          84
+        ],
+        "max_products": 1582
+      },
+      "catalog": {
+        "observed_products": 43419,
+        "purchased_products": 28954,
+        "products_with_5_buyers": 12851,
+        "products_with_20_buyers": 3489
+      },
+      "active_days": {
+        "customers_with_2_active_dates": 80199
+      },
+      "cooccurrence_work": {
+        "uncapped_user_pair_emissions": 77977366.0,
+        "capped_50_user_pair_emissions": 23421918.0
+      },
+      "future_population": {
+        "purchased_pairs": 109928,
+        "purchasers": 12938,
+        "pairs_from_customers_without_window_history": 50630,
+        "purchasers_without_window_history": 7245,
+        "pairs_for_products_absent_from_window_history": 2208
+      },
+      "warm_outcomes": {
+        "purchased_pairs": 59298,
+        "purchasers": 5693,
+        "previously_interacted_pairs": 14589,
+        "previously_purchased_pairs": 1892,
+        "new_product_pairs": 1327
+      },
+      "outcomes_accessed": true,
+      "candidate_diagnostics": [
+        {
+          "global_cap": 20,
+          "actual_global_products": 20,
+          "personal_cap": 50,
+          "relevant_pairs": 59298,
+          "purchasing_customers": 5693,
+          "global_hits": 2917,
+          "personal_hits": 12525,
+          "union_hits": 14509,
+          "global_macro_recall": 0.054561128746366115,
+          "personal_macro_recall": 0.24564186951822717,
+          "union_macro_recall": 0.28266053635338745,
+          "min_candidates": 20,
+          "mean_candidates": 25.139433835190857,
+          "max_candidates": 70,
+          "candidate_quantiles": [
+            21,
+            34,
+            48,
+            69
+          ],
+          "candidate_rows": 9257144
+        },
+        {
+          "global_cap": 50,
+          "actual_global_products": 50,
+          "personal_cap": 50,
+          "relevant_pairs": 59298,
+          "purchasing_customers": 5693,
+          "global_hits": 4629,
+          "personal_hits": 12525,
+          "union_hits": 15763,
+          "global_macro_recall": 0.08403004880762338,
+          "personal_macro_recall": 0.24564186951822717,
+          "union_macro_recall": 0.30354883398623234,
+          "min_candidates": 50,
+          "mean_candidates": 55.01618273262508,
+          "max_candidates": 100,
+          "candidate_quantiles": [
+            51,
+            64,
+            78,
+            99
+          ],
+          "candidate_rows": 20258719
+        },
+        {
+          "global_cap": 100,
+          "actual_global_products": 100,
+          "personal_cap": 50,
+          "relevant_pairs": 59298,
+          "purchasing_customers": 5693,
+          "global_hits": 6600,
+          "personal_hits": 12525,
+          "union_hits": 17228,
+          "global_macro_recall": 0.11720875651794599,
+          "personal_macro_recall": 0.24564186951822717,
+          "union_macro_recall": 0.327747931836868,
+          "min_candidates": 100,
+          "mean_candidates": 104.87731375871734,
+          "max_candidates": 150,
+          "candidate_quantiles": [
+            101,
+            113,
+            127,
+            148
+          ],
+          "candidate_rows": 38619183
+        },
+        {
+          "global_cap": 200,
+          "actual_global_products": 200,
+          "personal_cap": 50,
+          "relevant_pairs": 59298,
+          "purchasing_customers": 5693,
+          "global_hits": 9514,
+          "personal_hits": 12525,
+          "union_hits": 19336,
+          "global_macro_recall": 0.16834737215491752,
+          "personal_macro_recall": 0.24564186951822717,
+          "union_macro_recall": 0.36368258752638755,
+          "min_candidates": 200,
+          "mean_candidates": 204.66833952508202,
+          "max_candidates": 250,
+          "candidate_quantiles": [
+            201,
+            213,
+            226,
+            246
+          ],
+          "candidate_rows": 75365432
+        },
+        {
+          "global_cap": 500,
+          "actual_global_products": 500,
+          "personal_cap": 50,
+          "relevant_pairs": 59298,
+          "purchasing_customers": 5693,
+          "global_hits": 14870,
+          "personal_hits": 12525,
+          "union_hits": 23354,
+          "global_macro_recall": 0.26253719533378644,
+          "personal_macro_recall": 0.24564186951822717,
+          "union_macro_recall": 0.4308054038143379,
+          "min_candidates": 500,
+          "mean_candidates": 504.23548197875255,
+          "max_candidates": 550,
+          "candidate_quantiles": [
+            501,
+            511,
+            523,
+            543
+          ],
+          "candidate_rows": 185675640
+        }
+      ]
+    },
+    {
+      "split": "final_test",
+      "history_start": "2019-12-01",
+      "prediction_time": "2020-01-01",
+      "outcome_end": "2020-01-15",
+      "history": {
+        "customers": 370154,
+        "customers_with_2_products": 147393,
+        "customers_with_5_events": 90464,
+        "unique_product_quantiles": [
+          1,
+          11,
+          22,
+          65
+        ],
+        "max_products": 1659
+      },
+      "catalog": {
+        "observed_products": 44624,
+        "purchased_products": 26815,
+        "products_with_5_buyers": 9501,
+        "products_with_20_buyers": 2152
+      },
+      "active_days": {
+        "customers_with_2_active_dates": 75267
+      },
+      "cooccurrence_work": {
+        "uncapped_user_pair_emissions": 53376290.0,
+        "capped_50_user_pair_emissions": 16860165.0
+      },
+      "outcomes_accessed": false
+    }
+  ],
+  "resources": {
+    "memory_limit": "768MB",
+    "threads": 1,
+    "spill_cap": "4GB",
+    "elapsed_seconds": 56.57724241699907,
+    "process_maxrss": 1092288512,
+    "maxrss_units": "bytes on macOS; KiB on Linux",
+    "duckdb_version": "2.0.0"
+  },
+  "audit_source_sha256": "bd4ab47317fcb6c30af78ae063f397362d9ca7008d5f00e6badb5367ce33ed01"
+}
