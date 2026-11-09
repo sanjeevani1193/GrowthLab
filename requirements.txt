@@ -1,0 +1,2 @@
+# Streamlit Community Cloud entry point: reuse the verified dashboard/Linux pins.
+-r requirements-container.lock

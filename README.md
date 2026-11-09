@@ -18,7 +18,7 @@ Experiment planning/simulations, hypothetical reward economics and final offline
 product ranking are also complete. **Phase 11 Decision Studio is preserved at
 `8b5b25054e66f7ea69f2778818db6ae01fca01c9`. Phase 12A local Docker packaging is
 verified and approved for preservation; no public deployment has occurred.** The current
-full local suite passes **344 tests with no skips** (338 existing + six packaging checks).
+full local suite passes **353 tests with no skips** (338 original + 15 packaging/release checks).
 
 ## GrowthLab Decision Studio
 
@@ -93,9 +93,26 @@ inside the container. These are local smoke checks, not production load benchmar
 See [Docker design, exact commands and verification](docs/deployment/phase12a_docker.md)
 and the [small verification receipt](docs/deployment/phase12a_verification.json).
 The build uses the existing UI pins plus Linux-required `watchdog`; the original
-locks and app are unchanged. Only native Linux ARM64 was executed. Future Cloud
-Run release requires a native **Linux AMD64** build/test; no emulation, external
-image push or cloud resource creation was performed. Phase 12A is preserved; its verification containers have been stopped and removed.
+locks and app are unchanged. Only native Linux ARM64 was executed. The optional
+native **Linux AMD64** workflow is manual-only and public-repository guarded; it
+has not been run. No emulation, external image push or cloud resource creation
+was performed. Phase 12A is preserved; its verification containers were removed.
+
+## Proposed free public host — preparation only
+
+The public hosting target is **free Streamlit Community Cloud**. Google Cloud Run
+has been cancelled; no GCP services, registries, billing changes or CityPulse
+resources will be used. Nothing has been deployed.
+
+The new root `requirements.txt` reuses the verified Linux/dashboard locks. The
+planned entry point is `streamlit_app.py`; choose Python **3.14** explicitly when
+an eventual deployment is approved. The app requires no application secrets,
+customer data or trained models. Docker remains the verified local option.
+
+See the [revised preparation plan](docs/deployment/phase12b_predeployment.md).
+Phase 12B release preparation is verified and approved for preservation. Public
+deployment still requires separate approval and managed-host verification; no
+paid fallback is authorized.
 
 | Additional completed study | Methodology |
 | --- | --- |
@@ -277,7 +294,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 Full verification requires existing local artifacts, intentionally not shipped
 in Git. Some saved-artifact tests skip when local artifacts are absent; the
 Phase 4 completion run passed **all 66 tests with no skips**; the current full
-local suite passes **344 tests**.
+local suite passes **353 tests**.
 
 **Full re-creation belongs in a separate reproduction workspace/run record.**
 It requires the five official monthly files (~2.43 GB expanded) and sufficient
@@ -390,7 +407,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
 At Phase 7 completion the local suite passed **120 tests with no skips**; the
-current full suite passes **344**. Raw
+current full suite passes **353**. Raw
 history, customer features, models, predictions, and bootstrap draws are ignored;
 only aggregate evidence/figures, protocols, source and tests are reviewable.
 

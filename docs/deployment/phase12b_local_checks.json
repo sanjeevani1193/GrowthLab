@@ -1,0 +1,310 @@
+{
+  "status": "Community Cloud release preparation verified; no public deployment or AMD64 execution",
+  "checked_at_utc": "2026-11-09T16:54:17.576560+00:00",
+  "phase12a_commit": "c1e53694be8678b20184788179e34fe1b0ffb587",
+  "phase12a_push_and_clean_tree_verified": true,
+  "phase12a_preservation_tests": 344,
+  "github_inventory": {
+    "repository_visibility": "public",
+    "default_branch": "main",
+    "existing_workflow_count": 0
+  },
+  "proposed_ci": {
+    "runner": "ubuntu-24.04",
+    "expected_architecture": "linux/amd64",
+    "run_url": null,
+    "amd64_build_result": "not run",
+    "amd64_startup_result": "not run",
+    "actionlint_version": "1.7.12",
+    "actionlint_result": "passed",
+    "permissions": "contents: read",
+    "image_registry_push": false,
+    "trigger": "workflow_dispatch only",
+    "automatic_runs": false,
+    "public_repository_guard": true,
+    "publication": "included in this release commit; not dispatched",
+    "purpose": "optional Docker portability, not a Community Cloud prerequisite"
+  },
+  "local_arm64_harness": {
+    "uid": 10001,
+    "python": "3.14.7",
+    "runtime_package_count": 36,
+    "evidence_count": 12,
+    "frozen_headlines_match": true,
+    "planning_and_reward_checks": "passed",
+    "no_data_models_or_mac_paths": true,
+    "tested_platform": "linux/arm64",
+    "image_id": "sha256:05387fa1d6f484fb9b1f38b9dd15dede4943f2212b72599f8286c0342720742c",
+    "image_size_bytes": 727417590,
+    "http_health": 200,
+    "docker_health": "healthy",
+    "native_host_guard": "passed",
+    "isolation_and_file_hashes": "passed",
+    "startup_logs_checked": true,
+    "resource_snapshot": {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "1.48%",
+      "Container": "growthlab-ci",
+      "ID": "2aa99d9a9308",
+      "MemPerc": "14.57%",
+      "MemUsage": "74.6MiB / 512MiB",
+      "Name": "growthlab-ci",
+      "NetIO": "13.5kB / 16.1kB",
+      "PIDs": "4"
+    },
+    "note": "Local Docker evidence only. No registry push or cloud deployment."
+  },
+  "local_arm64_browser": {
+    "pages": [
+      {
+        "page": "Overview",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Purchase Intelligence",
+        "charts": 3,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "RetailHero Targeting",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Experiment Lab",
+        "charts": 1,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Reward Economics",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Product Ranking",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Methodology",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Mobile overview",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile overview expanded sources",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile ranking",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Purchase Intelligence",
+        "charts": 3,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Reward Economics",
+        "charts": 2,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Methodology",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      }
+    ],
+    "interactions": [
+      "Overview evidence links expand from Evidence & Sources",
+      "Purchase model: Logistic Regression AUC 0.8081",
+      "RetailHero: 10% budget \u2192 4,001 contacts and saved estimates",
+      "Unequal allocation selected; saved A/B power stays 79.3%",
+      "Zero reward \u2192 \u20ac600 net; scenario and sensitivity tabs render",
+      "Ranking K=20 macro 22.69% \u2192 micro 18.85%",
+      "Methodology wraps full cell descriptions; mobile table scroll reaches Evidence column"
+    ],
+    "browser_errors": []
+  },
+  "local_arm64_post_browser_resource_snapshot": {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "1.83%",
+    "Container": "growthlab-ci",
+    "ID": "2aa99d9a9308",
+    "MemPerc": "34.17%",
+    "MemUsage": "174.9MiB / 512MiB",
+    "Name": "growthlab-ci",
+    "NetIO": "372kB / 21MB",
+    "PIDs": "12"
+  },
+  "logs_checked_after_browser": true,
+  "new_ci_source_sha256": {
+    ".github/workflows/studio-amd64.yml": "d6532daa8e9d3355973130d35ef05e440fb4809d8f28d65fe76e948a314fd30e",
+    "scripts/verify_container_runtime.py": "c030f5cbabc5097ee122cb2842be39186ec441af5a42b0900f3b0b4ae77c7847",
+    "tests/test_container_runtime.py": "ed93afee19f1ec20dce83eeecccdcca2d8e4ed2f70b0e4ad2bada86fdfde5675"
+  },
+  "preserved_runtime_changed": false,
+  "research_changed": false,
+  "outcome_evaluation": false,
+  "gcp_api_enablement": false,
+  "cloud_resources_created": false,
+  "billing_changes": false,
+  "citypulse_access": false,
+  "public_deployment": false,
+  "deployment_plan_update": {
+    "target": "Free Streamlit Community Cloud",
+    "google_cloud_run": "cancelled by user",
+    "gcp_resources_authorized": false,
+    "paid_fallback_authorized": false,
+    "deployment_authorized": false,
+    "requirements_entry": "requirements.txt",
+    "runtime_pins_changed": false
+  },
+  "community_preparation_checks": {
+    "full_suite_passed": 353,
+    "skipped": 0,
+    "seconds": 16.85,
+    "new_hosting_guard_tests": 3,
+    "requirements_dry_run": "passed with no network, install or package changes",
+    "tracked_repository_artifact_audit": "passed",
+    "approved_runtime_and_docker_fingerprints_checked": 33,
+    "deployment_performed": false
+  },
+  "initial_harness_suite": {
+    "passed": 350,
+    "skipped": 0,
+    "seconds": 23.623,
+    "new_tests": 6
+  },
+  "full_suite": {
+    "passed": 353,
+    "skipped": 0,
+    "seconds": 16.398
+  },
+  "release_browser_checks": {
+    "pages": [
+      {
+        "page": "Overview",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Purchase Intelligence",
+        "charts": 3,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "RetailHero Targeting",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Experiment Lab",
+        "charts": 1,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Reward Economics",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Product Ranking",
+        "charts": 2,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Methodology",
+        "charts": 0,
+        "document_width": 1440,
+        "viewport": 1440
+      },
+      {
+        "page": "Mobile overview",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile overview expanded sources",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile ranking",
+        "charts": 2,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Purchase Intelligence",
+        "charts": 3,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Reward Economics",
+        "charts": 2,
+        "document_width": 390,
+        "viewport": 390
+      },
+      {
+        "page": "Mobile Methodology",
+        "charts": 0,
+        "document_width": 390,
+        "viewport": 390
+      }
+    ],
+    "interactions": [
+      "Overview evidence links expand from Evidence & Sources",
+      "Purchase model: Logistic Regression AUC 0.8081",
+      "RetailHero: 10% budget \u2192 4,001 contacts and saved estimates",
+      "Unequal allocation selected; saved A/B power stays 79.3%",
+      "Zero reward \u2192 \u20ac600 net; scenario and sensitivity tabs render",
+      "Ranking K=20 macro 22.69% \u2192 micro 18.85%",
+      "Methodology wraps full cell descriptions; mobile table scroll reaches Evidence column"
+    ],
+    "browser_errors": []
+  },
+  "release_checks": {
+    "requirements_dry_run": "passed; no install or pin changes",
+    "python_to_select": "3.14",
+    "tested_local_python": "3.14.7",
+    "entry_point": "streamlit_app.py",
+    "tracked_aggregate_sources": 12,
+    "evidence_manifest_tracked": true,
+    "approved_runtime_docker_hashes": 33,
+    "prior_artifact_states": 82,
+    "frozen_model_checks": "passed",
+    "application_changed": false,
+    "docker_changed": false,
+    "hosting_created": false
+  }
+}

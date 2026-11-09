@@ -1,0 +1,67 @@
+name: Studio native AMD64 smoke
+
+# Optional portability check: never run automatically on pushes or pull requests.
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studio-amd64-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker-smoke:
+    # Never allocate a runner if the repository becomes private.
+    if: ${{ github.event.repository.private == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Require native AMD64 and check packaging tests
+        run: |
+          test "$(uname -m)" = x86_64
+          python3 -m unittest discover -s tests -p 'test_container*.py' -v
+      - name: Build existing pinned Dockerfile locally
+        run: docker build --platform linux/amd64 --progress=plain -t growthlab-studio:ci .
+      - name: Start isolated container
+        run: |
+          docker run -d --name growthlab-ci --pull=never --platform linux/amd64 \
+            -p 127.0.0.1:8502:8080 --memory=512m --cpus=1 --pids-limit=128 \
+            --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m \
+            --cap-drop=ALL --security-opt=no-new-privileges:true growthlab-studio:ci
+          python3 scripts/verify_container_runtime.py \
+            --output "$RUNNER_TEMP/studio-runtime.json"
+      - name: Install only pinned browser tooling on runner
+        run: |
+          python3 -m venv "$RUNNER_TEMP/studio-browser"
+          python3 -c "from pathlib import Path; print('\n'.join(s for s in Path('requirements-studio-test.lock').read_text().splitlines() if '==' in s))" > "$RUNNER_TEMP/browser-requirements.lock"
+          "$RUNNER_TEMP/studio-browser/bin/python" -m pip install -r "$RUNNER_TEMP/browser-requirements.lock"
+          "$RUNNER_TEMP/studio-browser/bin/python" -m playwright install --with-deps --only-shell chromium
+      - name: Seven workspaces and planning/reward interactions
+        run: |
+          "$RUNNER_TEMP/studio-browser/bin/python" scripts/verify_decision_studio.py \
+            --url http://127.0.0.1:8502 --output "$RUNNER_TEMP/studio-browser-results"
+      - name: Inspect startup logs and resource usage
+        if: always()
+        run: |
+          if docker inspect growthlab-ci > /dev/null 2>&1; then
+            docker logs growthlab-ci
+            docker stats --no-stream growthlab-ci || true
+          fi
+          if test -f "$RUNNER_TEMP/studio-runtime.json"; then
+            printf '### Native container audit\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat "$RUNNER_TEMP/studio-runtime.json" >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if test -f "$RUNNER_TEMP/studio-browser-results/receipt.json"; then
+            printf '### Browser smoke checks\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat "$RUNNER_TEMP/studio-browser-results/receipt.json" >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Remove only the test container
+        if: always()
+        run: docker rm -f growthlab-ci 2>/dev/null || true
