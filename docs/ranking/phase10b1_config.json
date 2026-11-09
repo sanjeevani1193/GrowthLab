@@ -1,0 +1,17 @@
+{
+  "budgets": [50, 100, 150, 200],
+  "graph_history_cap": 50,
+  "seed_cap": 10,
+  "neighbors_per_item": 50,
+  "minimum_item_users": 5,
+  "minimum_pair_users": 3,
+  "customer_batch_size": 1000,
+  "memory_limit": "512MB",
+  "spill_cap": "4GB",
+  "positive_event_types": ["view", "cart", "purchase"],
+  "personal_event_types": ["view", "cart", "purchase", "remove_from_cart"],
+  "graph_score": "pair_users / sqrt(capped_source_users * capped_target_users)",
+  "neighbor_aggregation": "maximum similarity; then maximum pair support; then product ID",
+  "hybrid_order": ["personal", "item", "global"],
+  "scope": "Prespecified bounded development comparison; no final-test labels or ranking-model training"
+}
