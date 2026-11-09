@@ -1,5 +1,9 @@
 # GrowthLab
 
+**[Live Demo — GrowthLab Decision Studio](https://growthlab-decision-studio.streamlit.app/)**
+
+**v1.0.0 portfolio release** · Hosted on **free Streamlit Community Cloud**.
+
 A staged Customer Intelligence & Causal Decision Science portfolio project.
 
 **Module 1 — REES46 Customer Purchase Prediction is complete through Phase 4.**
@@ -16,8 +20,8 @@ treatment-propensity assumptions. The studies remain independent; their customer
 **Phases 0–10C are preserved at `cf97aca9ca95d7e5ee754dec0717dae815cf657b`.**
 Experiment planning/simulations, hypothetical reward economics and final offline
 product ranking are also complete. **Phase 11 Decision Studio is preserved at
-`8b5b25054e66f7ea69f2778818db6ae01fca01c9`. Phase 12A local Docker packaging is
-verified and approved for preservation; no public deployment has occurred.** The current
+`8b5b25054e66f7ea69f2778818db6ae01fca01c9`. Local Docker packaging and Community
+Cloud release preparation are preserved; the public demo is now deployed.** The current
 full local suite passes **353 tests with no skips** (338 original + 15 packaging/release checks).
 
 ## GrowthLab Decision Studio
@@ -57,7 +61,8 @@ See the [implementation and testing report](docs/decision_studio/phase11_impleme
 [fingerprinted evidence manifest](docs/decision_studio/evidence_manifest.json).
 The 25 UI tests include all seven pages and a separate no-data-directory run.
 Actual Chromium smoke checks cover desktop, mobile layouts and working controls.
-Local Docker packaging is verified; no cloud deployment has been started.
+Local Docker packaging is verified. The public demo runs directly on free
+Streamlit Community Cloud, using the same application and aggregate evidence.
 
 ## Local Docker run (Phase 12A)
 
@@ -98,21 +103,70 @@ native **Linux AMD64** workflow is manual-only and public-repository guarded; it
 has not been run. No emulation, external image push or cloud resource creation
 was performed. Phase 12A is preserved; its verification containers were removed.
 
-## Proposed free public host — preparation only
+## Public deployment — Streamlit Community Cloud
 
-The public hosting target is **free Streamlit Community Cloud**. Google Cloud Run
-has been cancelled; no GCP services, registries, billing changes or CityPulse
-resources will be used. Nothing has been deployed.
+**Live app:** https://growthlab-decision-studio.streamlit.app/
 
-The new root `requirements.txt` reuses the verified Linux/dashboard locks. The
-planned entry point is `streamlit_app.py`; choose Python **3.14** explicitly when
-an eventual deployment is approved. The app requires no application secrets,
-customer data or trained models. Docker remains the verified local option.
+The application is deployed from `sanjeevani1193/GrowthLab`, branch `main`, with
+entry point **streamlit_app.py**. The reviewed runtime selection is **Python 3.14**
+(tested locally with 3.14.7). Root `requirements.txt` reuses the verified Linux/
+dashboard dependency locks; no model weights, raw data or application secrets
+are required. Docker remains the independently verified local packaging option.
 
-See the [revised preparation plan](docs/deployment/phase12b_predeployment.md).
-Phase 12B release preparation is verified and approved for preservation. Public
-deployment still requires separate approval and managed-host verification; no
-paid fallback is authorized.
+Only free Community Cloud is used. Google Cloud Run and paid services are outside
+the release plan; no CityPulse infrastructure is reused. The free host may sleep
+or restart, so temporary hypothetical widget inputs can reset. Methodology,
+metric definitions and limitations remain unchanged.
+
+See the [public release verification](docs/deployment/v1_0_0_public_release.md)
+and the [Community Cloud configuration/rollback guide](docs/deployment/phase12b_predeployment.md).
+Earlier phase reports retain their original phase-time deployment status.
+Future pushes to the connected branch can update the live app; review them with
+that in mind.
+
+## Architecture overview
+
+```mermaid
+flowchart TD
+    subgraph Studies[Completed studies - separate populations and assumptions]
+        REES[REES46 cosmetics events] --> Predict[Customer purchase prediction]
+        REES --> Rank[Personalized product ranking]
+        Retail[RetailHero experiment and history] --> Causal[Assumption-dependent causal and uplift evaluation]
+        Synthetic[Synthetic experiment assumptions] --> AB[A/B Experiment Lab and saved A/A and A/B diagnostics]
+        Assumed[Hypothetical reward assumptions] --> Reward[Reward Economics engine and scenario analysis]
+    end
+    Predict --> Evidence[Verified public aggregate evidence]
+    Rank --> Evidence
+    Causal --> Evidence
+    AB --> Evidence
+    AB --> Calculators[Reusable planning and economics calculations]
+    Reward --> Calculators
+    Evidence --> Studio[Streamlit and Plotly Decision Studio - seven workspaces]
+    Calculators --> Studio
+    Studio --> Cloud[Free Streamlit Community Cloud - public Python app]
+    Studio --> Docker[Docker - verified local Linux ARM64 image]
+```
+
+The presentation layer reads frozen aggregates and runs small hypothetical
+calculations. It does not train or load ML models, run event ETL, join the REES46
+and RetailHero populations, or reopen final-test outcomes. Raw datasets, customer
+records, predictions and model artifacts stay outside the public runtime and Git.
+Optional AMD64 Docker CI is manual-only, public-repository guarded and unrun;
+it is not required for Community Cloud hosting.
+
+## Screenshots
+
+These are real, existing screenshots from verified local Chromium sessions of
+the same application, copied without modification. Public hosting chrome may
+differ. They show aggregate findings, not customer-level records.
+
+**Executive overview**
+
+![Decision Studio overview with verified research and simulation headlines](docs/decision_studio/screenshots/overview.png)
+
+**Product ranking comparison**
+
+![Product ranking metrics with macro and micro denominators and frozen method comparisons](docs/decision_studio/screenshots/product-ranking.png)
 
 | Additional completed study | Methodology |
 | --- | --- |

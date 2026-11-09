@@ -1,0 +1,111 @@
+{
+  "url": "https://growthlab-decision-studio.streamlit.app/",
+  "checked_at_utc": "2026-11-09T17:50:28.752655+00:00",
+  "pages": [
+    {
+      "workspace": "Overview",
+      "result": "passed",
+      "expected_metrics": [
+        "0.8487",
+        "+3.39 pp",
+        "79.3%",
+        "18.42%"
+      ],
+      "visible_charts": 0
+    },
+    {
+      "workspace": "Purchase Intelligence",
+      "result": "passed",
+      "expected_metrics": [
+        "0.8487",
+        "0.1025",
+        "59.23%",
+        "5.92\u00d7",
+        "324 / 547"
+      ],
+      "visible_charts": 0
+    },
+    {
+      "workspace": "RetailHero Targeting",
+      "result": "passed",
+      "expected_metrics": [
+        "63.65%",
+        "60.26%",
+        "+3.39 pp"
+      ],
+      "visible_charts": 1
+    },
+    {
+      "workspace": "Experiment Lab",
+      "result": "passed",
+      "expected_metrics": [
+        "5,886",
+        "4.3%",
+        "79.3%"
+      ],
+      "visible_charts": 1
+    },
+    {
+      "workspace": "Reward Economics",
+      "result": "passed",
+      "expected_metrics": [
+        "30.00",
+        "\u20ac600.00",
+        "\u20ac1,150.00",
+        "-\u20ac550.00",
+        "26.67%"
+      ],
+      "visible_charts": 1
+    },
+    {
+      "workspace": "Product Ranking",
+      "result": "passed",
+      "expected_metrics": [
+        "18.42%",
+        "0.21625",
+        "32.04%",
+        "70.69%"
+      ],
+      "visible_charts": 2
+    },
+    {
+      "workspace": "Methodology",
+      "result": "passed",
+      "expected_metrics": [],
+      "visible_charts": 0
+    }
+  ],
+  "interactions": [
+    "30% treatment allocation: 6,949 planned customers; frozen power remains 79.3%",
+    "Zero reward: hypothetical net \u20ac600.00",
+    "Saved 10% policy budget: 4,001 contacts",
+    "Ranking K=20 macro 22.69%, micro 18.85%"
+  ],
+  "browser_errors": [],
+  "http_status": 200,
+  "release": "v1.0.0",
+  "application_baseline_commit": "0fd072c009c2da59ad1807cab05ab418a797ee76",
+  "checked_at_europe_berlin": "2026-11-09T18:50:28.752655+01:00",
+  "automated_tests": {
+    "passed": 353,
+    "skipped": 0,
+    "elapsed_seconds": 16.883
+  },
+  "screenshots": {
+    "docs/decision_studio/screenshots/overview.png": {
+      "provenance": "Existing verified local Chromium capture; copied unchanged, not a public-host screenshot",
+      "sha256": "10e21626f2f108edc1ff749ce21cd2d5c16f0c4739791dfcba35d43759c3f813",
+      "bytes": 288557
+    },
+    "docs/decision_studio/screenshots/product-ranking.png": {
+      "provenance": "Existing verified local Chromium capture; copied unchanged, not a public-host screenshot",
+      "sha256": "2698406ba4ec4a27c391014cc2c132d2b748c562b51301fba5adeea42f0c2495",
+      "bytes": 132837
+    }
+  },
+  "limitations": [
+    "Public checks cover one desktop Chromium session; they are not a load/uptime test.",
+    "Managed host backend Python patch/resource limits were not independently introspected.",
+    "Optional native AMD64 workflow was not dispatched."
+  ]
+}
