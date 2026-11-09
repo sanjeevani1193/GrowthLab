@@ -1,0 +1,428 @@
+{
+  "protocol": {
+    "candidate_method": "Phase 10B1 personal_backfilled",
+    "candidate_budget": 100,
+    "candidate_order": "Latest event among all four event types descending, product ID ascending; append unseen past distinct-buyer popularity products, product ID ties; take first 100",
+    "ranking_methods": {
+      "global_popularity": "All historical products' distinct-buyer counts descending, then product ID ascending; absent counts are zero",
+      "personal_recency": "Personal-history products first; latest event among all four event types descending; past distinct-buyer count descending; product ID ascending; unseen products use popularity then ID"
+    },
+    "interaction_type_weights": null,
+    "cutoffs": [
+      5,
+      10,
+      20
+    ],
+    "primary_comparison": "Validation mean per-purchasing-customer Recall@10 and NDCG@10; report disagreement instead of changing rules",
+    "recall": "Macro mean among eligible purchasers primary; micro purchased-pair recall separately",
+    "ndcg": "Binary gains, log2(rank+1) discount; ideal uses min(K, all distinct future purchased products), including those outside candidates; macro among eligible purchasers",
+    "empty_outcome_policy": "Exclude from undefined purchase recall/NDCG averages, retain in scoring and coverage",
+    "cold_start_policy": "Empty personal history falls back to popularity; zero such customers in the historical-activity eligible cohort means observed cold-start metrics are null",
+    "history": "Previous calendar month, inclusive start and exclusive prediction timestamp, UTC",
+    "outcome": "Fourteen days from prediction timestamp, inclusive start and exclusive end, UTC",
+    "development_snapshots": [
+      "2019-11-01",
+      "2019-12-01"
+    ],
+    "reserved_final_snapshot": "2020-01-01; no final-test labels accessed or evaluated in this phase",
+    "customer_batch_size": 1000,
+    "memory_limit": "512MB",
+    "spill_cap": "4GB",
+    "scope": "Two deterministic ordering baselines only; no training, retrieval tuning or final-test evaluation"
+  },
+  "protocol_sha256": "0ffc2eb763080dc971ad6662b22d192d75017235c65eda1deae5e3487e24ecca",
+  "source_sha256": "d1894e489277eb3216e9ad942a73366d90d9f7ed2640a8cdf9a45d6264f7d926",
+  "prior_candidate_summary_sha256": "92f996cde168131a27928231e9af03450956f1a9cd4fb935d3c0fc9039779808",
+  "final_test_accessed": false,
+  "snapshots": {
+    "train": {
+      "window": [
+        "train",
+        "2019-10-01",
+        "2019-11-01",
+        "2019-11-15"
+      ],
+      "freeze": {
+        "canonical_candidate_sha256": "659053cea65ce8e97d60eee66602f5f609c9b414340a4d4f6fff6d52daf16167",
+        "eligible_users": 399664,
+        "without_personal_history": 0,
+        "candidate_budget": 100,
+        "labels_read": false,
+        "protocol_sha256": "0ffc2eb763080dc971ad6662b22d192d75017235c65eda1deae5e3487e24ecca",
+        "source_sha256": "d1894e489277eb3216e9ad942a73366d90d9f7ed2640a8cdf9a45d6264f7d926",
+        "history_database_sha256": "6a63e9d5d3024eb24675938679c2fb078dc0c880f626df9b16e7c09d6af02cc8"
+      },
+      "input_database_sha256": "6a63e9d5d3024eb24675938679c2fb078dc0c880f626df9b16e7c09d6af02cc8",
+      "label_sha256": "cc3b606170c00f2cac0dcbbce85f3cbea99e93d949286af99fde7c1717e9edf2",
+      "groups": {
+        "all": {
+          "eligible_users": 399664,
+          "purchasing_users": 6027,
+          "relevant_pairs": 66018,
+          "eligible_user_coverage": 1.0,
+          "full_top20_coverage": 1.0,
+          "mean_candidates": 100,
+          "candidate_hits": 20286,
+          "candidate_recall_micro": 0.3072798327728801,
+          "candidate_recall_macro": 0.3346765718935335,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 1158,
+                "recall_macro": 0.016757578287719756,
+                "recall_micro": 0.01754067072616559,
+                "ndcg_macro": 0.03998938563808345
+              },
+              "10": {
+                "hits": 2055,
+                "recall_macro": 0.030426104904830484,
+                "recall_micro": 0.031127874216122876,
+                "ndcg_macro": 0.03991785486676657
+              },
+              "20": {
+                "hits": 3586,
+                "recall_macro": 0.05316346637190771,
+                "recall_micro": 0.05431851919173559,
+                "ndcg_macro": 0.04545101064377115
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 4467,
+                "recall_macro": 0.11488729522758226,
+                "recall_micro": 0.06766336453694446,
+                "ndcg_macro": 0.17717777894249834
+              },
+              "10": {
+                "hits": 7562,
+                "recall_macro": 0.16948764184204293,
+                "recall_micro": 0.11454451816171347,
+                "ndcg_macro": 0.1849993606874127
+              },
+              "20": {
+                "hits": 11756,
+                "recall_macro": 0.23130025731764994,
+                "recall_micro": 0.17807264685388832,
+                "ndcg_macro": 0.20255221247672991
+              }
+            }
+          }
+        },
+        "with_personal_history": {
+          "eligible_users": 399664,
+          "purchasing_users": 6027,
+          "relevant_pairs": 66018,
+          "eligible_user_coverage": 1.0,
+          "full_top20_coverage": 1.0,
+          "mean_candidates": 100,
+          "candidate_hits": 20286,
+          "candidate_recall_micro": 0.3072798327728801,
+          "candidate_recall_macro": 0.3346765718935335,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 1158,
+                "recall_macro": 0.016757578287719756,
+                "recall_micro": 0.01754067072616559,
+                "ndcg_macro": 0.03998938563808345
+              },
+              "10": {
+                "hits": 2055,
+                "recall_macro": 0.030426104904830484,
+                "recall_micro": 0.031127874216122876,
+                "ndcg_macro": 0.03991785486676657
+              },
+              "20": {
+                "hits": 3586,
+                "recall_macro": 0.05316346637190771,
+                "recall_micro": 0.05431851919173559,
+                "ndcg_macro": 0.04545101064377115
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 4467,
+                "recall_macro": 0.11488729522758226,
+                "recall_micro": 0.06766336453694446,
+                "ndcg_macro": 0.17717777894249834
+              },
+              "10": {
+                "hits": 7562,
+                "recall_macro": 0.16948764184204293,
+                "recall_micro": 0.11454451816171347,
+                "ndcg_macro": 0.1849993606874127
+              },
+              "20": {
+                "hits": 11756,
+                "recall_macro": 0.23130025731764994,
+                "recall_micro": 0.17807264685388832,
+                "ndcg_macro": 0.20255221247672991
+              }
+            }
+          }
+        },
+        "without_personal_history": {
+          "eligible_users": 0,
+          "purchasing_users": 0,
+          "relevant_pairs": 0,
+          "eligible_user_coverage": null,
+          "full_top20_coverage": null,
+          "mean_candidates": null,
+          "candidate_hits": 0,
+          "candidate_recall_micro": null,
+          "candidate_recall_macro": null,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "10": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "20": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "10": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "20": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              }
+            }
+          }
+        }
+      },
+      "candidate_universe_sha256": {
+        "candidates": "659053cea65ce8e97d60eee66602f5f609c9b414340a4d4f6fff6d52daf16167",
+        "global_popularity": "659053cea65ce8e97d60eee66602f5f609c9b414340a4d4f6fff6d52daf16167",
+        "personal_recency": "659053cea65ce8e97d60eee66602f5f609c9b414340a4d4f6fff6d52daf16167"
+      },
+      "customers_ranked": 399664,
+      "resources": {
+        "candidate_freeze_seconds": 25.05515133298468,
+        "evaluation_seconds": 65.01491637501749,
+        "elapsed_seconds": 91.39221491699573,
+        "peak_process_rss": 168263680,
+        "rss_units": "bytes on macOS; KiB on Linux"
+      }
+    },
+    "validation": {
+      "window": [
+        "validation",
+        "2019-11-01",
+        "2019-12-01",
+        "2019-12-15"
+      ],
+      "freeze": {
+        "canonical_candidate_sha256": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+        "eligible_users": 368232,
+        "without_personal_history": 0,
+        "candidate_budget": 100,
+        "labels_read": false,
+        "protocol_sha256": "0ffc2eb763080dc971ad6662b22d192d75017235c65eda1deae5e3487e24ecca",
+        "source_sha256": "d1894e489277eb3216e9ad942a73366d90d9f7ed2640a8cdf9a45d6264f7d926",
+        "history_database_sha256": "5250d2ecacd9390a869f886671d09c3b425e7b2419509b3631db39c19e998abe"
+      },
+      "input_database_sha256": "5250d2ecacd9390a869f886671d09c3b425e7b2419509b3631db39c19e998abe",
+      "label_sha256": "65f57d559704dc949e0178e21eb10da84b7084fb9af161ee27f812766c624fd6",
+      "groups": {
+        "all": {
+          "eligible_users": 368232,
+          "purchasing_users": 5693,
+          "relevant_pairs": 59298,
+          "eligible_user_coverage": 1.0,
+          "full_top20_coverage": 1.0,
+          "mean_candidates": 100,
+          "candidate_hits": 17292,
+          "candidate_recall_micro": 0.2916118587473439,
+          "candidate_recall_macro": 0.32367365853137103,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 1427,
+                "recall_macro": 0.026859865790654924,
+                "recall_micro": 0.024064892576478127,
+                "ndcg_macro": 0.058683359502492816
+              },
+              "10": {
+                "hits": 2338,
+                "recall_macro": 0.04221617747506651,
+                "recall_micro": 0.03942797396202233,
+                "ndcg_macro": 0.05624230013863569
+              },
+              "20": {
+                "hits": 3542,
+                "recall_macro": 0.061265851744067935,
+                "recall_micro": 0.05973220007420149,
+                "ndcg_macro": 0.05926555385304061
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 3964,
+                "recall_macro": 0.11549458409224232,
+                "recall_micro": 0.06684879759856993,
+                "ndcg_macro": 0.1699309735851416
+              },
+              "10": {
+                "hits": 6587,
+                "recall_macro": 0.16749878436181748,
+                "recall_micro": 0.1110830044858174,
+                "ndcg_macro": 0.17786011898043547
+              },
+              "20": {
+                "hits": 9942,
+                "recall_macro": 0.22192787317656162,
+                "recall_micro": 0.16766164120206414,
+                "ndcg_macro": 0.19368175381462568
+              }
+            }
+          }
+        },
+        "with_personal_history": {
+          "eligible_users": 368232,
+          "purchasing_users": 5693,
+          "relevant_pairs": 59298,
+          "eligible_user_coverage": 1.0,
+          "full_top20_coverage": 1.0,
+          "mean_candidates": 100,
+          "candidate_hits": 17292,
+          "candidate_recall_micro": 0.2916118587473439,
+          "candidate_recall_macro": 0.32367365853137103,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 1427,
+                "recall_macro": 0.026859865790654924,
+                "recall_micro": 0.024064892576478127,
+                "ndcg_macro": 0.058683359502492816
+              },
+              "10": {
+                "hits": 2338,
+                "recall_macro": 0.04221617747506651,
+                "recall_micro": 0.03942797396202233,
+                "ndcg_macro": 0.05624230013863569
+              },
+              "20": {
+                "hits": 3542,
+                "recall_macro": 0.061265851744067935,
+                "recall_micro": 0.05973220007420149,
+                "ndcg_macro": 0.05926555385304061
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 3964,
+                "recall_macro": 0.11549458409224232,
+                "recall_micro": 0.06684879759856993,
+                "ndcg_macro": 0.1699309735851416
+              },
+              "10": {
+                "hits": 6587,
+                "recall_macro": 0.16749878436181748,
+                "recall_micro": 0.1110830044858174,
+                "ndcg_macro": 0.17786011898043547
+              },
+              "20": {
+                "hits": 9942,
+                "recall_macro": 0.22192787317656162,
+                "recall_micro": 0.16766164120206414,
+                "ndcg_macro": 0.19368175381462568
+              }
+            }
+          }
+        },
+        "without_personal_history": {
+          "eligible_users": 0,
+          "purchasing_users": 0,
+          "relevant_pairs": 0,
+          "eligible_user_coverage": null,
+          "full_top20_coverage": null,
+          "mean_candidates": null,
+          "candidate_hits": 0,
+          "candidate_recall_micro": null,
+          "candidate_recall_macro": null,
+          "methods": {
+            "global_popularity": {
+              "5": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "10": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "20": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              }
+            },
+            "personal_recency": {
+              "5": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "10": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              },
+              "20": {
+                "hits": 0,
+                "recall_macro": null,
+                "recall_micro": null,
+                "ndcg_macro": null
+              }
+            }
+          }
+        }
+      },
+      "candidate_universe_sha256": {
+        "candidates": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+        "global_popularity": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996",
+        "personal_recency": "d0962e856721bfc45cc1dfd2c93f8ba3f5fa9e82f258bc0e9320477e9a425996"
+      },
+      "customers_ranked": 368232,
+      "resources": {
+        "candidate_freeze_seconds": 19.238086875004228,
+        "evaluation_seconds": 57.35033495799871,
+        "elapsed_seconds": 77.4170750839985,
+        "peak_process_rss": 203620352,
+        "rss_units": "bytes on macOS; KiB on Linux"
+      }
+    }
+  },
+  "duckdb_version": "2.0.0"
+}

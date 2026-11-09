@@ -1,0 +1,24 @@
+{
+  "candidate_method": "Phase 10B1 personal_backfilled",
+  "candidate_budget": 100,
+  "candidate_order": "Latest event among all four event types descending, product ID ascending; append unseen past distinct-buyer popularity products, product ID ties; take first 100",
+  "ranking_methods": {
+    "global_popularity": "All historical products' distinct-buyer counts descending, then product ID ascending; absent counts are zero",
+    "personal_recency": "Personal-history products first; latest event among all four event types descending; past distinct-buyer count descending; product ID ascending; unseen products use popularity then ID"
+  },
+  "interaction_type_weights": null,
+  "cutoffs": [5, 10, 20],
+  "primary_comparison": "Validation mean per-purchasing-customer Recall@10 and NDCG@10; report disagreement instead of changing rules",
+  "recall": "Macro mean among eligible purchasers primary; micro purchased-pair recall separately",
+  "ndcg": "Binary gains, log2(rank+1) discount; ideal uses min(K, all distinct future purchased products), including those outside candidates; macro among eligible purchasers",
+  "empty_outcome_policy": "Exclude from undefined purchase recall/NDCG averages, retain in scoring and coverage",
+  "cold_start_policy": "Empty personal history falls back to popularity; zero such customers in the historical-activity eligible cohort means observed cold-start metrics are null",
+  "history": "Previous calendar month, inclusive start and exclusive prediction timestamp, UTC",
+  "outcome": "Fourteen days from prediction timestamp, inclusive start and exclusive end, UTC",
+  "development_snapshots": ["2019-11-01", "2019-12-01"],
+  "reserved_final_snapshot": "2020-01-01; no final-test labels accessed or evaluated in this phase",
+  "customer_batch_size": 1000,
+  "memory_limit": "512MB",
+  "spill_cap": "4GB",
+  "scope": "Two deterministic ordering baselines only; no training, retrieval tuning or final-test evaluation"
+}
