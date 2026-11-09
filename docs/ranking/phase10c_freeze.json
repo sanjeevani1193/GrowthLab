@@ -1,0 +1,54 @@
+{
+  "prepared_at_utc": "2026-11-09T13:23:02.513578+00:00",
+  "outcomes_read": false,
+  "protocol_sha256": "a2d2fb67a8ecca241d1a89d752c34cbe349ccdaa305c400a51662d0f87098f97",
+  "code_sha256": "dd195fa298c9a41a837b9ee5a3d0d105421745d352ba088dbd19c703fe506129",
+  "upstream_sha256": {
+    "src/growthlab/ml_reranking.py": "5a055033566302117600427b678179dc16f90cfd5606f83382c410f09c112750",
+    "src/growthlab/ranking_baselines.py": "d1894e489277eb3216e9ad942a73366d90d9f7ed2640a8cdf9a45d6264f7d926",
+    "src/growthlab/candidates.py": "2e2162656ca8ece78e2931701537cef21c51ede86794d2fe9404c41488995cc5",
+    "docs/ranking/phase10b2b_summary.json": "d3ed66c865079d433bd94361028cd70ee00d6f5a39a7e9e9455b8f8ea6f63ec9"
+  },
+  "model_path": "data/ranking/phase10b2b/model.joblib",
+  "model_sha256": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+  "model_parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.08,
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "max_depth": null,
+    "min_samples_leaf": 50,
+    "l2_regularization": 1.0,
+    "max_bins": 63,
+    "early_stopping": false,
+    "categorical_features": null,
+    "class_weight": null,
+    "random_state": 20261109
+  },
+  "history_source_path": "data/features/phase2/cleaned/2019-Dec.parquet",
+  "history_source_sha256": "65f57d559704dc949e0178e21eb10da84b7084fb9af161ee27f812766c624fd6",
+  "history_database_path": "data/ranking/phase10c/history.duckdb",
+  "history_database_sha256": "8ce4a42b18325a91b01d67dbc0cfdb309fb21dc3161eae1543c45d7560f3fd9b",
+  "expected_outcome_path": "data/features/phase2/cleaned/2020-Jan.parquet",
+  "expected_outcome_sha256": "1e21d49b99c92403274aa67568b9070ccadccd52d825265380c2e2193cfef100",
+  "history_statistics": {
+    "historical_pairs": 1890502,
+    "historical_events": 3349426,
+    "earliest_pair_latest": "2019-12-01 00:00:00",
+    "latest_pair_event": "2019-12-31 23:59:57",
+    "historical_products": 44624,
+    "eligible_customers": 370154
+  },
+  "membership": {
+    "eligible_users": 370154,
+    "candidate_rows": 37015400,
+    "candidate_sha256": "9c3e9fa5e7991f391de04ccf52c1e95f811402498f396e31e28aa363b03aa09c",
+    "candidate_budget": 100
+  },
+  "resources": {
+    "elapsed_seconds": 28.891727209003875,
+    "peak_process_rss": 394510336,
+    "rss_units": "bytes on macOS; KiB on Linux",
+    "database_bytes": 40906752
+  }
+}

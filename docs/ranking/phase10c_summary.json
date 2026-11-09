@@ -1,0 +1,140 @@
+{
+  "preselected_method": "ml",
+  "eligible_users": 370154,
+  "candidate_rows": 37015400,
+  "purchasing_users": 4947,
+  "relevant_pairs": 48915,
+  "candidate_hits": 14338,
+  "candidate_recall_micro": 0.29312071961565983,
+  "candidate_recall_macro": 0.32037547702193875,
+  "eligible_user_coverage": 1.0,
+  "full_top20_coverage": 1.0,
+  "candidate_sha256": "9c3e9fa5e7991f391de04ccf52c1e95f811402498f396e31e28aa363b03aa09c",
+  "method_universe_sha256": {
+    "global_popularity": "9c3e9fa5e7991f391de04ccf52c1e95f811402498f396e31e28aa363b03aa09c",
+    "personal_recency": "9c3e9fa5e7991f391de04ccf52c1e95f811402498f396e31e28aa363b03aa09c",
+    "ml": "9c3e9fa5e7991f391de04ccf52c1e95f811402498f396e31e28aa363b03aa09c"
+  },
+  "methods": {
+    "global_popularity": {
+      "5": {
+        "hits": 1180,
+        "recall_macro": 0.025690620363970455,
+        "recall_micro": 0.024123479505264233,
+        "ndcg_macro": 0.0542140885055212
+      },
+      "10": {
+        "hits": 1840,
+        "recall_macro": 0.04080776452164982,
+        "recall_micro": 0.0376162731268527,
+        "ndcg_macro": 0.051030273642344685
+      },
+      "20": {
+        "hits": 2679,
+        "recall_macro": 0.058739003683262965,
+        "recall_micro": 0.05476847592762956,
+        "ndcg_macro": 0.05460254470363446
+      }
+    },
+    "personal_recency": {
+      "5": {
+        "hits": 3581,
+        "recall_macro": 0.11551054921851257,
+        "recall_micro": 0.07320862721046714,
+        "ndcg_macro": 0.17320973397271103
+      },
+      "10": {
+        "hits": 5931,
+        "recall_macro": 0.1693486372139389,
+        "recall_micro": 0.12125114995400184,
+        "ndcg_macro": 0.1797063857721534
+      },
+      "20": {
+        "hits": 8717,
+        "recall_macro": 0.22231805703191754,
+        "recall_micro": 0.17820709393846468,
+        "ndcg_macro": 0.19480256906090868
+      }
+    },
+    "ml": {
+      "5": {
+        "hits": 4555,
+        "recall_macro": 0.13694211374110182,
+        "recall_micro": 0.09312071961565982,
+        "ndcg_macro": 0.2247121785326458
+      },
+      "10": {
+        "hits": 6840,
+        "recall_macro": 0.18416251862368846,
+        "recall_micro": 0.13983440662373506,
+        "ndcg_macro": 0.2162532599833091
+      },
+      "20": {
+        "hits": 9220,
+        "recall_macro": 0.22685503643379015,
+        "recall_micro": 0.18849023816825106,
+        "ndcg_macro": 0.22204225631403993
+      }
+    }
+  },
+  "paired_uncertainty": {
+    "mean_difference": [
+      0.02143156452258903,
+      0.05150244455993502,
+      0.01481388140974994,
+      0.03654687421115625,
+      0.004536979401872752,
+      0.027239687253131445
+    ],
+    "lower_95": [
+      0.01786184674540641,
+      0.045892566844886434,
+      0.011374136214927255,
+      0.032184270083941,
+      0.0017075190730771455,
+      0.023793305265575812
+    ],
+    "upper_95": [
+      0.024916164442773794,
+      0.056901647290017975,
+      0.018125375293767874,
+      0.040557408923567,
+      0.0072861047321568125,
+      0.03063462220565352
+    ],
+    "purchasers": 4947,
+    "replications": 2000,
+    "seed": 20261110,
+    "endpoints": [
+      "recall_macro@5",
+      "ndcg_macro@5",
+      "recall_macro@10",
+      "ndcg_macro@10",
+      "recall_macro@20",
+      "ndcg_macro@20"
+    ]
+  },
+  "errors": {
+    "absent_from_candidates": 34577,
+    "retrieved_not_top10_ml": 7498,
+    "top10_ml_only": 2008,
+    "top10_recency_only": 1099,
+    "top10_both": 4832
+  },
+  "completed_at_utc": "2026-11-09T13:27:34.141853+00:00",
+  "protocol_sha256": "a2d2fb67a8ecca241d1a89d752c34cbe349ccdaa305c400a51662d0f87098f97",
+  "freeze_sha256": "f3a658733c22c6a3e54bf826f6b543a990e25e0dece8959f9778856decc0e6e5",
+  "source_sha256": "dd195fa298c9a41a837b9ee5a3d0d105421745d352ba088dbd19c703fe506129",
+  "model_sha256_before": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+  "model_sha256_after": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+  "artifacts": {
+    "data/ranking/phase10c/access_ledger.json": "a07f48025f388b11699788206fb5d8ea278ab5f6ad58a3b6701b7746cb307098",
+    "data/ranking/phase10c/purchaser_metrics.npz": "34d228c31d8e55a63d08cbfadabdd85c26370fd4c7212ebe6654fcbaf8b6af70",
+    "data/ranking/phase10c/inference_check.npz": "0e207c40688259bb019d6c4a72a03e92f0930a6cf56931f90237a8d29a62adeb"
+  },
+  "resources": {
+    "evaluation_seconds": 221.94448745899717,
+    "peak_process_rss": 279724032,
+    "rss_units": "bytes on macOS; KiB on Linux"
+  }
+}

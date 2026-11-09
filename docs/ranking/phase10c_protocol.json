@@ -1,0 +1,94 @@
+{
+  "phase": "10C final held-out ranking evaluation",
+  "written_before_final_labels": true,
+  "preserved_commit": "7efc0311b9dc10c19bd494915548e92e7d291242",
+  "preselected_method": "ml; selected using validation, not reselected using final results",
+  "model_path": "data/ranking/phase10b2b/model.joblib",
+  "model_sha256": "3c48c0d645a690bb603bebede3732eb664f4df7dfd8c2012909b5260f3a6cadd",
+  "model_class": "sklearn.ensemble.HistGradientBoostingClassifier",
+  "model_parameters": {
+    "loss": "log_loss",
+    "learning_rate": 0.08,
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "max_depth": null,
+    "min_samples_leaf": 50,
+    "l2_regularization": 1.0,
+    "max_bins": 63,
+    "early_stopping": false,
+    "categorical_features": null,
+    "class_weight": null,
+    "random_state": 20261109
+  },
+  "features": [
+    "product_views",
+    "product_carts",
+    "product_purchases",
+    "hours_since_product_event",
+    "product_buyers",
+    "customer_events",
+    "from_personal_history"
+  ],
+  "feature_definitions": {
+    "product_views": "Cleaned past-month view rows for the customer/product; zero when unseen",
+    "product_carts": "Cleaned past-month cart-addition rows for the customer/product; zero when unseen",
+    "product_purchases": "Cleaned past-month product-purchase rows for the customer/product; zero when unseen",
+    "hours_since_product_event": "Hours from latest of all four historical event types to scoring; NaN when unseen",
+    "product_buyers": "Distinct historical purchasers per product across all historical products; missing count zero",
+    "customer_events": "All four historical event types across every product for the customer",
+    "from_personal_history": "One for an historically interacted candidate, zero for unseen popularity backfill"
+  },
+  "history_start": "2019-12-01 00:00:00",
+  "prediction_time": "2020-01-01 00:00:00",
+  "outcome_end": "2020-01-15 00:00:00",
+  "timezone": "UTC; every interval inclusive start and exclusive end",
+  "history_month": "2019-Dec",
+  "outcome_month": "2020-Jan",
+  "eligibility": "At least one valid positive-user/product-key historical event in December; no future activity or purchase requirement",
+  "candidate_budget": 100,
+  "candidate_rule": "Latest-event personal history descending, product ID ascending; append unseen distinct-buyer popularity products, ID ties; stop at 100 unique products; previously purchased products allowed",
+  "ranking_rules": {
+    "global_popularity": "All historical products' distinct-buyer counts descending, then product ID ascending; absent counts are zero",
+    "personal_recency": "Personal-history products first; latest event among all four event types descending; past distinct-buyer count descending; product ID ascending; unseen products use popularity then ID"
+  },
+  "ml_score": "decision_function margin; not a validated calibrated purchase probability",
+  "ml_ties": "Descending margin, then frozen personalized-recency position, then product ID; no score rounding",
+  "primary": [
+    "macro Recall@10",
+    "macro NDCG@10",
+    "paired ML-minus-recency differences with 95% intervals"
+  ],
+  "secondary": [
+    "macro Recall@5 and @20",
+    "macro NDCG@5 and @20",
+    "micro Recall@5,@10,@20",
+    "macro and micro candidate ceilings",
+    "eligible-user list coverage",
+    "runtime and peak memory"
+  ],
+  "metric_definitions": "Reuse ranking_metrics from Phase 10B2A; macro among all eligible purchasers, micro across all distinct purchased pairs; binary NDCG ideal includes products outside candidates; no-purchase users remain in scoring/coverage",
+  "uncertainty": {
+    "method": "Paired purchaser-level percentile bootstrap of ML minus recency metric differences; same sampled user indices for all six endpoints",
+    "replications": 2000,
+    "confidence_level": 0.95,
+    "seed": 20261110,
+    "replication_batch": 25,
+    "limitations": "Pointwise intervals conditional on fitted model, this cohort, fixed retrieval and sampling; no training-refit, temporal or shared-product uncertainty; secondary endpoints exploratory, no simultaneous correction"
+  },
+  "conclusion_policy": "Report both fixed primary endpoints. Both positive lower bounds support a final advantage under assumptions; a zero-crossing interval is inconclusive for that endpoint. No test-driven model/rule changes or alternative fits; validation-selected model remains ML.",
+  "candidate_freeze": "Complete per-user candidate membership hashed and read-only December database fingerprinted before January labels; identical membership required for every method",
+  "access_control": "Exclusive first-access ledger after protocol/readiness verification; subsequent verify uses saved purchaser metrics and frozen-model inference checks, not January labels",
+  "customer_batch_size": 1000,
+  "memory_limit": "256MB",
+  "spill_cap": "4GB",
+  "threads": 1,
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "duckdb": "2.0.0"
+  },
+  "prior_summary_sha256": "d3ed66c865079d433bd94361028cd70ee00d6f5a39a7e9e9455b8f8ea6f63ec9",
+  "limitations": "Conditional purchaser bootstrap with fixed model; no simultaneous correction for secondary endpoints, training-refit/temporal/shared-product dependence or online causal claims",
+  "scope": "One final evaluation; no fit/tuning, no new candidates/features, no dashboard or deployment"
+}
